@@ -1,0 +1,151 @@
+<html>
+<meta charset="UTF-8">
+<style>
+#header {
+    background-color:#3e3e3e;
+    color:white;
+    text-align:center;
+    padding:5px;
+    width:1200px;
+}
+#nav {
+    text-align:center;
+    background-color:#eeeeee;
+    line-height:30px;
+    float:left;
+    height:800px;
+    width:200px;
+    padding:5px;
+}
+#section {
+    height:800px;
+    width:1000px;
+    float:left;
+    padding:10px;
+    overflow:auto;
+}
+#mid {
+    margin:0 auto;
+    width:1250px;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom:50px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+code {
+    background-color:#e0e0e0;
+}
+a:link {text-decoration: none;color:black;}
+a:visited{text-decoration:none;color:black;}
+a:hover{text-decoration:underline;color:black;}
+</style>
+
+<body>
+<div id="mid">
+<div id="header">
+<h1>五子棋AI娱乐赛</h1>
+</div>
+
+<div id="nav">
+    <h2><a href=index.html>Result</a></h2> 
+    <h2><a href=ranking.html>Ranking</a></h2> 
+    <h2><a href=introduction.html>Introduction</a></h2> 
+    <h2><a href=get_start.html>Getting Started</a></h2> 
+    <h2><a href=gui.html>GUI</a></h2> 
+    <h2><a href=validation.html>Validation</a></h2> 
+</div>
+
+<div id="section">
+<h3>
+为什么要Validation
+</h3>
+<p>
+Validation System是正常软件公司必备的一个系统。开发和测试是一样重要的，一个好的测试系统会让我们的开发事半功倍。具体来说，这个系统可以自动测试一些已知的或者可能出现的bug，也可以测试程序的结果是否如同预计。
+</p>
+<p>
+在刚开始的开发过程中，人工测试往往是我们比较常用的手段，但是到了某个节点以后，我们出现了太多的需要测试的东西，或者一个bug很难重现，这时候Validation system就显得非常必要了。
+</p>
+
+<h3>
+我们的Validation System
+</h3>
+<p>
+在这个Project里，我们用了一个比较简易的，text based的测试系统，并且把测试系统直接嵌入到了主程序中。这个测试系统读取一个棋盘信息，以及期待的结果，然后测试AI是否进行了正确的选择。系统可以读取一个file，或者一个folder。
+</p>
+
+<h3>
+测试文件格式
+</h3>
+<p>
+测试文件是纯文本文件，分为三个部分，即黑棋，白棋和期待结果。在每个部分下面，是点的坐标。程序会读取这个文件，然后在棋盘上摆好黑棋和白棋，再测试AI的Move是否在期待结果内。注意程序永远认为下一步应该是黑棋走，所以在写测试文件的时候，你要假想自己的AI是黑棋
+</p>
+<code>
+Black<br>
+6 7<br>
+6 8<br>
+6 9<br>
+6 10<br>
+White<br>
+6 6<br>
+5 6<br>
+4 6<br>
+3 6<br>
+Correct<br>
+6 11<br>
+</code>
+<p>
+如以上这个例子，我们在四个连续的位置放了黑棋，也在四个连续的位置放了白棋。此时应该黑棋走，黑棋唯一正确的选择就是下在6 11以直接赢得比赛胜利。
+</p>
+
+<p>
+如果认为有多个正确的走法，比如堵活三的时候，Correct下可以有多个坐标。注意<b>Black White Correct</b>是关键词，不可以替换！
+</p>
+
+<h3>
+运行测试
+</h3>
+
+<p>
+我们要输入argument进行测试，要打开test_enable，同时指定测试文件。注意一次只能测试一个AI所以只可以输入一个测试ID！
+</p>
+<code>
+$ ./game.out 2 -test_enable:1 -test_file:./test_basic/atk_five1.tfir
+</code>
+
+<p>
+当然有的时候我们不想一个一个测试，而希望测试整个folder里的全部内容，这时候我们需要写一个<b>filelist</b>，里面列出所有需要测试的内容。
+</p>
+
+<code>
+def_three1.tfir<br>
+def_four1.tfir<br>
+def_four2.tfir<br>
+atk_five1.tfir<br>
+atk_five2.tfir<br>
+atk_four1.tfir<br>
+</code>
+
+<p>
+把这个文件放到folder（如test_basic）里，然后使用test_folder，即可运行全部folder里的测试
+</p>
+<code>
+$ ./game.out 2 -test_enable:1 -test_folder:./test_basic/
+</code>
+
+<h3>
+属于自己的测试
+</h3>
+<p>
+由于有些Move并不是必须的，只是你认为你的AI应该这么做，所以我们推荐大家自己建立一个只属于自己的testcase folder。这也更有利于检查你曾经出过的bug。每出现一个bug，你就应该写一个regression test，从而在未来检测这个bug是否还会出现。test_basic里面的内容将由gaogaotiantian进行维护。
+</p>
+<p>
+对于你自己的testcase folder，你可以选择push，也可以不push只是作为本地文件。
+</p>
+
+</div>
+</div>
+</body>
+</html>
