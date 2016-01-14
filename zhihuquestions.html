@@ -2,20 +2,26 @@
   <head>
     <meta charset="UTF-8">
     <style>
-    pv {
-      margin-right: 10px;
-      margin-left: 10px;
-      font-style: italic;
-      font-style: bold;
-      color: green;
-    }
-    ph {      
-      margin-right: 10px;
-      margin-left: 10px;
-      font-style: italic;
-      font-style: bold;
-      color: red;
-    }
+      span {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+      span.lv {
+        color: #009900;
+      }
+      span.hv {
+        font-style: italic;
+        font-weight: bold;
+        color: #007700;
+      }
+      span.lh {
+        color: #FF5555;
+      }
+      span.hh { 
+        font-style: italic;
+        font-weight: bold;
+        color: #FF0000;
+      }
     </style>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
@@ -38,7 +44,8 @@
         })
         .fail(function(d, text, error){alert("Error in getJSON!" + text + error)})
         .success(function() {
-          $('#question_table').bind('dynatable:preinit', function(e, dynatable) {
+          $('#question_table')
+          .bind('dynatable:preinit', function(e, dynatable) {
             dynatable.utility.textTransform.noStyle = function(text) {
               switch (text)
               {
@@ -66,19 +73,35 @@
               return text;
             };
           })
-
-          $('#question_table').dynatable({
+          .bind('dynatable:init', function(e, dynatable) {
+            dynatable.queries.functions['min_focus'] = function(record, queryValue) {
+              console.log(record['FOCUS'])
+              return record['FOCUS'] >= parseInt(queryValue);
+            };
+          })
+          .dynatable({
+            features : {
+              search: false
+            },
             dataset : {
               records: dbJSON
+            },
+            inputs : {
+              queries: $('#min_focus'), $('#max_focus')
             }
           });
-          console.log(dbJSON)
         })
       })
     </script>
   </head>
   <body>
     <div>
+      <div id="search_filters">
+        关注数
+        <input id="min_focus" style="width:45px">
+        -
+        <input id="max_focus" style="width:45px">
+      </div>
       <table id="question_table">
         <thead>
           <th>名字</th>
