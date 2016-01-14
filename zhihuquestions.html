@@ -22,6 +22,22 @@
         font-weight: bold;
         color: #FF0000;
       }
+      table {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        text-align: left;
+      }
+      #full_content {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #actual_table_section {
+        text-align: center;
+      }
+      body {
+        text-align: center;
+      }
     </style>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
@@ -75,8 +91,34 @@
           })
           .bind('dynatable:init', function(e, dynatable) {
             dynatable.queries.functions['min_focus'] = function(record, queryValue) {
-              console.log(record['FOCUS'])
               return record['FOCUS'] >= parseInt(queryValue);
+            };
+            dynatable.queries.functions['max_focus'] = function(record, queryValue) {
+              return record['FOCUS'] <= parseInt(queryValue);
+            };
+            dynatable.queries.functions['min_answer'] = function(record, queryValue) {
+              return record['ANSWER'] >= parseInt(queryValue);
+            };
+            dynatable.queries.functions['max_answer'] = function(record, queryValue) {
+              return record['ANSWER'] <= parseInt(queryValue);
+            };
+            dynatable.queries.functions['min_ratio'] = function(record, queryValue) {
+              return record['FARATIO'] >= parseInt(queryValue);
+            };
+            dynatable.queries.functions['max_ratio'] = function(record, queryValue) {
+              return record['FARATIO'] <= parseInt(queryValue);
+            };
+            dynatable.queries.functions['min_highans'] = function(record, queryValue) {
+              return record['TOP_ANSWER_NUMBER'] >= parseInt(queryValue);
+            };
+            dynatable.queries.functions['max_highans'] = function(record, queryValue) {
+              return record['TOP_ANSWER_NUMBER'] <= parseInt(queryValue);
+            };
+            dynatable.queries.functions['min_review'] = function(record, queryValue) {
+              return record['REVIEW'] >= parseInt(queryValue);
+            };
+            dynatable.queries.functions['max_review'] = function(record, queryValue) {
+              return record['REVIEW'] <= parseInt(queryValue);
             };
           })
           .dynatable({
@@ -87,7 +129,7 @@
               records: dbJSON
             },
             inputs : {
-              queries: $('#min_focus'), $('#max_focus')
+              queries: $('#min_focus, #max_focus, #min_answer, #max_answer, #min_ratio, #max_ratio, #min_highans, #max_highans, #min_review, #max_review')
             }
           });
         })
@@ -95,27 +137,45 @@
     </script>
   </head>
   <body>
-    <div>
+    <div id="full_content">
       <div id="search_filters">
         关注数
         <input id="min_focus" style="width:45px">
         -
         <input id="max_focus" style="width:45px">
+        答案数
+        <input id="min_answer" style="width:45px">
+        -
+        <input id="max_answer" style="width:45px">
+        关注答案比
+        <input id="min_ratio" style="width:45px">
+        -
+        <input id="max_ratio" style="width:45px">
+        最高答案
+        <input id="min_highans" style="width:45px">
+        -
+        <input id="max_highans" style="width:45px">
+        浏览数
+        <input id="min_review" style="width:45px">
+        -
+        <input id="max_review" style="width:45px">
       </div>
-      <table id="question_table">
-        <thead>
-          <th>名字</th>
-          <th>关注</th>
-          <th>答案数</th>
-          <th>关注答案比</th>
-          <th>最高答案赞同</th>
-          <th>浏览</th>
-          <th>首次评论</th>
-          <th>上次活跃时间</th>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <div id="actual_table_section">
+        <table id="question_table">
+          <thead>
+            <th>名字</th>
+            <th>关注</th>
+            <th>答案数</th>
+            <th>关注答案比</th>
+            <th>最高答案赞同</th>
+            <th>浏览</th>
+            <th>首次评论</th>
+            <th>上次活跃时间</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
