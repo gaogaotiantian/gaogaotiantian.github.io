@@ -25,25 +25,33 @@
       table {
         margin-left: auto;
         margin-right: auto;
-        padding: 10px;
         text-align: left;
       }
+      div {
+        margin: 0px;
+        padding: 0px;
+      }
       #full_content {
+        border-style: solid;
         margin-left: auto;
         margin-right: auto;
         height:100%;
-        overflow: hidden;
       }
       #search_filters {
+        position: absolute;
+        background: #e0e0e0;
         text-align: center;
-        position:absolute;
         width: 100%;
         height: 25px;
       }
+      #scroll_wrapper {
+        border-style:dotted;
+        height: auto;
+        padding-top: 25px;
+        padding-bottom: 10px;
+      }
       #actual_table_section {
-        position: relative;
-        top: 30px;
-        height: 95%;
+        height: 100%;
         text-align: center;
         overflow-y: scroll;
       }
@@ -80,7 +88,7 @@
             dynatable.utility.textTransform.noStyle = function(text) {
               switch (text)
               {
-                case "名字":
+                case "问题":
                   return "NAME"
                 case "关注":
                   return "FOCUS"
@@ -174,22 +182,25 @@
         <input id="min_review" style="width:45px">
         -
         <input id="max_review" style="width:45px">
+        <span>Made by <a href="http://www.zhihu.com/people/gao-tian-50">高天</a><span>
       </div>
-      <div id="actual_table_section">
-        <table id="question_table">
-          <thead>
-            <th>名字</th>
-            <th>关注</th>
-            <th>答案数</th>
-            <th>关注答案比</th>
-            <th>最高答案赞同</th>
-            <th>浏览</th>
-            <th>首次评论</th>
-            <th>上次活跃时间</th>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+      <div id="scroll_wrapper">
+        <div id="actual_table_section">
+          <table id="question_table">
+            <thead>
+              <th>问题</th>
+              <th>关注</th>
+              <th>答案数</th>
+              <th>关注答案比</th>
+              <th>最高答案赞同</th>
+              <th>浏览</th>
+              <th>首次评论</th>
+              <th>上次活跃时间</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>
