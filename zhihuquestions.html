@@ -32,7 +32,6 @@
         padding: 0px;
       }
       #full_content {
-        border-style: solid;
         margin-left: auto;
         margin-right: auto;
         height:100%;
@@ -45,10 +44,11 @@
         height: 25px;
       }
       #scroll_wrapper {
-        border-style:dotted;
+        position: absolute;
+        top: 25px;
+        bottom: 0px;
+        width: 100%;
         height: auto;
-        padding-top: 25px;
-        padding-bottom: 10px;
       }
       #actual_table_section {
         height: 100%;
@@ -182,7 +182,7 @@
         <input id="min_review" style="width:45px">
         -
         <input id="max_review" style="width:45px">
-        <span>Made by <a href="http://www.zhihu.com/people/gao-tian-50">高天</a><span>
+        <span>Made by and all rights reserved by <a href="http://www.zhihu.com/people/gao-tian-50">高天</a><span>
       </div>
       <div id="scroll_wrapper">
         <div id="actual_table_section">
