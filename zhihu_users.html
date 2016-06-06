@@ -15,20 +15,21 @@
           var table = $('#user-table').DataTable( {
             data: userJSON,
             paging: false,
-            columns: [
-              {title:"排名"},
-              {title:"用户", data:"NAME"},
-              {title:"关注了", data:"FOLLOWEE"},
-              {title:"关注者", data:"FOLLOWER"},
-              {title:"回答数", data:"ANSWER_NUM"},
-              {title:"赞同数", data:"AGREE_NUM"}
-            ],
             columnDefs: [ {
               sortable: false,
               "class": "index",
-              targets: 0
-            }],
-            order: [[1, 'asc']],
+              "data": null,
+              "defaultContent": '',
+              targets: [0]
+            }], 
+            columns: [
+              {title:"排名"},
+              {title:"用户", data:"NAME", "sortable": false, orderable: false},
+              {title:"关注者", data:"FOLLOWER"},
+              {title:"关注了", data:"FOLLOWEE"},
+              {title:"回答数", data:"ANSWER_NUM"},
+              {title:"赞同数", data:"AGREE_NUM"}
+            ],
             fixedColumns: true
           })
           table.on( 'order.dt search.dt', function () {
@@ -41,6 +42,6 @@
     </script>
   </head>
   <body>
-    <table id="user-table" class="display"></table>
+    <table id="user-table" class="display compact"></table>
   </body>
 </html>

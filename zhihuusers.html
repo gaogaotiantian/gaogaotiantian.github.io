@@ -1,191 +1,47 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <style>
-      span {
-        margin-right: 10px;
-        margin-left: 10px;
-      }
-      span.lv {
-        color: #009900;
-      }
-      span.hv {
-        font-style: italic;
-        font-weight: bold;
-        color: #007700;
-      }
-      span.lh {
-        color: #FF5555;
-      }
-      span.hh { 
-        font-style: italic;
-        font-weight: bold;
-        color: #FF0000;
-      }
-      table {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-      }
-      tr:nth-child(even) {
-        background:#DDDDDD;
-      }
-      div {
-        margin: 0px;
-        padding: 0px;
-      }
-      #full_content {
-        margin-left: auto;
-        margin-right: auto;
-        height:100%;
-      }
-      #search_filters {
-        position: absolute;
-        background: #e0e0e0;
-        text-align: center;
-        width: 100%;
-        height: 25px;
-      }
-      #scroll_wrapper {
-        position: absolute;
-        top: 25px;
-        bottom: 0px;
-        width: 100%;
-        height: auto;
-      }
-      #actual_table_section {
-        height: 100%;
-        text-align: center;
-        overflow-y: scroll;
-      }
-      body {
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        text-align: center;
-      }
-    </style>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
 
-    <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
-    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/jquery.dynatable.css" />
     <script>
-      var dbJSON = []
-      $.dynatableSetup({
-        features: {
-          paginate : false
-        },
-        table: {
-          defaultColumnIdStyle: 'noStyle'
-        }
-      });
-
       $(document).ready(function() {
         $.getJSON("user.json", function(data) {
-          dbJSON = data
+          userJSON = data
         })
-        .fail(function(d, text, error){alert("Error in getJSON!" + text + error)})
+        .fail(function(d, text, error){alert("ERR in getJSON!" + text + error)})
         .success(function() {
-          $('#question_table')
-          .bind('dynatable:preinit', function(e, dynatable) {
-            dynatable.utility.textTransform.noStyle = function(text) {
-              switch (text)
-              {
-                case "用户":
-                  return "NAME"
-                case "关注者":
-                  return "FOLLOWER"
-                case "关注了":
-                  return "FOLLOWEE"
-                case "回答数":
-                  return "ANSWER_NUM"
-                case "赞同数":
-                  return "AGREE_NUM"
-                default:
-                  return text
-              }
-              if (text == "abc")
-                return "NAME"
-              return text;
-            };
+          var table = $('#user-table').DataTable( {
+            data: userJSON,
+            paging: false,
+            columnDefs: [ {
+              sortable: false,
+              "class": "index",
+              "data": null,
+              "defaultContent": '',
+              targets: [0]
+            }], 
+            columns: [
+              {title:"排名"},
+              {title:"用户", data:"NAME", "sortable": false, orderable: false},
+              {title:"关注者", data:"FOLLOWER"},
+              {title:"关注了", data:"FOLLOWEE"},
+              {title:"回答数", data:"ANSWER_NUM"},
+              {title:"赞同数", data:"AGREE_NUM"}
+            ],
+            fixedColumns: true
           })
-          .bind('dynatable:init', function(e, dynatable) {
-            dynatable.queries.functions['min_follower'] = function(record, queryValue) {
-              return record['FOLLOWER'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_follower'] = function(record, queryValue) {
-              return record['FOLLOWER'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_followee'] = function(record, queryValue) {
-              return record['FOLLOWEE'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_followee'] = function(record, queryValue) {
-              return record['FOLLOWEE'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_answer'] = function(record, queryValue) {
-              return record['ANSWER_NUM'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_answer'] = function(record, queryValue) {
-              return record['ANSWER_NUM'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_agree'] = function(record, queryValue) {
-              return record['AGREE_NUM'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_agree'] = function(record, queryValue) {
-              return record['AGREE_NUM'] <= parseInt(queryValue);
-            };
-          })
-          .dynatable({
-            features : {
-              search: false
-            },
-            dataset : {
-              records: dbJSON
-            },
-            inputs : {
-              queries: $('#min_follower, #max_follower, #min_followee, #max_followee, #min_answer, #max_answer, #min_agree, #max_agree')
-            }
-          });
+          table.on( 'order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            } );
+          } ).draw();
         })
       })
     </script>
   </head>
   <body>
-    <div id="full_content">
-      <div id="search_filters">
-        关注者数
-        <input id="min_follower" style="width:45px">
-        -
-        <input id="max_follower" style="width:45px">
-        关注人数
-        <input id="min_followee" style="width:45px">
-        -
-        <input id="max_followee" style="width:45px">
-        答案数
-        <input id="min_answer" style="width:45px">
-        -
-        <input id="max_answer" style="width:45px">
-        赞同数
-        <input id="min_agree" style="width:45px">
-        -
-        <input id="max_agree" style="width:45px">
-        <span>Made by and all rights reserved by <a href="http://www.zhihu.com/people/gao-tian-50">高天</a><span>
-      </div>
-      <div id="scroll_wrapper">
-        <div id="actual_table_section">
-          <table id="question_table">
-            <thead>
-              <th>用户</th>
-              <th>关注者</th>
-              <th>关注了</th>
-              <th>回答数</th>
-              <th>赞同数</th>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <table id="user-table" class="display compact"></table>
   </body>
 </html>
