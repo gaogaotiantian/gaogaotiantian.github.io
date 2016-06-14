@@ -6,16 +6,22 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
 
     <script>
-      var col_names=['排名', '用户', '关注者', '关注了', '回答数', '赞同数', '关注回答比', '赞同回答比', "赞同关注比"]
-      $.fn.dataTable.ext.search.push (
-        function(settings, data, dataIndex) {
-          for (var i = 0; i < data.length; i++) {
-            var col_name = col_names[i]
-            var min = $('input[col_name='+col_name+'] .min')
-            var fil_data = data[i]
-          }
+    $.fn.dataTable.ext.search.push(
+      function( settings, data, dataIndex ) {
+        var min = parseInt( $('#follower_min').val(), 10 );
+        var max = parseInt( $('#follower_max').val(), 10 );
+        var follwer = parseFloat( data[3] ) || 0; // use data for the age column
+   
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+             ( isNaN( min ) && age <= max ) ||
+             ( min <= age   && isNaN( max ) ) ||
+             ( min <= age   && age <= max ) )
+        {
+            return true;
         }
-      )
+        return false;
+      }
+    );
       $(document).ready(function() {
         $.getJSON("user.json", function(data) {
           userJSON = data
@@ -50,16 +56,15 @@
                 cell.innerHTML = i+1;
             } );
           } ).draw();
-
-          $('#user-table thead th').each( function() {
-            var title = $(this).text()
-            $(this).html(title + '<input/ class="min" col_name="' + title + '" placeholder="min"> <input class="max" col_name="' + title + '" placeholder="max"/>')
-          })
         })
       })
     </script>
   </head>
   <body>
-    <table id="user-table" class="display compact"></table>
+    <div>
+      关注者: <input id=follwer_min placeholder=min/>-<input id=follower_max placeholder=max/>
+    </div>
+    <table id="user-table" class="display compact">
+    </table>
   </body>
 </html>
