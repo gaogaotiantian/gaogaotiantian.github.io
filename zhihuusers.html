@@ -40,6 +40,11 @@
                 cell.innerHTML = i+1;
             } );
           } ).draw();
+
+          $('#user-table thead th').each( function() {
+            var title = $(this).text()
+            $(this).html(title + '<input/ placeholder="min"> <input placeholder="max"/>')
+          })
         })
       })
     </script>
