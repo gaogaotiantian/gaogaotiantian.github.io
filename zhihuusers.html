@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
 
     <script>
+      var col_names=['排名', '用户', '关注者', '关注了', '回答数', '赞同数', '关注回答比', '赞同回答比', "赞同关注比"]
+      $.fn.dataTable.ext.search.push (
+        function(settings, data, dataIndex) {
+          for (var i = 0; i < data.length; i++) {
+            var col_name = col_names[i]
+            var min = $('input[col_name='+col_name+'] .min')
+            var fil_data = data[i]
+          }
+        }
+      )
       $(document).ready(function() {
         $.getJSON("user.json", function(data) {
           userJSON = data
@@ -43,7 +53,7 @@
 
           $('#user-table thead th').each( function() {
             var title = $(this).text()
-            $(this).html(title + '<input/ placeholder="min"> <input placeholder="max"/>')
+            $(this).html(title + '<input/ class="min" col_name="' + title + '" placeholder="min"> <input class="max" col_name="' + title + '" placeholder="max"/>')
           })
         })
       })
