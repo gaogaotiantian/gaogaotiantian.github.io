@@ -4,22 +4,36 @@
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
-
+    <style>
+      body {
+        text-align: center;
+      }
+      input {
+        width: 60px;
+      }
+    </style>
     <script>
+    var id_list = ['follower', 'answer']
+    var index_list = [2, 4]
     $.fn.dataTable.ext.search.push(
       function( settings, data, dataIndex ) {
-        var min = parseInt( $('#follower_min').val(), 10 );
-        var max = parseInt( $('#follower_max').val(), 10 );
-        var follower = parseInt( data[2], 10 ); // use data for the follower column
+        for (var i = 0; i < 2; i++) {
+          var id = id_list[i];
+          var index = index_list[i]
+          var min = parseInt( $('#' + id + '_min').val(), 10 );
+          var max = parseInt( $('#' + id + '_max').val(), 10 );
+          var d   = parseInt( data[index], 10 ); // use data for the follower column
    
-        if ( ( isNaN( min ) && isNaN( max ) ) ||
-             ( isNaN( min ) && follower <= max ) ||
-             ( min <= follower && isNaN( max ) ) ||
-             ( min <= follower && follower <= max ) )
-        {
-            return true;
+          if ( ( isNaN( min ) && isNaN( max ) ) ||
+               ( isNaN( min ) && d <= max ) ||
+               ( min <= d && isNaN( max ) ) ||
+               ( min <= d && d <= max ) )
+          {
+             continue; 
+          }
+          return false;
         }
-        return false;
+        return true;
       }
     );
       $(document).ready(function() {
@@ -68,6 +82,8 @@
   <body>
     <div>
       关注者: <input id=follower_min class=filter placeholder=min>-<input id=follower_max class=filter placeholder=max>
+      回答数: <input id=answer_min class=filter placeholder=min>-<input id=answer_max class=filter placeholder=max>
+
     </div>
     <table id="user-table" class="display compact">
     </table>
