@@ -2,8 +2,10 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css"/>
     <style>
       body {
         text-align: center;
@@ -63,7 +65,10 @@
               {title:"赞同回答比", data:"AARATIO"},
               {title:"赞同关注比", data:"AFRATIO"}
             ],
-            fixedColumns: true
+            fixedColumns: true,
+            fixedHeader: {
+              header : true
+            }
           })
 
           table.on( 'order.dt search.dt', function () {
