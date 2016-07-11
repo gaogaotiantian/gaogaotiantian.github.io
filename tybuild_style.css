@@ -1,0 +1,30 @@
+.user_status_option {
+    display: inline-block;
+    width:200px;
+}
+.user_status_general, .juexing_effect {
+    display: inline-block;
+    width:150px;
+}
+.equip_effect {
+    display: inline-block;
+    width:150px;
+}
+div {
+    padding:10px;
+}
+div#user_status_input {
+    float:left;
+}
+div#user_status_general, #juexing_effect {
+    float:left;
+}
+div.item {
+    float:left;
+}
+div.clear {
+    clear:both;
+}
+input {
+    width:50px;
+}
