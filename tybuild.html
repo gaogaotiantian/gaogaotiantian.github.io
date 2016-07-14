@@ -41,7 +41,14 @@
         user.power = parseInt($("#user_power_potential").val()) + parseInt($("#user_power_other").val());
         user.dex = parseInt($("#user_dex_potential").val()) + parseInt($("#user_dex_other").val());
         user.mainStatus = $("#user_job option:selected").val();
-        user.equipDamage = Math.round(user.extraDamage / 1.1128 / (1+user.shengeAttack/100) - user.power);
+
+        if (user.level < 79) {
+          user.ATK_CONST = 1.04;
+        } else {
+          user.ATK_CONST = 1.1128;
+        }
+
+        user.equipDamage = Math.round(user.extraDamage / user.ATK_CONST / (1+user.shengeAttack/100) - user.power);
         if (user.mainStatus == "power") {
           user.lidao = parseInt(user.power / 10) * 4;
         } else if (user.mainStatus == "dex") {
@@ -51,8 +58,8 @@
         // Calculate source data
         user.minAttack = (user.minDamage - user.extraDamage) / ((1 + user.lidao/100) * (1 + user.skillAttack/100));
         user.maxAttack = (user.maxDamage - user.extraDamage) / ((1 + user.lidao/100) * (1 + user.skillAttack/100));
-        user.minEquipAttack = Math.round(user.minAttack / 1.1128 / (1+user.shengeAttack/100));
-        user.maxEquipAttack = Math.round(user.maxAttack / 1.1128 / (1+user.shengeAttack/100));
+        user.minEquipAttack = Math.round(user.minAttack / user.ATK_CONST / (1+user.shengeAttack/100));
+        user.maxEquipAttack = Math.round(user.maxAttack / user.ATK_CONST / (1+user.shengeAttack/100));
 
         console.log(user);
         UpdateUser(user);
@@ -71,9 +78,9 @@
         user.PM_CONST = user.level*37.5+150;
         user.criticalRate = (user.criticalValue * (1 + user.criticalBuffRate) / user.CRI_CONST + user.extraCriticalRate/100);
         user.criticalDamage = Math.min(2, (0.5 + user.criticalDamageValue / user.CRIDAM_CONST + user.extraCriticalDamageRate/100));
-        user.extraDamage = (user.equipDamage + user.power) * 1.1128 * (1+user.shengeAttack/100);
-        user.minAttack = user.minEquipAttack * 1.1128 * (1+user.shengeAttack/100);
-        user.maxAttack = user.maxEquipAttack * 1.1128 * (1+user.shengeAttack/100);
+        user.extraDamage = (user.equipDamage + user.power) * user.ATK_CONST * (1+user.shengeAttack/100);
+        user.minAttack = user.minEquipAttack * user.ATK_CONST * (1+user.shengeAttack/100);
+        user.maxAttack = user.maxEquipAttack * user.ATK_CONST * (1+user.shengeAttack/100);
         if (user.minAttack > user.maxAttack) {
           user.maxAttack = user.minAttack;
         }
@@ -96,6 +103,7 @@
       function UpdateJuexing() {
         var juexingMap = {
           "power":[6, "#juexing_power"],
+          "power":[10, "#juexing_power_10"],
           "equipDamage":[27, "#juexing_equip_damage"],
           "maxEquipAttack" :[30, "#juexing_max_attack"], 
           "criticalValue"  :[54, "#juexing_critical_value"],
@@ -194,6 +202,7 @@
       <div id="juexing_effect">
         <h2>觉醒收益</h2>
         <span class="juexing_effect">力量(6)</span><span id="juexing_power">0</span><br>
+        <span class="juexing_effect">力量(10)(参考)</span><span id="juexing_power_10">0</span><br>
         <span class="juexing_effect">伤害(27)</span><span id="juexing_equip_damage">0</span><br>
         <span class="juexing_effect">大攻(30)</span><span id="juexing_max_attack">0</span><br>
         <span class="juexing_effect">暴击值(54)</span><span id="juexing_critical_value">0</span><br>
@@ -210,6 +219,7 @@
         <h2>装备一</h2>
         <span class="equip_effect">小攻</span><input class="user_input" status="minEquipAttack"><br>
         <span class="equip_effect">大攻</span><input class="user_input" status="maxEquipAttack"><br>
+        <span class="equip_effect">伤害</span><input class="user_input" status="equipDamange"><br>
         <span class="equip_effect">暴击值</span><input class="user_input" status="criticalValue"><br>
         <span class="equip_effect">额外暴击率</span><input class="user_input" status="extraCriticalRate"><br>
         <span class="equip_effect">暴击加成值</span><input class="user_input" status="criticalDamageValue"><br>
