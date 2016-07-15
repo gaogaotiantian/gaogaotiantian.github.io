@@ -102,25 +102,27 @@
       }
       function UpdateJuexing() {
         var juexingMap = {
-          "power":[6, "#juexing_power"],
-          "power":[10, "#juexing_power_10"],
-          "equipDamage":[27, "#juexing_equip_damage"],
-          "maxEquipAttack" :[30, "#juexing_max_attack"], 
-          "criticalValue"  :[54, "#juexing_critical_value"],
-          "extraCriticalRate" : [2.5, "#juexing_extra_critical_rate"],
-          "criticalDamageValue"  :[54, "#juexing_critical_damage_value"],
-          "extraCriticalDamageRate" : [7.6, "#juexing_extra_critical_damage_rate"],
-          "wushuangValue" : [54, "#juexing_wushuang_value"],
-          "pomoValue" : [54, "#juexing_pomo_value"]
+          "#juexing_power" : ["power", 6],
+          "#juexing_power":["power", 6],
+          "#juexing_power_10":["power", 10],
+          "#juexing_equip_damage":["equipDamage", 27],
+          "#juexing_min_attack": ["minEquipAttack", 30],
+          "#juexing_max_attack": ["maxEquipAttack", 30],
+          "#juexing_critical_value":["criticalValue", 54],
+          "#juexing_extra_critical_rate":["extraCriticalRate", 2.5],
+          "#juexing_critical_damage_value":["criticalDamageValue", 54],
+          "#juexing_extra_critical_damage_rate":["extraCriticalDamageRate", 7.6],
+          "#juexing_wushuang_value":["wushuangValue", 54],
+          "#juexing_pomo_value":["pomoValue", 54]
         }
         for (juexing in juexingMap) {
           var newUser = {}
           var equip = {};
-          equip[juexing] = juexingMap[juexing][0];
+          equip[juexingMap[juexing][0]] = juexingMap[juexing][1];
           newUser = EquipUser(userBasic, equip);
           var newDamage = GetDamage(newUser);
           var effect = (newDamage - userBasic.damage) / userBasic.damage
-          $(juexingMap[juexing][1]).text(effect)
+          $(juexing).text(effect)
         }
       }
       function UpdateEquip() {
@@ -204,6 +206,7 @@
         <span class="juexing_effect">力量(6)</span><span id="juexing_power">0</span><br>
         <span class="juexing_effect">力量(10)(参考)</span><span id="juexing_power_10">0</span><br>
         <span class="juexing_effect">伤害(27)</span><span id="juexing_equip_damage">0</span><br>
+        <span class="juexing_effect">小攻(30)</span><span id="juexing_min_attack">0</span><br>
         <span class="juexing_effect">大攻(30)</span><span id="juexing_max_attack">0</span><br>
         <span class="juexing_effect">暴击值(54)</span><span id="juexing_critical_value">0</span><br>
         <span class="juexing_effect">额外暴击率(2.5)</span><span id="juexing_extra_critical_rate">0</span><br>
@@ -219,7 +222,7 @@
         <h2>装备一</h2>
         <span class="equip_effect">小攻</span><input class="user_input" status="minEquipAttack"><br>
         <span class="equip_effect">大攻</span><input class="user_input" status="maxEquipAttack"><br>
-        <span class="equip_effect">伤害</span><input class="user_input" status="equipDamange"><br>
+        <span class="equip_effect">伤害</span><input class="user_input" status="equipDamage"><br>
         <span class="equip_effect">暴击值</span><input class="user_input" status="criticalValue"><br>
         <span class="equip_effect">额外暴击率</span><input class="user_input" status="extraCriticalRate"><br>
         <span class="equip_effect">暴击加成值</span><input class="user_input" status="criticalDamageValue"><br>
