@@ -17,7 +17,7 @@
         if (jQuery.isEmptyObject(user)) {
           return 0;
         }
-        var damage = (user.minDamage + user.maxDamage + user.minSkillDamage + user.maxSkillDamage) / 2 * (1 + user.criticalRate * user.criticalDamage) * (1 + user.wushuangRate * user.wushuangDamageRatio) * (1 + user.pomoRate)
+        var damage = (user.minDamage + user.maxDamage + user.minSkillDamage + user.maxSkillDamage) / 2 * (1 + user.criticalRate * user.criticalDamage) * (1 + user.wushuangRate * user.wushuangDamageRatio) * (1 + user.pomoRate) * (1 - user.enemyDefRate)
         return Math.round(damage);
       }
       function GetUser() {
@@ -40,6 +40,9 @@
         user.pomoValue = parseInt($('#user_pomo_value').val());
         user.power = parseInt($("#user_power_potential").val()) + parseInt($("#user_power_other").val());
         user.dex = parseInt($("#user_dex_potential").val()) + parseInt($("#user_dex_other").val());
+        user.pofangValue = parseInt($("#user_pofang_value").val());
+        user.extraPofangRate = parseInt($("#user_extra_pofang_rate").val());
+        user.enemyDefValue = parseInt($("#user_enemy_def_value").val());
         user.mainStatus = $("#user_job option:selected").val();
 
         if (user.level < 79) {
@@ -76,9 +79,13 @@
         user.CRIDAM_CONST = user.level*12.5+62.5;
         user.WS_CONST = user.level*25+125;
         user.PM_CONST = user.level*37.5+150;
-        user.criticalRate = (user.criticalValue * (1 + user.criticalBuffRate) / user.CRI_CONST + user.extraCriticalRate/100);
+        user.DEF_CONST = user.level*40+200;
+        user.PF_CONST = user.level*(35+0.2971*user.level)+180;
+        user.criticalRate = (user.criticalValue * (1 + user.criticalBuffRate/100) / user.CRI_CONST + user.extraCriticalRate/100);
         user.criticalDamage = Math.min(2, (0.5 + user.criticalDamageValue / user.CRIDAM_CONST + user.extraCriticalDamageRate/100));
         user.extraDamage = (user.equipDamage + user.power) * user.ATK_CONST * (1+user.shengeAttack/100);
+        user.pofangRate = user.pofangValue / user.PF_CONST + user.extraPofangRate/100;
+        user.enemyDefRate = user.enemyDefValue*(1-user.pofangRate) / (user.DEF_CONST + user.enemyDefValue * (1-user.pofangRate))
         user.minAttack = user.minEquipAttack * user.ATK_CONST * (1+user.shengeAttack/100);
         user.maxAttack = user.maxEquipAttack * user.ATK_CONST * (1+user.shengeAttack/100);
         if (user.minAttack > user.maxAttack) {
@@ -113,7 +120,8 @@
           "#juexing_critical_damage_value":["criticalDamageValue", 54],
           "#juexing_extra_critical_damage_rate":["extraCriticalDamageRate", 7.6],
           "#juexing_wushuang_value":["wushuangValue", 54],
-          "#juexing_pomo_value":["pomoValue", 54]
+          "#juexing_pomo_value":["pomoValue", 54],
+          "#juexing_pofang_value":["pofangValue", 54]
         }
         for (juexing in juexingMap) {
           var newUser = {}
@@ -189,6 +197,9 @@
         <span class="user_status_option">无双值:</span><input class="user_input" id="user_wushuang_value"/><br>
         <span class="user_status_option">无双输出占比(%):</span><input class="user_input" id="user_wushuang_damage_ratio"/><br>
         <span class="user_status_option">破魔值:</span><input class="user_input" id="user_pomo_value"/><br>
+        <span class="user_status_option">破防值:</span><input class="user_input" id="user_pofang_value"/><br>
+        <span class="user_status_option">额外破防率:</span><input class="user_input" id="user_extra_pofang_value"/><br>
+        <span class="user_status_option">敌人防御:</span><input class="user_input" id="user_enemy_def_value"/><br>
       </div>
       <div id="user_status_general">
         <h2>用户结果</h2>
@@ -214,6 +225,7 @@
         <span class="juexing_effect">额外暴击加成率(7.6)</span><span id="juexing_extra_critical_damage_rate">0</span><br>
         <span class="juexing_effect">无双力(54)</span><span id="juexing_wushuang_value">0</span><br>
         <span class="juexing_effect">破魔力(54)</span><span id="juexing_pomo_value">0</span><br>
+        <span class="juexing_effect">破防力(54)</span><span id="juexing_pofang_value">0</span><br>
       </div>
     </div>
     <div class="clear"></div>
@@ -229,6 +241,7 @@
         <span class="equip_effect">额外暴击加成率</span><input class="user_input" status="extraCriticalDamageRate"><br>
         <span class="equip_effect">无双值</span><input class="user_input" status="wushuangValue"><br>
         <span class="equip_effect">破魔值</span><input class="user_input" status="pomoValue"><br>
+        <span class="equip_effect">破防值</span><input class="user_input" status="pofangValue"><br>
         <span class="equip_effect">期望伤害增长</span><span class="equip_result">0</span>
       </div>
     </div>
