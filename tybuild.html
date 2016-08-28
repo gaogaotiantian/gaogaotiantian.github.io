@@ -18,7 +18,7 @@
           return 0;
         }
         var damage = (user.minDamage + user.maxDamage + user.minSkillDamage + user.maxSkillDamage) / 2 * (1 + user.criticalRate * user.criticalDamage) * (1 + user.wushuangRate * user.wushuangDamageRatio) * (1 + user.pomoRate) * (1 - user.enemyDefRate)
-        return Math.round(damage);
+        return damage.toFixed(3);
       }
       function GetUser() {
         var user = {};
