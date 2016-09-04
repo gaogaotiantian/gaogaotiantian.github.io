@@ -52,7 +52,7 @@ body{
 #website_logo{
     text-align:center;
     float:left;
-    width:10%;
+    width:15%;
     height:100%;
     font-size: 1em;
 }
@@ -61,7 +61,7 @@ body{
     font-size: 1em;
     float:right;
     height:100%;
-    width:90%;
+    width:85%;
 }
 
 #main_content{
@@ -83,16 +83,17 @@ body{
     position:relative;
     color:black;
     float:left;
-    width:10%;
+    width:15%;
     height:100%;
     border-radius:3%;
 }
 #grad_requirement{
     word-wrap: break-word;
-    word-break: break-all;
-    width:auto;
+    word-break: normal;
+    width:100%;
     position:absolute;
-    padding:0.5em;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
     bottom:0;
 }
 #form_area{
@@ -209,6 +210,22 @@ p.title{
 	border-radius:10;
 	margin-bottom:3%;
 	margin-top:2%;
+}
+div.req_detail{
+    display:none;
+}
+p.req_p{
+    font-weight:bold;
+    font-size:1em;
+}
+p.req_p.satisfied{
+    color:green;
+}
+p.req_p.unsatisfied{
+    color:red;
+}
+p.req_detail_p{
+    font-size:0.75em;
 }
 .year{
 	overflow:hidden;

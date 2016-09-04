@@ -197,6 +197,9 @@ function ValidGE(){
 function UpdateGE(){
     for(i in geStatus)
         geStatus[i] = 0
+    for (a in userData.ap.area) {
+        geStatus[a] += userData.ap.area[a]
+    }
 
     for(course of validCourses){
         for(ge of course.gearea)
@@ -255,6 +258,8 @@ function checkDepth(){
 
 //this function will check the Area B requirment 
 function checkAreaB(){
+    if (userData["nonNativeSpeaker"] == true)
+        return true
     for(course of validCourses){
             for(language of foreignLanguage){
                 if(language.sub==course.sub && language.number == course.number)

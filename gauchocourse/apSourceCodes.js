@@ -17,12 +17,12 @@ var computeAP;
 var validateAP = function(arr){
 
     for( var i = 0 ; i < arr.length ; i++)
-	for( var j = 0 ; j < arr.length; j++){
-	    if(i==j)continue;
-	    if (arr[i].label==arr[j].label){
-		return false
-	    }
-	}
+        for( var j = 0 ; j < arr.length; j++){
+            if(i==j)continue;
+            if (arr[i].label==arr[j].label){
+                return false
+            }
+        }
 
     return true;
 
@@ -40,20 +40,20 @@ raw2apData = function(arr){
      */
     var res = [];
     for(var i = 0; i < arr.length ; i++){
-	var label = arr[i].label;
-	var foo;
-	for(var idx in apData){
-	    //console.log(key);
-	    if(label == apData[idx].label){
-		foo = apData[idx];
-		//console.log("found");
-		break;
-	    }
-	}
-	//console.log(foo)
-	foo.user_score = arr[i].score;
-	res.push(foo);
-	//console.log(res);
+        var label = arr[i].label;
+        var foo;
+        for(var idx in apData){
+            //console.log(key);
+            if(label == apData[idx].label){
+                foo = apData[idx];
+                //console.log("found");
+                break;
+            }
+        }
+        //console.log(foo)
+        foo.user_score = arr[i].score;
+        res.push(foo);
+        //console.log(res);
     }
     return res;
 
@@ -61,13 +61,11 @@ raw2apData = function(arr){
 
 addGE = function(geareas,area){
     if (area=="none")return;
-    for(var foo in geareas){
-	if (geareas[foo]==area){
-	    return;
-	}
+    if (area in geareas) {
+        geareas[area] += 1
+    } else {
+        geareas[area] = 1
     }
-    geareas.push(area)
-
 }
 computeAP = function(arr){
 
@@ -80,90 +78,90 @@ computeAP = function(arr){
     
     
     var total_units = 0;
-    var ge_areas = [];
+    var ge_areas = {};
     var art = 0;
     var physics = 0;
     var math = 0;
     var english = 0;
     for(var i = 0 ; i < arr.length ; i++){
-	if(arr[i].user_score<3){
-	    continue;
-	}
-	if(!arr[i].multi_scores){
-	    //console.log(arr[i])
-	    var label = arr[i].label;
+        if(arr[i].user_score<3){
+            continue;
+        }
+        if(!arr[i].multi_scores){
+            //console.log(arr[i])
+            var label = arr[i].label;
             var units = parseInt(arr[i].units);
-	    var ge_area = arr[i].ge.area;
-	    var subject = arr[i].subject;
-	    var bar;
-	    switch(subject){
-	    case "physics":
-		physics+=units;
-		bar = physics;
-		break;
-	    case "art":
-		art+=units;
-		bar = art;
-		break;
-	    case "math":
-		math+=units;
-		bar = math;
-		break
-	    case "english":
-		english+=units;
-		bar = english;
-		break
-	    default:
-		break
+            var ge_area = arr[i].ge.area;
+            var subject = arr[i].subject;
+            var bar;
+            switch(subject){
+            case "physics":
+                physics+=units;
+                bar = physics;
+                break;
+            case "art":
+                art+=units;
+                bar = art;
+                break;
+            case "math":
+                math+=units;
+                bar = math;
+                break
+            case "english":
+                english+=units;
+                bar = english;
+                break
+            default:
+                break
 
-	    }
-	    if(bar > 8){
-		continue;
-	    }
-	    addGE(ge_areas,ge_area);
-	    total_units += units;
-	    
-	}
-	else{
-	    var foo = arr[i][arr[i]["user_score"]];
-	    var label = arr[i].label;
-	    var units = parseInt(foo.units);
-	    var ge_area = foo.ge.area;
-	    var subject = arr[i].subject;
-	    switch(subject){
-	    case "physics":
-		physics+=units;
-		bar = physics;
-		break;
-	    case "art":
-		art+=units;
-		bar = art;
-		break;
-	    case "math":
-		math+=units;
-		bar = math;
-		break
-	    case "english":
-		english+=units;
-		bar = english;
-		break
-	    default:
-		break
+            }
+            if(bar > 8){
+                continue;
+            }
+            addGE(ge_areas,ge_area);
+            total_units += units;
+            
+        }
+        else{
+            var foo = arr[i][arr[i]["user_score"]];
+            var label = arr[i].label;
+            var units = parseInt(foo.units);
+            var ge_area = foo.ge.area;
+            var subject = arr[i].subject;
+            switch(subject){
+            case "physics":
+                physics+=units;
+                bar = physics;
+                break;
+            case "art":
+                art+=units;
+                bar = art;
+                break;
+            case "math":
+                math+=units;
+                bar = math;
+                break
+            case "english":
+                english+=units;
+                bar = english;
+                break
+            default:
+                break
 
-	    }
-	    //console.log(bar)
-	    //console.log(subject)
-	    if(bar > 8){
-		continue;
-	    }
-	    if(label != "English Language and Composition or Literature and Composition")
-		addGE(ge_areas,ge_area);
-	    else{
-		addGE(ge_areas,"A1");
-		addGE(ge_areas,"A2");
-	    }
-	    total_units += units;
-	}
+            }
+            //console.log(bar)
+            //console.log(subject)
+            if(bar > 8){
+                continue;
+            }
+            if(label != "English Language and Composition or Literature and Composition")
+                addGE(ge_areas,ge_area);
+            else{
+                addGE(ge_areas,"A1");
+                addGE(ge_areas,"A2");
+            }
+            total_units += units;
+        }
     }
     
     return { "units":total_units , "area":ge_areas};
@@ -180,11 +178,11 @@ run_AP_analysis = function(arr){
     var res = {};
     var flag = validateAP(arr);
     if(!flag){
-	res.valid = false;
-	res.units = 0;
-	res.area = {};
-	res.apList = [];
-	return res
+        res.valid = false;
+        res.units = 0;
+        res.area = {};
+        res.apList = [];
+        return res
     }
     arr = raw2apData(arr);
     res = computeAP(arr);
@@ -303,10 +301,10 @@ var res = computeAP(arr);
 //a simple test
 /*
 var obj = {
-	label :"phy",
-	units:3,
-	ge:{area:"e",score:3}
-	}
+        label :"phy",
+        units:3,
+        ge:{area:"e",score:3}
+        }
 
 
 var arr = [obj]

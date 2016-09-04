@@ -418,7 +418,7 @@ function checkRequiredCourses(){
     if(unFinishedReq.length>0){
         var tempstring = "You need to take following courses for your major requirment : \n"
         for(var c of unFinishedReq){
-            tempstring+=(c+"\n")
+            tempstring+=(c+" | ")
         }
         invalidGrad.push({name : "Required Courses", message : tempstring})
     }
@@ -481,18 +481,18 @@ function checkChoiceCourses(){
         //console.log("currentUnits",currentUnits)
         //console.log("requirment unit",choices.units)
         if(currentUnits< parseInt(choices.units)){
-            var tempstring = " you must take "
+            var tempstring = "You must take "
             tempstring+=(parseInt(choices.units) - currentUnits)
             tempstring+=(" more units from the following courses: \n")
             for(var c of choices.courses){
                 if(c.sub!=undefined)
-                    tempstring+=(c.sub+" "+c.number+"\n")
+                    tempstring+=(c.sub+" "+c.number+" | ")
                 else{
                     for(var ic of c.courses){
                         tempstring+=(ic.sub+" "+ic.number+" or ")
                     }
                     tempstring = tempstring.slice(0,tempstring.length-3)
-                    tempstring+="\n"
+                    tempstring+=" | "
                 }
             }
             invalidGrad.push({name: "Choice Courses", message :tempstring})

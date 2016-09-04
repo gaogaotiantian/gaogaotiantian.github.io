@@ -6,7 +6,7 @@ var invalidData = []
 // Array of unfulfilled graduation requirement
 var invalidGrad = [] 
 var validCourses = []
-var userData = {"major":"", "getype":"", "ap":{"valid":false, "units":"0", "apList":[]}, "totalUnits":"0"}
+var userData = {"major":"", "getype":"", "ap":{"valid":false, "units":"0", "apList":[], "area":{}}, "totalUnits":"0", "nonNativeSpeaker":false}
 var geFullFillment = []
 // Initialization, only run once for this function
 $(document).ready(function(){
@@ -47,6 +47,13 @@ $("#sel_major").change(function() {
         }
     }
     RefreshInputs()
+})
+$("#nonNativeCheckBox").click(function(){
+    if ($(this).is(":checked")) {
+        userData["nonNativeSpeaker"] = true
+    } else {
+        userData["nonNativeSpeaker"] = false
+    }
 })
 $(".inputform")
 .on("mouseenter", ".courseInputSection", function() {
@@ -107,13 +114,20 @@ $(".inputform")
     }
 })
 
-$(".addInputButton").click(function() {
-    var newInput = '<div class="courseInputWrapper">' +
-                   '<a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>' +
-                   '<span class="courseCredit singleCredit">0</span>' +
-                       '<div class="courseInputSection">' +
-                           '<input class="courseInput" type="text" ignore="false">' +
-                           '<div class="courseInputErrMsg">' +
+$("#left_bar")
+.on("mouseenter", ".req_wrapper", function() {
+    $(this).find(".req_detail").css("display", "block")
+})
+.on("mouseleave", ".req_wrapper", function() {
+    $(this).find(".req_detail").css("display", "none")
+})
+$(".addinputbutton").click(function() {
+    var newinput = '<div class="courseinputwrapper">' +
+                   '<a href="javascript:;" class="courseinputremove"><img src=image/remove.png class="remove_button"></a>' +
+                   '<span class="coursecredit singlecredit">0</span>' +
+                       '<div class="courseinputsection">' +
+                           '<input class="courseinput" type="text" ignore="false">' +
+                           '<div class="courseinputerrmsg">' +
                                '<input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>' +
                                '<p class="errMsg">This is error message</p>' +
                            '</div>' +
@@ -124,13 +138,25 @@ $(".addInputButton").click(function() {
 
 function UpdateRequirementDiv(){
     text = "<div id='grad_requirement'>"
+    for (req of invalidGrad) {
+        text += "<div class='req_wrapper'>" +
+                   "<p class='req_p unsatisfied'>" + req.name + " is not satisfied" + "</p>" +
+                   "<div class='req_detail'>" + 
+                       "<p class='req_detail_p'>" + req.message + "</p>" +
+                   "</div>" +
+                "</div>"
+    }
     for (req of geFullFillment) {
-        text += "<p>"
+        if (req.status == false) {
+            text += "<p class='req_p unsatisfied'>"
+        } else {
+            text += "<p class='req_p satisfied'>"
+        }
         text += req.type + " : " + req.message
         text += "</p>"
     }
 
-    text += "<p>Total Credit : " + userData["totalUnits"] + "</p>"
+    text += "<p class='req_p'>Total Credit : " + userData["totalUnits"] + "</p>"
     text += "</div>"
     $("#left_bar").html(text)
 }
