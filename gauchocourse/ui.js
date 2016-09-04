@@ -122,13 +122,13 @@ $("#left_bar")
 .on("mouseleave", ".req_wrapper", function() {
     $(this).find(".req_detail").css("display", "none")
 })
-$(".addinputbutton").click(function() {
-    var newinput = '<div class="courseinputwrapper">' +
-                   '<a href="javascript:;" class="courseinputremove"><img src=image/remove.png class="remove_button"></a>' +
-                   '<span class="coursecredit singlecredit">0</span>' +
-                       '<div class="courseinputsection">' +
-                           '<input class="courseinput" type="text" ignore="false">' +
-                           '<div class="courseinputerrmsg">' +
+$(".addInputButton").click(function() {
+    var newInput = '<div class="courseInputWrapper">' +
+                   '<a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>' +
+                   '<span class="courseCredit singleCredit">0</span>' +
+                       '<div class="courseInputSection">' +
+                           '<input class="courseInput" type="text" ignore="false">' +
+                           '<div class="courseInputErrMsg">' +
                                '<input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>' +
                                '<p class="errMsg">This is error message</p>' +
                            '</div>' +
