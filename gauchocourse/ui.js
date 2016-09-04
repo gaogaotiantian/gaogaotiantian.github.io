@@ -132,7 +132,7 @@ function UpdateRequirementDiv(){
 
     text += "<p>Total Credit : " + userData["totalUnits"] + "</p>"
     text += "</div>"
-    $("#requirement_div").html(text)
+    $("#left_bar").html(text)
 }
 function RefreshInputs(){
     var curData = []
@@ -174,12 +174,12 @@ function RefreshInputs(){
 function UpdateUserAP() {
     var selectedAp = []
     $("#ap_form").find('.apInputWrapper').each(function() {
-        var apName = $(".apCourseSelect :selected").text()
-        var apScore = $(".apScoreSelect :selected").text()
+        var apName = $(this).find(".apCourseSelect :selected").text()
+        var apScore = $(this).find(".apScoreSelect :selected").text()
         var ap_i
         for (ap of apData) {
             if (ap.label == apName) {
-                ap_i = ap
+                ap_i = JSON.parse(JSON.stringify(ap))
             }
         }
         ap_i["user_score"] = parseInt(apScore)
@@ -196,8 +196,12 @@ apForm = $("#ap_form").dialog({
     width:800,
     modal: true,
     close: function() {
-        UpdateUserAP()
-        RefreshInputs()
+        try {
+            UpdateUserAP()
+            RefreshInputs()
+        } catch(err) {
+            console.log(err)
+        }
     }
 })
 $("#ap_form_button").button().on("click", function(){

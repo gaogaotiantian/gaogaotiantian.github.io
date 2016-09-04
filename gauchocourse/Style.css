@@ -44,7 +44,7 @@ body{
     display:block;
     height:6%; 
     width:100%;
-    background-color:#CCCC33;
+    /*background-color:#CCCC33;*/
     color:black;
     position:absolute;
 }
@@ -79,21 +79,24 @@ body{
 }
 #left_bar{
     text-align:center;
-    background-color:#CCCC33;
+    /*background-color:#CCCC33;*/
+    position:relative;
     color:black;
     float:left;
     width:10%;
     height:100%;
     border-radius:3%;
 }
-#requirement_div{
+#grad_requirement{
+    word-wrap: break-word;
+    word-break: break-all;
+    width:auto;
     position:absolute;
-    text-align:center;
-    padding:1em;
+    padding:0.5em;
     bottom:0;
 }
 #form_area{
-    background-color:#FFFFFF;
+    /*background-color:#FFFFFF;*/
     border-radius:1%;	
     width:auto;	
     height:100%;
@@ -119,12 +122,12 @@ body{
     height:5%;
     position:absolute;
     width:100%;
-    background-color:#CCCC33;
+    /*background-color:#CCCC33;*/
     clear:left;
 }
 .web_logo{
     font-size:1.74em;
-    height:50%;
+    height:40%;
     vertical-align:middle;
     color:blue;
 }
@@ -186,7 +189,7 @@ body{
     right:0%;
 }
 .courseInputErrMsg {
-    position:fixed;
+    position:absolute;
     display:none;
     overflow:auto;
     z-index:10;
@@ -213,7 +216,7 @@ p.title{
 	
 }
 #main{
-	margin:0 auto;
+	margin:0 ;
 	width:100%;
 }
 
