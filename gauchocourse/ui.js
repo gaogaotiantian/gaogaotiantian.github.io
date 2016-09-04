@@ -143,8 +143,9 @@ function RefreshInputs(){
         }
     })
     ValidateAllInput(curData)
-    var totalUnits = 0
+    var totalUnits = parseInt(userData.ap.units)
     $(".courseInput").each(function() {
+        $(this).parent().parent().find(".courseCredit").text("0")
         if (IsValid($(this).val())) {
             if ($(this).attr("ignore") == "false") {
                 $(this).attr("valid", "true")
