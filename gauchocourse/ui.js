@@ -54,6 +54,7 @@ $("#nonNativeCheckBox").click(function(){
     } else {
         userData["nonNativeSpeaker"] = false
     }
+    RefreshInputs()
 })
 $(".inputform")
 .on("mouseenter", ".courseInputSection", function() {
