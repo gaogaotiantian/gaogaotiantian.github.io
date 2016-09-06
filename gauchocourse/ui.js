@@ -63,10 +63,11 @@ $(".inputform")
         $(this).find(".courseInputErrMsg").css("display", "block")
         $(this).find(".courseInputErrMsg").css("width", $(this).find(".courseInput").css("width"))
         var err_msg = GetErrorMessage($(this).find(".courseInput").val())
+        console.log(err_msg)
         if ($(this).find(".courseInput").attr("ignore") == "true") {
             $(this).find(".courseInputErrMsg").find(".errMsg").text("Error is ignored!")
         } else {
-            $(this).find(".courseInputErrMsg").find(".errMsg").text(err_msg)
+            $(this).find(".courseInputErrMsg").find(".errMsg").html(err_msg)
         }
     }
 })

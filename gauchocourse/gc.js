@@ -85,11 +85,12 @@ function IsValid(name){
 
 function GetErrorMessage(name){
     if(name == "") return true
+    msg = ""
     for(er of invalidData){
         if(er.name ==name)
-            return er.message
+            msg += er.message+'<br />'
     }
-    return ""
+    return msg
 }
 
 function GetCredit(name){
@@ -231,8 +232,9 @@ function CheckThisCourse(course, sem){
 
     if(course.majorlimit.length!=0){
         var inmajor = false
-
+        var majorList = ""
         for(major of course.majorlimit){
+            majorList += major + " | "
             if(major == userData.major){
                 inmajor = true
                 break
@@ -241,7 +243,7 @@ function CheckThisCourse(course, sem){
 
         if(!inmajor){
             invalidCourse.push(course)
-            invalidData.push({name:(course.label), semester : NumToSem(sem), message : "course only offer to certain major"})
+            invalidData.push({name:(course.label), semester : NumToSem(sem), message : "This course only offer to certain major: "+majorList})
         }
     }
 
@@ -294,7 +296,7 @@ function CheckThisCourse(course, sem){
             break
     }
     if(!timecheck){
-        invalidData.push({name:(course.label), semester : NumToSem(sem), message : "course not offer in this quarter"})
+        invalidData.push({name:(course.label), semester : NumToSem(sem), message : "This course is not offered in this quarter"})
         invalidCourse.push(course)
         return
     }
@@ -382,7 +384,7 @@ function CheckThisCourse(course, sem){
             tempstring+= "and "
         }
         tempstring = tempstring.slice(0,tempstring.length-4)
-        invalidData.push({name : course.label, semester : NumToSem(sem), message : "Does not fulfill following preReq: \n"+tempstring})
+        invalidData.push({name : course.label, semester : NumToSem(sem), message : "You do not fulfill the following pre requirements: \n"+tempstring})
         return
     }
     validCourses.push(course)

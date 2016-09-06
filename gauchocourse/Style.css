@@ -190,7 +190,7 @@ body{
     right:0%;
 }
 .courseInputErrMsg {
-    position:absolute;
+    position:fixed;
     display:none;
     overflow:auto;
     z-index:10;
