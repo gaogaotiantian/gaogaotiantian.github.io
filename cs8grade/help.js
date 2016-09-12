@@ -1,37 +1,14 @@
 function Refresh(){
-$("td[val_type='hw_total']").each(function() {
-    p = $(this).parent()
-    total = 0
-    p.find("td[val_type ^= hw]").each(function() {
-        if ($(this).attr('val_type') != 'hw_total') {
-            total += parseInt($(this).html())  
-        }
-    })
-    $(this).html(total)
-})
-$("td[val_type='pa_total']").each(function() {
-    p = $(this).parent()
-    total = 0
-    p.find("td[val_type ^= pa]").each(function() {
-        if ($(this).attr('val_type') != 'pa_total') {
-            if ($(this).attr('val_type') == 'pa5') {
-                total += parseInt($(this).find('input').val())
-                console.log($(this).find('input').val())
-            } else {
-                total += parseInt($(this).html())
-            }
-        }
-    })
-    console.log(total)
-    $(this).html(total)
-})
 $("td[val_type='percent']").each(function() {
     p = $(this).parent()
     total = 0.0
-    total += parseInt(p.find("td[val_type = 'hw_total']").html())/304.*20
-    total += parseInt(p.find("td[val_type = 'pa_total']").html())/50.*30
-    total += parseInt(p.find("td[val_type = 'challenge']").find('input').val())
-    total += parseInt(p.find("td[val_type = 'mid_term']").html())/77.*25
+    total += parseFloat(p.find("td[val_type = 'hw']").html())
+    total += parseFloat(p.find("td[val_type = 'pa']").html())
+    challenge = parseInt(p.find("td[val_type = 'challenge']").html())
+    if (!isNaN(challenge)) {
+        total += challenge
+    }  
+    total += parseInt(p.find("td[val_type = 'midterm']").html())/77.*25
     total += parseInt(p.find("td[val_type = 'final']").find('input').val())/100.*25
     total = total.toFixed(1)
     $(this).html(total)
