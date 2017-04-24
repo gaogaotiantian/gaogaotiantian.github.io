@@ -52,12 +52,9 @@
       "Santa Barbara, CA":
       {
         "Number":363,
-        "RateByPop":395,
-        "RateByArea":200,
-        "IndexByPop":80,
-        "IndexByArea":76,
-        "RankingByPop":70,
-        "RankingByArea":80
+        "Rate":395,
+        "Index":80,
+        "Ranking":70,
       }
       "Los Angeles, CA":
       {
@@ -74,10 +71,9 @@
     从FBI UCR的网站上爬下按照城市为单位的数据（可以用爬虫，也可以下载提供的xsl文件再用其他package读xls文件），原始数据保存人口和Violent Crime的数量。保存好原始数据之后，以原始数据为基础，做出整理后的数据。
     <ul>
       <li>Num: 城市总犯罪次数</li>
-      <li>RateByPop: 每10w人的犯罪率</li>
-      <li>RateByArea: 每sq mile的犯罪率</li>
-      <li>Index(ByPop/ByArea): 犯罪指数，全美均值为100，80代表犯罪率是全美均值的80%</li>
-      <li>Ranking(ByPop/ByArea): 犯罪率排名，在这个城市生活比全美多少百分比的居民安全，最安全为100。如60代表这个城市的犯罪率要低于60%的美国居民所在的城市。</li>
+      <li>Rate: 每10w人的犯罪率</li>
+      <li>Index: 犯罪指数，全美均值为100，80代表犯罪率是全美均值的80%</li>
+      <li>Ranking: 犯罪率排名，在这个城市生活比全美多少百分比的居民安全，最安全为100。如60代表这个城市的犯罪率要低于60%的美国居民所在的城市。</li>
       <li>你们自由发挥的空间</li>
     </ul>
   </p>
