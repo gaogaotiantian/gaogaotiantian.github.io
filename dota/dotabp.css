@@ -1,0 +1,27 @@
+img {
+    max-width:100%;
+    max-height:100%;
+    border-style:solid;
+    border-color:transparent;
+}
+body {
+    background-color:#111111;
+    color:#dddddd;
+}
+.hero {
+    width:100%;
+}
+.hero_row_div {
+    margin:5px;
+    background-color:#333333;
+}
+#win_rate_div {
+    font-size:25px;
+}
+#win_rate_p {
+    width:100%;
+    text-align:center;
+}
+.hero_data {
+    font-size:12px;
+}
