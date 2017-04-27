@@ -47,6 +47,8 @@ function GetHeroDataHtml(heroName) {
     var d = GetHeroData(heroName);
     var team = d[0];
     var opp = -d[1];
+    var self_corr = d[2];
+    var enemy_corr = d[3];
     var $t = $("<span>");
     var team_color_sat = 255 - Math.min(255, Math.round(Math.abs(team/5*255))).toString();
     var opp_color_sat = 255 - Math.min(255, Math.round(Math.abs(opp/5*255))).toString();
@@ -58,8 +60,17 @@ function GetHeroDataHtml(heroName) {
         $t.css({"color":"rgb(255,"+team_color_sat+","+team_color_sat+")"});
     }
     html.append($t);
+    html.append("<br>");
+    $t = $("<span>")
+    if (self_corr > 0) {
+        $t.text("Corr +" + self_corr + "%");
+    } else {
+        $t.text("Corr " + self_corr + "%");
+    }
+    $t.css({"color":RateToColor(self_corr/10)});
+    html.append($t);
     html.append("<br>")
-    var $t = $("<span>");
+    $t = $("<span>");
     if (opp > 0) {
         $t.text("Opp +" + opp + "%");
         $t.css({"color":"rgb(" +opp_color_sat+",255,"+opp_color_sat+")"});
@@ -68,12 +79,23 @@ function GetHeroDataHtml(heroName) {
         $t.css({"color":"rgb(255,"+opp_color_sat+","+opp_color_sat+")"});
     }
     html.append($t);
+    html.append("<br>");
+    $t = $("<span>")
+    if (enemy_corr > 0) {
+        $t.text("Corr +" + enemy_corr + "%");
+    } else {
+        $t.text("Corr " + enemy_corr + "%");
+    }
+    $t.css({"color":RateToColor(enemy_corr/10)});
+    html.append($t);
     return html.html()
 }
 function GetHeroData(heroName) {
     var old_rate = GetWinRate();
     var self_rate = 0;
     var enemy_rate = 0;
+    var self_corr = 0;
+    var enemy_corr = 0;
     var selfIdx = selfTeam.indexOf(heroName);
     var enemyIdx = enemyTeam.indexOf(heroName);
     // Pretend self choose this hero, if team full, ignore
@@ -81,24 +103,27 @@ function GetHeroData(heroName) {
         selfTeam.splice(selfIdx, 1);
         self_rate = old_rate - GetWinRate();
         selfTeam.splice(selfIdx, 0, heroName);
+        self_corr = GetCorr(heroName, true);
     } else if (enemyIdx != -1) {
         enemyTeam.splice(enemyIdx, 1);
         enemy_rate = old_rate - GetWinRate();
         enemyTeam.splice(enemyIdx, 0, heroName);
+        enemy_corr = GetCorr(heroName, false);
     } else {
         if (selfTeam.length < 5) {
             selfTeam.push(heroName);
             self_rate = GetWinRate() - old_rate;
             selfTeam.pop();
+            self_corr = GetCorr(heroName, true);
         }
-
         if (enemyTeam.length < 5) {
             enemyTeam.push(heroName);
             enemy_rate = GetWinRate() - old_rate;
             enemyTeam.pop();
+            enemy_corr = GetCorr(heroName, false);
         }
     }
-    return [self_rate.toFixed(2), enemy_rate.toFixed(2)]
+    return [self_rate.toFixed(2), enemy_rate.toFixed(2), self_corr.toFixed(2), enemy_corr.toFixed(2)]
 }
 function GetWinRate() {
     var win_self = 1;
@@ -127,6 +152,29 @@ function GetWinRate() {
         }
     }
     return (win_self/(win_self+win_enemy)*100).toFixed(2);
+}
+function GetCorr(heroName, isSelf) {
+    var corr = 1;
+    for (var i = 0; i < selfTeam.length; i++) {
+        if (selfTeam[i] != heroName) {
+            if (isSelf) {
+                corr = corr * GetTeamMate(heroName, selfTeam[i]);
+            } else {
+                corr = corr * GetMatchUp(heroName, selfTeam[i]);
+            }
+        }
+    }
+
+    for (var i = 0; i < enemyTeam.length; i++) {
+        if (enemyTeam[i] != heroName) {
+            if (isSelf) {
+                corr = corr * GetMatchUp(heroName, enemyTeam[i]);
+            } else {
+                corr = corr * GetTeamMate(heroName, enemyTeam[i]);
+            }
+        }
+    }
+    return 100*(corr-1);
 }
 // Win rate calculation functions
 function GetMatchUp(heroName1, heroName2) {
