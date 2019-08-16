@@ -210,14 +210,14 @@ function refresh() {
 
     // 攻击
     let curr_attack   = getFVal('curr-attack-input');
-    let adjust_attack = 0.3 * adjust_status;
+    let adjust_attack = 0.4 * adjust_status;
     let total_attack  = curr_attack + adjust_attack;
 
     $('#curr-attack-change').text(adjust_attack.toFixed(1));
 
     // 强度
     let curr_strength   = getFVal('curr-strength-input') / STRENGTH_CONST;
-    let adjust_strength = (getFVal('adjust-strength-input') + adjust_status * 0.7) / STRENGTH_CONST;
+    let adjust_strength = (getFVal('adjust-strength-input') + adjust_status * 0.6) / STRENGTH_CONST;
     let total_strength  = curr_strength + adjust_strength;
 
     $('#curr-strength-change').text((adjust_strength * STRENGTH_CONST).toFixed(1));
@@ -294,7 +294,7 @@ function refresh() {
     let per_strength = 1 / STRENGTH_CONST / (1 + total_strength);
     let per_critical = 0.6 / CRITICAL_CONST / (1 + total_critical * 0.6);
     let per_focus    = 0.7 / FOCUS_CONST / (0.3 + total_focus * 0.7);
-    let per_status   = 0.3 * per_attack + 0.7 * per_strength + 0.5 * per_critical
+    let per_status   = 0.4 * per_attack + 0.6 * per_strength + 0.3 * per_critical
     let per_expertise = 1 / EXPERTISE_CONST_FIRST / (1 + total_expertise_first) * total_first_percent + 
                         1 / EXPERTISE_CONST_SECOND / (1 + total_expertise_second) * total_second_percent
 
