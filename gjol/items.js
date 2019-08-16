@@ -40,14 +40,14 @@ function create_attribute_chart() {
     for (let i = 0; i < attribute_header.length; i++) {
         let header = attribute_header[i];
         let col = document.createElement('div');
-        let attribute_name = document.createElement('p')
-        let attribute_data = document.createElement('p')
-        let attribute_data_percent = document.createElement('p')
+        let attribute_name = document.createElement('div')
+        let attribute_data = document.createElement('div')
+        let attribute_data_percent = document.createElement('div')
         attribute_name.innerHTML = header
         attribute_data.id = "属性-"+header
-        attribute_data.className = "item-cell"
+        attribute_data.className = "pt-2"
         attribute_data_percent.id = "属性-"+header+"-率"
-        attribute_data_percent.className = "item-cell"
+        attribute_data_percent.className = "pt-2"
         col.appendChild(attribute_name)
         col.appendChild(attribute_data)
         col.appendChild(attribute_data_percent)
