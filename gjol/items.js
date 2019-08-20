@@ -44,21 +44,35 @@ function create_attribute_chart() {
     // 面板属性
     for (let i = 0; i < attribute_header.length; i++) {
         let header = attribute_header[i];
-        let col = document.createElement('div');
-        let attribute_name = document.createElement('div')
-        let attribute_data_xy = document.createElement('div')
-        let attribute_data_item = document.createElement('div')
+        let col    = document.createElement('div');
+        let attribute_name         = document.createElement('div')
+        let attribute_data_xy      = document.createElement('div')
+        let attribute_data_item    = document.createElement('div')
+        let attribute_data_total   = document.createElement('div')
         let attribute_data_percent = document.createElement('div')
         if (header == "来源") { 
-            
+            attribute_name.innerHTML = header
+            attribute_data_xy.innerHTML = "星蕴";
+            attribute_data_xy.className = "pt-2"
+            attribute_data_item.innerHTML = "装备";
+            attribute_data_item.className = "pt-2"
+            attribute_data_total.innerHTML = "总计";
+            attribute_data_total.className = "pt-2"
+        } else {
+            attribute_name.innerHTML = header
+            attribute_data_item.id = "装备-属性-"+header
+            attribute_data_item.className = "pt-2"
+            attribute_data_xy.id = "星蕴-属性-"+header
+            attribute_data_xy.className = "pt-2"
+            attribute_data_total.id = "总计-属性-"+header
+            attribute_data_total.className = "pt-2"
+            attribute_data_percent.id = "属性-"+header+"-率"
+            attribute_data_percent.className = "pt-2"
         }
-        attribute_name.innerHTML = header
-        attribute_data.id = "属性-"+header
-        attribute_data.className = "pt-2"
-        attribute_data_percent.id = "属性-"+header+"-率"
-        attribute_data_percent.className = "pt-2"
         col.appendChild(attribute_name)
-        col.appendChild(attribute_data)
+        col.appendChild(attribute_data_xy)
+        col.appendChild(attribute_data_item)
+        col.appendChild(attribute_data_total)
         col.appendChild(attribute_data_percent)
 
         d.appendChild(col);
@@ -292,7 +306,7 @@ function refresh_item_data() {
     // Write attributes to webpage
     for (let i = attribute_header.indexOf("术"); i < attribute_header.length; i++) {
         let attr = attribute_header[i];
-        document.getElementById("属性-" + attr).innerHTML = char_attr[attr].toFixed(1);
+        document.getElementById("装备-属性-" + attr).innerHTML = char_attr[attr].toFixed(1);
         document.getElementById("属性-" + attr + "-率").innerHTML = attr_percent(attr);
     }
     document.getElementById("战力").innerHTML = char_attr["最终战力"].toFixed(1);
