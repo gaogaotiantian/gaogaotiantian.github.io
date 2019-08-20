@@ -209,7 +209,7 @@ function refresh_item_data() {
             let selected_value = enchantment_level_select.options[enchantment_level_select.selectedIndex].value;
             let cell = document.getElementsByClassName(selected_enchantment + ' ' +position)[0];
             
-            cell.innerHTML = parseFloat(cell.innerHTML) || 0 + parseFloat(game_data["enchantment"][position][selected_enchantment][selected_value - 1]);
+            cell.innerHTML = (parseFloat(cell.innerHTML) || 0) + parseFloat(game_data["enchantment"][position][selected_enchantment][selected_value - 1]);
         }
     }
 
