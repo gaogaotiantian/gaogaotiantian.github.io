@@ -17,6 +17,10 @@ const item_header = [
     "强化",
     "附魔",
     "附魔等级",
+    "镶嵌一",
+    "镶嵌一等级",
+    "镶嵌二",
+    "镶嵌二等级",
     "等级",
     "术",
     "攻击",
@@ -67,7 +71,11 @@ function create_item_chart() {
         col.id = "装备-"+header
         
         let header_div = document.createElement('div');
-        header_div.innerHTML = header;
+        if (header.includes("等级")) {
+            header_div.innerHTML = "等级";
+        } else {
+            header_div.innerHTML = header;
+        }
         col.appendChild(header_div);
 
         // Create cells for each position
@@ -137,6 +145,30 @@ function create_item_chart() {
                 }
                 name_cell.appendChild(create_select(select_id, options));
             }
+
+            // 镶嵌
+            ["一", "二"].forEach(function(num) {
+                if (position + num in game_data["gem"]) {
+                    // 镶嵌选择
+                    name_cell = document.getElementsByClassName("镶嵌"+num+' '+position)[0];
+                    name_cell.innerHTML = "";
+                    select_id = position + "-镶嵌"+num+"-select";
+                    options = [];
+                    for (let gem in game_data["gem"][position+num]) {
+                        options.push(gem);
+                    }
+                    name_cell.appendChild(create_select(select_id, options));
+
+                    name_cell = document.getElementsByClassName("镶嵌"+num+"等级"+' '+position)[0];
+                    name_cell.innerHTML = "";
+                    select_id = position + "-镶嵌"+num+"等级-select";
+                    options = [];
+                    for (let j = 0; j <= 8; j++) {
+                        options.push(j);
+                    }
+                    name_cell.appendChild(create_select(select_id, options));
+                }
+            })
         }
     }
 }
@@ -189,7 +221,7 @@ function refresh_item_data() {
             let data = find_item_by_name(item_name);
             if (data) {
                 // Do not change "装备" and "位置"
-                for (let j = 5; j < item_header.length; j++) {
+                for (let j = item_header.indexOf("等级"); j < item_header.length; j++) {
                     let header = item_header[j];
                     let cell = document.getElementsByClassName(header + ' ' + position)[0];
                     if (header in data) {
@@ -201,6 +233,7 @@ function refresh_item_data() {
             }
         }
 
+        // Enchantment changes
         let enchantment_select = document.getElementById(position+"-附魔-select");
         let enchantment_level_select = document.getElementById(position+"-附魔等级-select");
 
@@ -210,7 +243,22 @@ function refresh_item_data() {
             let cell = document.getElementsByClassName(selected_enchantment + ' ' +position)[0];
             
             cell.innerHTML = (parseFloat(cell.innerHTML) || 0) + parseFloat(game_data["enchantment"][position][selected_enchantment][selected_value - 1]);
+
         }
+
+        // Gem changes
+        ["一", "二"].forEach(function(num) {
+            let gem_select = document.getElementById(position+"镶嵌"+num+"-select");
+            let gem_level_select = document.getElementById(position+"镶嵌"+num+"等级-select");
+            if (gem_select && gem_level_select && gem_level_select.options[gem_level_select.selectedIndex].value > 0) {
+                let selected_gem = gem_select.options[gem_select.selectedIndex].value;
+                let selected_level = gem_level_select.options[gem_level_select.selectedIndex].value;
+                let selected_value = game_data["gem"][position][selected_gem][selected_level-1];
+
+                cell.innerHTML = (parseFloat(cell.innerHTML) || 0) + parseFloat(selected_value);
+            }
+
+        })
     }
 
     // Update total attributes based on items
