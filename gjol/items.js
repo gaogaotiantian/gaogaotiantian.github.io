@@ -68,9 +68,9 @@ function create_attribute_chart() {
             attribute_data_item.id = "装备-属性-"+header
             attribute_data_item.className = "pt-2 attribute-cell"
             attribute_data_total.id = "总计-属性-"+header
-            attribute_data_total.className = "pt-2 attribute-cell"
+            attribute_data_total.className = "pt-2 attribute-cell attribute-cell-dark"
             attribute_data_percent.id = "属性-"+header+"-率"
-            attribute_data_percent.className = "pt-2 attribute-cell"
+            attribute_data_percent.className = "pt-2 attribute-cell attribute-cell-dark"
         }
         col.appendChild(attribute_name)
         col.appendChild(attribute_data_xy)
@@ -251,7 +251,10 @@ function refresh_item_data() {
                         if (header != "等级") {
                             let enhance_select = document.getElementById(position+"-强化-select");
                             let enhance = parseFloat(enhance_select.value || 0);
-                            cell.innerHTML = (data[header] * (1+enhance*0.03)).toFixed(1);
+                            let value   = (data[header] * (1+enhance*0.03));
+                            if (value) {
+                                cell.innerHTML = value.toFixed(1);
+                            }
                         }
                     } else {
                         cell.innerHTML = 0;
@@ -392,11 +395,4 @@ function update_attr() {
 }
 
 $(function() {
-    create_attribute_chart();
-    create_item_chart();
-    refresh_item_data();
-
-    $('body').on('change', 'select', refresh_item_data);
-    $('body').on('blur', 'input', refresh_item_data);
-
 })

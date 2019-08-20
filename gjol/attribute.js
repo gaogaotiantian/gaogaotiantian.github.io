@@ -94,8 +94,8 @@ const curr_content = [
     ],
     [
         {"type": "p"},
-        {"type": "button", "id": "save-curr-button", "val": "保存属性", "class": "btn btn-success"},
-        {"type": "button", "id": "load-curr-button", "val": "读取属性", "class": "btn btn-primary"},
+        {"type": "button", "val": "保存属性", "class": "btn btn-success save-curr-button"},
+        {"type": "button", "val": "读取属性", "class": "btn btn-primary load-curr-button"},
     ],
 ];
 
@@ -186,23 +186,6 @@ function create(data) {
     return elem;
 }
 
-function save() {
-    let data = {};
-    $("input").each(function() {
-        data[$(this).attr("id")] = $(this).val();
-    })
-    localStorage.setItem("attribute", JSON.stringify(data));
-}
-
-function load() {
-    let raw = localStorage.getItem("attribute");
-    if (raw) {
-        let data = JSON.parse(raw);
-        for (let id in data) {
-            $('#' + id).val(data[id]);
-        }
-    }
-}
 
 function refresh() {
     // 属性
@@ -309,11 +292,3 @@ function refresh() {
 function getFVal(id) {
     return eval($('#'+id).val()) || 0;
 }
-
-$(function() {
-    init_page();
-    refresh();
-    $('body').on('blur', 'input', refresh);
-    $('body').on('click', '#save-curr-button', save);
-    $('body').on('click', '#load-curr-button', load);
-})
