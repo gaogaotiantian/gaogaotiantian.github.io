@@ -37,7 +37,7 @@ char_attr = {};
 function create_attribute_chart() {
     let container = document.getElementById('item-attribute-container');
     let d = document.createElement('div');
-    d.className = "d-flex justify-content-around";
+    d.className = "d-flex justify-content-around text-center";
 
     container.appendChild(d);
 
@@ -53,21 +53,24 @@ function create_attribute_chart() {
         if (header == "来源") { 
             attribute_name.innerHTML = header
             attribute_data_xy.innerHTML = "星蕴";
-            attribute_data_xy.className = "pt-2"
+            attribute_data_xy.className = "pt-2 attribute-cell"
             attribute_data_item.innerHTML = "装备";
-            attribute_data_item.className = "pt-2"
+            attribute_data_item.className = "pt-2 attribute-cell"
             attribute_data_total.innerHTML = "总计";
-            attribute_data_total.className = "pt-2"
+            attribute_data_total.className = "pt-2 attribute-cell"
         } else {
             attribute_name.innerHTML = header
+            let attribute_data_xy_input = document.createElement('input');
+            attribute_data_xy_input.id = "星蕴-属性-"+header
+            attribute_data_xy_input.className = "attribute-input";
+            attribute_data_xy.appendChild(attribute_data_xy_input);
+            attribute_data_xy.className = "pt-2 attribute-cell"
             attribute_data_item.id = "装备-属性-"+header
-            attribute_data_item.className = "pt-2"
-            attribute_data_xy.id = "星蕴-属性-"+header
-            attribute_data_xy.className = "pt-2"
+            attribute_data_item.className = "pt-2 attribute-cell"
             attribute_data_total.id = "总计-属性-"+header
-            attribute_data_total.className = "pt-2"
+            attribute_data_total.className = "pt-2 attribute-cell"
             attribute_data_percent.id = "属性-"+header+"-率"
-            attribute_data_percent.className = "pt-2"
+            attribute_data_percent.className = "pt-2 attribute-cell"
         }
         col.appendChild(attribute_name)
         col.appendChild(attribute_data_xy)
@@ -83,7 +86,7 @@ function create_item_chart() {
     // Create the whole form first
     let container = document.getElementById('item-choice-container');
     let d = document.createElement('div');
-    d.className = "d-flex justify-content-center";
+    d.className = "d-flex justify-content-center text-center";
     for (let i = 0; i < item_header.length; i++) {
         let header = item_header[i];
         let col = document.createElement('div');
