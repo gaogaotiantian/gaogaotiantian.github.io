@@ -254,6 +254,8 @@ function refresh_item_data() {
                             let value   = (data[header] * (1+enhance*0.03));
                             if (value) {
                                 cell.innerHTML = value.toFixed(1);
+                            } else {
+                                cell.innerHTML = "";
                             }
                         }
                     } else {
