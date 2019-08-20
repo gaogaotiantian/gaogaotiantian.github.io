@@ -1,4 +1,5 @@
 const attribute_header = [
+    "来源",
     "术",
     "攻击",
     "强度",
@@ -45,8 +46,12 @@ function create_attribute_chart() {
         let header = attribute_header[i];
         let col = document.createElement('div');
         let attribute_name = document.createElement('div')
-        let attribute_data = document.createElement('div')
+        let attribute_data_xy = document.createElement('div')
+        let attribute_data_item = document.createElement('div')
         let attribute_data_percent = document.createElement('div')
+        if (header == "来源") { 
+            
+        }
         attribute_name.innerHTML = header
         attribute_data.id = "属性-"+header
         attribute_data.className = "pt-2"
@@ -248,14 +253,17 @@ function refresh_item_data() {
 
         // Gem changes
         ["一", "二"].forEach(function(num) {
-            let gem_select = document.getElementById(position+"镶嵌"+num+"-select");
-            let gem_level_select = document.getElementById(position+"镶嵌"+num+"等级-select");
+            let gem_select = document.getElementById(position+"-镶嵌"+num+"-select");
+            let gem_level_select = document.getElementById(position+"-镶嵌"+num+"等级-select");
             if (gem_select && gem_level_select && gem_level_select.options[gem_level_select.selectedIndex].value > 0) {
-                let selected_gem = gem_select.options[gem_select.selectedIndex].value;
+                let selected_gem   = gem_select.options[gem_select.selectedIndex].value;
                 let selected_level = gem_level_select.options[gem_level_select.selectedIndex].value;
-                let selected_value = game_data["gem"][position][selected_gem][selected_level-1];
+                for (let attr in game_data["gem"][position+num][selected_gem]) {
+                    let selected_value = game_data["gem"][position+num][selected_gem][attr][selected_level-1];
+                    let cell = document.getElementsByClassName(attr+ ' ' +position)[0];
 
-                cell.innerHTML = (parseFloat(cell.innerHTML) || 0) + parseFloat(selected_value);
+                    cell.innerHTML = (parseFloat(cell.innerHTML) || 0) + parseFloat(selected_value);
+                }
             }
 
         })
@@ -282,7 +290,7 @@ function refresh_item_data() {
     update_attr();
 
     // Write attributes to webpage
-    for (let i = 0; i < attribute_header.length; i++) {
+    for (let i = attribute_header.indexOf("术"); i < attribute_header.length; i++) {
         let attr = attribute_header[i];
         document.getElementById("属性-" + attr).innerHTML = char_attr[attr].toFixed(1);
         document.getElementById("属性-" + attr + "-率").innerHTML = attr_percent(attr);
@@ -327,7 +335,7 @@ function update_attr() {
     char_attr["会心"] += char_attr["术"] * 0.3;
 
     // 各种率
-    char_attr["强度率"]   = char_attr["强度"] / STRENGTH_CONST
+    char_attr["强度率"]   =  0.1 + char_attr["强度"] / STRENGTH_CONST 
     char_attr["专精率一"] = char_attr["专精"] / EXPERTISE_CONST_FIRST
     char_attr["专精率二"] = char_attr["专精"] / EXPERTISE_CONST_SECOND
     char_attr["会心率"]   = char_attr["会心"] / CRITICAL_CONST
