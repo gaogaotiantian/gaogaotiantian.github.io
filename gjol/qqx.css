@@ -1,17 +1,51 @@
+.game-card {
+    color: #EEE;
+    font-weight: 700;
+    text-shadow: 0px 1px 2px #000,
+                 1px 0px 2px #000,
+                 0px -1px 2px #000,
+                 -1px 0px 2px #000 ;
+}
+
+.game-card-inactive {
+    color: #CCC;
+    font-weight: 700;
+    text-shadow: 0px 1px 2px #222,
+                 1px 0px 2px #222,
+                 0px -1px 2px #222,
+                 -1px 0px 2px #222;
+}
+
 .game-card-春 {
-    background-color: #bbffbb;
+    background-color: rgb(83, 252, 49);
+}
+
+.game-card-inactive-春 {
+    background-color: rgb(195, 255, 160);
 }
 
 .game-card-夏 {
-    background-color: #ffbbbb;
+    background-color: rgb(255, 96, 68);
+}
+
+.game-card-inactive-夏 {
+    background-color: rgb(250, 196, 176);
 }
 
 .game-card-秋 {
-    background-color: #eeeebb;
+    background-color: rgb(233, 186, 56);
+}
+
+.game-card-inactive-秋 {
+    background-color: rgb(226, 200, 152);
 }
 
 .game-card-冬 {
-    background-color: #bbbbff;
+    background-color: rgb(54, 73, 240);
+}
+
+.game-card-inactive-冬 {
+    background-color: rgb(129, 155, 245);
 }
 
 .game-card-selected {
@@ -19,9 +53,18 @@
 }
 
 #qqx-card-table-opponent-div {
-    height: 30vh;
+    height: 25vh;
+}
+
+#qqx-card-table-dealer-div {
+    height: 40vh;
 }
 
 #qqx-card-table-player-div {
-    height: 30vh;
+    height: 25vh;
+}
+
+#qqx-card-status-div {
+    height:   90vh;
+    overflow: scroll;
 }
