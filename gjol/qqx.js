@@ -107,6 +107,13 @@ class Player {
 
     cardClickEvent(card) {
         return function evt(e) {
+            if (game.selectedCard) {
+                if (game.selectedCard.name == card.name) {
+                    keyDownEvent({"keyCode": "double_click"});
+                } else {
+                    keyDownEvent({"keyCode": "click", "card": card})
+                }
+            }
             game.selectedCard = card;
             game.display();
         }
@@ -286,11 +293,13 @@ var game;
 const move_position = {
     "dealer": {
         "pocket": {
+            "double_click": "right",
             "up"   : ["opponent", "hand"],
             "down" : ["player"  , "hand"],
             "right": ["dealer"  , "hand"]
         },
         "hand": {
+            "double_click": "down",
             "up"   : ["opponent", "pocket"],
             "down" : ["player"  , "pocket"],
             "left" : ["dealer"  , "pocket"]
@@ -298,20 +307,24 @@ const move_position = {
     },
     "opponent": {
         "pocket": {
+            "double_click": "down",
             "down":  ["dealer"  , "pocket"],
             "right": ["opponent", "hand"]
         }, 
         "hand": {
+            "double_click": "down",
             "down": ["dealer"  , "pocket"],
             "left": ["opponent", "pocket"]
         }
     },
     "player": {
         "pocket": {
+            "double_click": "right",
             "up"   : ["dealer", "pocket"],
             "right": ["player", "hand"]
         },
         "hand": {
+            "double_click": "left",
             "up":  ["dealer", "pocket"],
             "left":["player", "pocket"] 
         }
@@ -336,9 +349,22 @@ function keyDownEvent(e) {
             case 40: //down
                 key = "down";
                 break;
+            case "double_click":
+                key = data["double_click"];
+                break;
+            case "click":
+                key = "click";
+                break;
         }
         if (key && key in data) {
             game.moveCard(game[card.owner], game[data[key][0]], data[key][1], card);
+        }
+
+        if (key == "click") {
+            if (game.selectedCard.owner == "player" && e.card.owner == "dealer" && e.card.position == "hand" && game.selectedCard.season == e.card.season) {
+                game.moveCard(game[card.owner], game.player, "pocket", card);
+                game.moveCard(game[e.card.owner], game.player, "pocket", e.card);
+            }
         }
     }
     game.selectedCard = null;
@@ -352,6 +378,13 @@ $(function() {
     document.getElementById("restart-button").onclick = function() {
         game.restart();
         game.display();
+    };
+
+    document.onclick = function(e){
+        if (e.target.tagName == "DIV") {
+            game.selectedCard = null;
+            game.display();
+        }
     };
     game.display();
 })
