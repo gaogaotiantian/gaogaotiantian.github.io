@@ -11,8 +11,8 @@ class Card {
     }
 
     render(evaluation = false) {
-        let card = document.createElement("button");
-        card.className = `m-1 game-card game-card-${this.season}`;
+        let card = document.createElement("a");
+        card.className = `btn m-1 game-card game-card-${this.season}`;
         if (game.selectedCard && this.index == game.selectedCard.index) {
             card.classList.add("game-card-selected");
         }
@@ -68,19 +68,28 @@ class Combination {
     render(player, dealer) {
         let container = document.createElement("div");
         let score = document.createElement("span");
+        let selected = false;
         score.innerHTML = this.score;
         container.appendChild(score);
         for (let i = 0; i < this.cards.length; i++) {
             let card = this.cards[i];
-            let card_button = document.createElement("button");
+            let card_button = document.createElement("a");
             let season = qqx_data["season"][card];
             if (player.hasCard(card)) {
-                card_button.className = `m-1 game-card game-card-${season}`;
+                card_button.className = `btn m-1 game-card game-card-${season}`;
             } else {
-                card_button.className = `m-1 game-card-inactive game-card-inactive-${season}`;
+                card_button.className = `btn m-1 game-card-inactive game-card-inactive-${season}`;
             }
             card_button.innerHTML = card;
             container.appendChild(card_button);
+
+            if (game.selectedCard && card == game.selectedCard.name) {
+                selected = true;
+            }
+        }
+
+        if (selected == true) {
+            container.classList.add("combination-selected");
         }
         return container;
     }
@@ -195,11 +204,17 @@ class Player {
                 card = this.hand[i].render(true);
             }
             card.addEventListener("click", this.cardClickEvent(this.hand[i]));
+            if (i > 0 && this.hand[i].season != this.hand[i-1].season) {
+                hand.appendChild(document.createElement("br"));
+            }
             hand.appendChild(card);
         }
         for (let i = 0; i < this.pocket.length; i++) {
             let card = this.pocket[i].render();
             card.addEventListener("click", this.cardClickEvent(this.pocket[i]));
+            if (i > 0 && this.pocket[i].season != this.pocket[i-1].season) {
+                pocket.appendChild(document.createElement("br"));
+            }
             pocket.appendChild(card);
         }
 
