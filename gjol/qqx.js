@@ -274,8 +274,10 @@ class Game {
             this.dealer.hand[i].evaluation = 0;
         }
 
+        let playerSeasons = this.player.getSeasons()
         for (let i = 0; i < this.possibleCombinations.length; i++) {
             let comb = this.possibleCombinations[i];
+            let seasons = comb.seasons;
             for (let j = 0; j < comb.cards.length; j++) {
                 let card = comb.cards[j];
                 for (let k = 0; k < this.dealer.hand.length; k++) {

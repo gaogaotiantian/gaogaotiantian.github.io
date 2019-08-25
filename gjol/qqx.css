@@ -1,13 +1,19 @@
 .game-card {
     color: rgb(35, 21, 28) !important;
-    font-weight: 700;
-    text-shadow: 0px 0px 1px #aaa;
+    font-weight: 600;
+    text-shadow: 0px 0px 2px #aaa;
+    font-size: 1.1rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    padding: 0.15vh 0.25vw;
 }
 
 .game-card-inactive {
     color: rgb(102, 98, 100) !important;
     font-weight: 500;
-    text-shadow: 0px 0px 1px #aaa;
+    text-shadow: 0px 0px 2px #aaa;
+    font-size: 1.1rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    padding: 0.15vh 0.25vw;
 }
 
 .game-card-春 {
