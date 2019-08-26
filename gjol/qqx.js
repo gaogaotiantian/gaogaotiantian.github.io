@@ -33,7 +33,7 @@ class Combination {
         this.evaluation = 0;
     }
 
-    isPossible(player, opponent) {
+    isPossible(player, opponent, extra_season = null) {
         let seasons = player.getSeasons();
 
         for (let i = 0; i < this.cards.length; i++) {
@@ -49,19 +49,34 @@ class Combination {
                 return false;
             }
         }
+
+        if (extra_season && seasons[extra_season] <= this.seasons[extra_season]) {
+            return false;
+        }
+
         return true;
     }
 
-    evaluate(player, dealer, pocket_appear_rate) {
-        let possibility = 1;
+    hasCard(cardName) {
         for (let i = 0; i < this.cards.length; i++) {
-            if (dealer.hasCard(this.cards[i], "hand")) {
-                possibility *= 0.6;
-            } else if (dealer.hasCard(this.cards[i], "pocket")) {
-                possibility *= 0.6*pocket_appear_rate;
+            if (this.cards[i] == cardName) {
+                return true;
             }
         }
-        this.evaluation = this.score * possibility;
+        return false;
+    }
+
+    evaluate(dealer, pocket_appear_rate, cardName = null) {
+        let possibility = 1;
+        for (let i = 0; i < this.cards.length; i++) {
+            if (cardName && this.cards[i] == cardName) {
+                continue;
+            } else if (dealer.hasCard(this.cards[i], "hand")) {
+                possibility *= 0.5;
+            } else if (dealer.hasCard(this.cards[i], "pocket")) {
+                possibility *= 0.5*pocket_appear_rate;
+            }
+        }
         return this.score * possibility;
     }
 
@@ -190,13 +205,35 @@ class Player {
         let container = document.createElement("div");
         let pocket    = document.createElement("div");
         let hand      = document.createElement("div");
-        container.className = "row";
-        pocket.className    = "col-6";
-        hand.className      = "col-6";
+        let hand_title    = document.createElement("div");
+        let pocket_title  = document.createElement("div");
+
+        container.className = "row p-1";
+        pocket.className    = "col-6 mx-1 game-card-section";
+        hand.className      = "col-5 mx-1 game-card-section";
 
         container.id        = `qqx-card-table-${this.id}-div`;
         pocket.id           = `qqx-card-table-pocket-${this.id}-div`;
         hand.id             = `qqx-card-table-hand-${this.id}-div`;
+
+        switch (this.id) {
+            case "dealer":
+                hand_title.innerHTML = "场上牌"
+                pocket_title.innerHTML = "牌库";
+                break;
+            case "player":
+                hand_title.innerHTML = "玩家手牌"
+                pocket_title.innerHTML = "玩家得分区";
+                break;
+            case "opponent":
+                hand_title.innerHTML = "对方牌"
+                pocket_title.innerHTML = "对方得分区";
+                break;
+        }
+        hand_title.className = "subtitle";
+        pocket_title.className = "subtitle";
+        hand.appendChild(hand_title);
+        pocket.appendChild(pocket_title);
 
         for (let i = 0; i < this.hand.length; i++) {
             let card = this.hand[i].render();
@@ -255,11 +292,9 @@ class Game {
 
     getPossibleCombinations(player, opponent) {
         let ret = [];
-        let curr_round = 10 - this.player.hand.length;
-        let pocket_appear_rate = 1 / (qqx_data["card"].length - 30 - curr_round*2) * (10 - curr_round);
         for (let i = 0; i < this.combinations.length; i++) {
             if (this.combinations[i].isPossible(player, opponent)) {
-                this.combinations[i].evaluate(this.player, this.dealer, pocket_appear_rate)
+                this.combinations[i].evaluation = this.combinations[i].evaluate(this.dealer, this.getPocketChance())
                 ret.push(this.combinations[i]);
             }
         }
@@ -268,24 +303,98 @@ class Game {
         return ret;
     }
 
+    getPocketChance() {
+        return (1 / this.dealer.pocket.length) * 2 * this.player.hand.length;
+    }
+
+    getSeasonOpportunityCost(seasons) {
+        let hand = this.dealer.hand;
+        let pocket = this.dealer.pocket;
+        let ret = {"春":0, "夏":0, "秋":0, "冬":0};
+
+        let data = {"春":[], "夏":[], "秋":[], "冬":[]};
+        let temp = {};
+
+        for (let season in seasons) {
+            temp[season] = [];
+            for (let i = 0; i < seasons[season]; i++) {
+                // [Evaluation, Chance]
+                temp[season].push([0,0]);
+            }
+        } 
+
+        for (let i = 0; i < hand.length; i++) {
+            data[hand[i].season].push([hand[i], 0.5]);
+        }
+        for (let i = 0; i < pocket.length; i++) {
+            data[pocket[i].season].push([pocket[i], 0.5 * this.getPocketChance()]);
+        }
+
+        // 先对所有的排按照价值排序，然后计算手里最后有1张、2张.. 季节牌时的期望(temp[season])和保持在这个状态的概率
+        // 然后从1张开始向上补充概率，求出至少有k张牌时的evaluation期望，然后减！
+        for (let season in seasons) {
+            if (seasons[season] > 0) {
+                data[season].sort(function(a, b){return b[0].evaluation - a[0].evaluation});
+                for (let i = 0; i < data[season].length; i++) {
+                    let card_data = data[season][i];
+                    let card_eval = card_data[0].evaluation;
+                    let card_chance = card_data[1];
+                    for (let j = temp[season].length - 1; j > 0; j--) {
+                        let next_data = temp[season][j];
+                        let prev_data = temp[season][j-1];
+                        let new_card_chance = prev_data[1] * (1 - next_data[1]) * card_chance;
+                        if (prev_data[1] > 0) {
+                            next_data[0] += new_card_chance * (prev_data[0] / prev_data[1] + card_eval);
+                            next_data[1] += new_card_chance;
+                        }
+                    }
+                    temp[season][0][0] += card_chance * (1-temp[season][0][1]) * card_eval;
+                    temp[season][0][1] += card_chance * (1-temp[season][0][1]);
+                }
+
+                for (let i = 1; i < temp[season].length; i++) {
+                    temp[season][i][0] += (1-temp[season][i][1]) * temp[season][i-1][0];
+                }
+                ret[season] = Math.max(0, temp[season][temp[season].length - 1][0] - 
+                        (temp[season][temp[season].length - 2] || [0])[0]);
+            }
+        }
+        return ret;
+    }
+
     refresh() {
         this.possibleCombinations = this.getPossibleCombinations(this.player, this.opponent);
         for (let i = 0; i < this.dealer.hand.length; i++) {
             this.dealer.hand[i].evaluation = 0;
         }
+        for (let i = 0; i < this.dealer.pocket.length; i++) {
+            this.dealer.pocket[i].evaluation = 0;
+        }
 
-        let playerSeasons = this.player.getSeasons()
+        let playerSeasons = this.player.getSeasons();
+        let pocket_appear_rate = this.getPocketChance();
         for (let i = 0; i < this.possibleCombinations.length; i++) {
             let comb = this.possibleCombinations[i];
-            let seasons = comb.seasons;
-            for (let j = 0; j < comb.cards.length; j++) {
-                let card = comb.cards[j];
-                for (let k = 0; k < this.dealer.hand.length; k++) {
-                    if (card == this.dealer.hand[k].name) {
-                        this.dealer.hand[k].evaluation += comb.evaluation;
-                    }
-                }
+            for (let j = 0; j < this.dealer.hand.length; j++) {
+                if (comb.hasCard(this.dealer.hand[j].name)) {
+                    this.dealer.hand[j].evaluation += comb.evaluate(this.dealer, pocket_appear_rate, this.dealer.hand[j].name);
+                } 
             }
+            for (let j = 0; j < this.dealer.pocket.length; j++) {
+                if (comb.hasCard(this.dealer.pocket[j].name)) {
+                    this.dealer.pocket[j].evaluation += comb.evaluate(this.dealer, pocket_appear_rate, this.dealer.pocket[j].name);
+                } 
+            }
+        }
+
+        let seasonOpportunityCost = this.getSeasonOpportunityCost(playerSeasons);
+        console.log(seasonOpportunityCost)
+
+        for (let i = 0; i < this.dealer.hand.length; i++) {
+            this.dealer.hand[i].evaluation -= seasonOpportunityCost[this.dealer.hand[i].season];
+        }
+        for (let i = 0; i < this.dealer.pocket.length; i++) {
+            this.dealer.pocket[i].evaluation -= seasonOpportunityCost[this.dealer.pocket[i].season];
         }
         this.display();
     }
@@ -298,7 +407,11 @@ class Game {
         table_div.appendChild(this.player.render());
 
         let combination_div = document.getElementById("qqx-card-status-div");
+        let combination_title = document.createElement('div')
         combination_div.innerHTML = "";
+        combination_title.innerHTML = "可能组合";
+        combination_title.classList = "subtitle";
+        combination_div.appendChild(combination_title);
         for (let i = 0; i < this.possibleCombinations.length; i++) {
             combination_div.appendChild(this.possibleCombinations[i].render(this.player, this.dealer));
 
