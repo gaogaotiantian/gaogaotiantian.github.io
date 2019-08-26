@@ -10,17 +10,23 @@ class Card {
         this.evaluation = 0;
     }
 
-    render(evaluation = false) {
+    render(options = {}) {
         let card = document.createElement("a");
         card.className = `btn m-1 game-card game-card-${this.season}`;
         if (game.selectedCard && this.index == game.selectedCard.index) {
             card.classList.add("game-card-selected");
         }
-        if (evaluation) {
+
+        if ("draggable" in options && options["draggable"]) {
+            card.classList.add("draggable-card");
+        }
+
+        if ("evaluation" in options && options["evaluation"]) {
             card.innerHTML = `${this.name}  (${(this.evaluation*100).toFixed(0)})`;
         } else {
             card.innerHTML = this.name;
         }
+
         return card;
     }
 }
@@ -227,6 +233,12 @@ class Player {
         pocket.id           = `qqx-card-table-pocket-${this.id}-div`;
         hand.id             = `qqx-card-table-hand-${this.id}-div`;
 
+        pocket.setAttribute("player", this.id);
+        pocket.setAttribute("position", "pocket");
+
+        hand.setAttribute("player", this.id);
+        hand.setAttribute("position", "hand");
+
         switch (this.id) {
             case "dealer":
                 hand_title.innerHTML = "场上牌"
@@ -247,9 +259,9 @@ class Player {
         pocket.appendChild(pocket_title);
 
         for (let i = 0; i < this.hand.length; i++) {
-            let card = this.hand[i].render();
+            let card = this.hand[i].render({"draggable": true});
             if (this.id == "dealer") {
-                card = this.hand[i].render(true);
+                card = this.hand[i].render({"evaluation": true, "draggable": true});
             }
             card.addEventListener("click", this.cardClickEvent(this.hand[i]));
             if (i > 0 && this.hand[i].season != this.hand[i-1].season) {
@@ -258,7 +270,7 @@ class Player {
             hand.appendChild(card);
         }
         for (let i = 0; i < this.pocket.length; i++) {
-            let card = this.pocket[i].render();
+            let card = this.pocket[i].render({"draggable": true});
             card.addEventListener("click", this.cardClickEvent(this.pocket[i]));
             if (i > 0 && this.pocket[i].season != this.pocket[i-1].season) {
                 pocket.appendChild(document.createElement("br"));
@@ -283,6 +295,7 @@ class Game {
         this.player   = new Player("player");
         this.dealer   = new Player("dealer");
         this.selectedCard = null;
+        this.draggedCard  = null;
         this.dealer.prepareCards();
         this.combinations = this.loadCombinations();
         this.possibleCombinations = [];
@@ -511,6 +524,22 @@ function keyDownEvent(e) {
     game.refresh();
 }
 
+function mouseDownEvent(e) {
+    if (e.target.classList.contains("draggable-card")) {
+        game.draggedCard = e.target.innerHTML;
+    }
+}
+
+function mouseUpEvent(e) {
+    if (game.draggedCard) {
+        if (e.target.classList.contains("game-card-section")) {
+            let id       = e.target.getAttribute("player");
+            let position = e.target.getAttribute("position");
+        }
+        game.draggedCard = null;
+    }
+}
+
 $(function() {
     game = new Game();
 
@@ -526,5 +555,8 @@ $(function() {
             game.display();
         }
     };
+
+    document.onmousedown = mouseDownEvent;
+    document.onmouseup = mouseUpEvent;
     game.display();
 })
