@@ -13,6 +13,7 @@ class Card {
     render(options = {}) {
         let card = document.createElement("a");
         card.className = `btn m-1 game-card game-card-${this.season}`;
+        card.setAttribute("name", this.name);
         if (game.selectedCard && this.index == game.selectedCard.index) {
             card.classList.add("game-card-selected");
         }
@@ -296,6 +297,7 @@ class Game {
         this.dealer   = new Player("dealer");
         this.selectedCard = null;
         this.draggedCard  = null;
+        this.draggedCardDom = null;
         this.dealer.prepareCards();
         this.combinations = this.loadCombinations();
         this.possibleCombinations = [];
@@ -307,6 +309,20 @@ class Game {
             ret.push(new Combination(qqx_data["combination"][i]))
         }
         return ret;
+    }
+
+    findCardByName(cardName) {
+        let g = this;
+        for (let player of ["opponent", "dealer", "player"]) {
+            for (let position of ["hand", "pocket"]) {
+                for (let card of g[player][position]) {
+                    if (card.name == cardName) {
+                        return card;
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     moveCard(from, to, pos, card) {
@@ -526,7 +542,9 @@ function keyDownEvent(e) {
 
 function mouseDownEvent(e) {
     if (e.target.classList.contains("draggable-card")) {
-        game.draggedCard = e.target.innerHTML;
+        game.draggedCard = game.findCardByName(e.target.getAttribute("name"));
+        game.draggedCardDom = e.target;
+        game.draggedCardDom.style.zindex = -1;
     }
 }
 
@@ -535,8 +553,27 @@ function mouseUpEvent(e) {
         if (e.target.classList.contains("game-card-section")) {
             let id       = e.target.getAttribute("player");
             let position = e.target.getAttribute("position");
+            console.log(id, position)
+
+            game.moveCard(game[game.draggedCard.owner], game[id], position, game.draggedCard);
+        } else {
+            console.log(e.target)
         }
         game.draggedCard = null;
+        game.draggedCardDom = null;
+    }
+}
+
+function mouseMoveEvent(e) {
+    if (game.draggedCard) {
+        let x = e.clientX;
+        let y = e.clientY;
+        let d = game.draggedCardDom;
+
+        d.style.position = "fixed";
+        d.style.left = (x - d.offsetWidth/2) + "px";
+        d.style.top = (y - d.offsetHeight/2) + "px";
+
     }
 }
 
@@ -558,5 +595,6 @@ $(function() {
 
     document.onmousedown = mouseDownEvent;
     document.onmouseup = mouseUpEvent;
+    document.onmousemove = mouseMoveEvent;
     game.display();
 })
