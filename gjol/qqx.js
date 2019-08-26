@@ -399,7 +399,6 @@ class Game {
         }
 
         let seasonOpportunityCost = this.getSeasonOpportunityCost(playerSeasons);
-        console.log(seasonOpportunityCost)
 
         for (let i = 0; i < this.dealer.hand.length; i++) {
             this.dealer.hand[i].evaluation -= seasonOpportunityCost[this.dealer.hand[i].season];
