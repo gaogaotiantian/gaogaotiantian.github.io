@@ -544,21 +544,25 @@ function mouseDownEvent(e) {
     if (e.target.classList.contains("draggable-card")) {
         game.draggedCard = game.findCardByName(e.target.getAttribute("name"));
         game.draggedCardDom = e.target;
-        game.draggedCardDom.style.zindex = -1;
+        game.draggedCardDom.style.zIndex = 15;
     }
 }
 
 function mouseUpEvent(e) {
     if (game.draggedCard) {
-        if (e.target.classList.contains("game-card-section")) {
-            let id       = e.target.getAttribute("player");
-            let position = e.target.getAttribute("position");
-            console.log(id, position)
-
-            game.moveCard(game[game.draggedCard.owner], game[id], position, game.draggedCard);
-        } else {
-            console.log(e.target)
-        }
+        for (let id of ["opponent", "dealer", "player"]) {
+            for (let position of ["pocket", "hand"]) {
+                let d = document.getElementById(`qqx-card-table-${position}-${id}-div`);
+                if (d.offsetLeft <= e.clientX && e.clientX <= d.offsetLeft + d.offsetWidth &&
+                    d.offsetTop  <= e.clientY && e.clientY <= d.offsetTop + d.offsetHeight) {
+                    if (game.draggedCard.owner != id || game.draggedCard.position != position) {
+                        game.moveCard(game[game.draggedCard.owner], game[id], position, game.draggedCard);
+                        game.selectedCard = null;
+                        game.refresh();
+                    }
+                }
+            }
+        } 
         game.draggedCard = null;
         game.draggedCardDom = null;
     }
