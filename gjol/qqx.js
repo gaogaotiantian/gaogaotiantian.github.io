@@ -84,8 +84,19 @@ class Combination {
         let container = document.createElement("div");
         let score = document.createElement("span");
         let selected = false;
+        container.className = "px-2 my-1";
         score.innerHTML = this.score;
         container.appendChild(score);
+
+        this.cards.sort(function(a, b) {
+            if (player.hasCard(a) == player.hasCard(b)) {
+                return 0;
+            } else if (player.hasCard(a)) {
+                return -1;
+            } else {
+                return 1;
+            }
+        })
         for (let i = 0; i < this.cards.length; i++) {
             let card = this.cards[i];
             let card_button = document.createElement("a");
