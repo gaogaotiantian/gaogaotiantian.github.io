@@ -1,6 +1,776 @@
 [
     {
         "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420541314\">\u88ab\u8bc8\u9a97\u540e\u6211\u662f\u6291\u90c1\u4e86\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.2, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420902540\">\u6cb3\u5357\u5927\u4e13\u5f81\u96c6\u5fd7\u613f\u51fa\u7ed3\u679c\u4e86\u5417\uff0c\u5728\u7684\u53ef\u4ee5\u53d1\u4e0b\u81ea\u5df1\u7684\u6863\u6848\u72b6\u6001\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 41, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.41, 
+        "ANSWER": 29, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420627408\">\u8282\u65e5\u5f53\u5929\u7236\u6bcd\u6ca1\u6709\u6536\u5230\u5b69\u5b50\u7684\u795d\u798f\u4f1a\u5931\u671b\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420627805\">\u505a\u7236\u6bcd\u662f\u4e00\u79cd\u600e\u6837\u7684\u4f53\u9a8c\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 14, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.27, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420636525\">\u7236\u6bcd\u5728\u5b69\u5b50\u751f\u6d3b\u4e2d\u626e\u6f14\u7740\u600e\u6837\u91cd\u8981\u7684\u89d2\u8272\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.22, 
+        "ANSWER": 9, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420683521\">\u964c\u751f\u4eba\uff0c\u4eca\u65e5\u5f53\u7239\u4e86\u80fd\u7ed9\u4e00\u53e5\u795d\u798f\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 22, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.16, 
+        "ANSWER": 19, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420637801\">\u7236\u6bcd\u80fd\u628a\u5b69\u5b50\u5173\u5728\u623f\u95f4\u91cc\u5417\uff1f\u8fd9\u79cd\u6559\u80b2\u65b9\u5f0f\u53ef\u53d6\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.0, 
+        "ANSWER": 12, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420787534\">\u600e\u6837\u6210\u4e3a\u7236\u6bcd\u773c\u4e2d\u7684\u597d\u5b69\u5b50\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.07, 
+        "ANSWER": 14, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420788914\">\u5b69\u5b50\u5e94\u8be5\u6309\u7236\u6bcd\u5b89\u6392\u7684\u8def\u8d70\u5417\uff1f\u8fd9\u5bf9\u5b69\u5b50\u6210\u957f\u6709\u5e2e\u52a9\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420795450\">\u7ed3\u5a5a\u540e\u4e0d\u60f3\u8981\u5b69\u5b50\u53ef\u4ee5\u5417\uff1f\u8fd9\u79cd\u60f3\u6cd5\u5f88\u5947\u602a\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.0, 
+        "ANSWER": 13, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420804432\">\u4e3a\u4ec0\u4e48\u7236\u6bcd\u53ea\u6709\u5728\u5b69\u5b50\u6210\u7ee9\u597d\u7684\u65f6\u5019\u624d\u559c\u6b22\u81ea\u5df1\u7684\u5b69\u5b50\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.09, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420739864\">\u5047\u5982\u67d0\u4eba\u7684\u67d0\u4e2a\u53d1\u73b0\u53ef\u4ee5\u4fc3\u6210\u4e2d\u533b\u7406\u8bba\u73b0\u4ee3\u5316\uff0c\u4f60\u8ba4\u4e3a\u56fd\u5bb6\u5e94\u4e88\u9ad8\u5ea6\u91cd\u89c6\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.0, 
+        "ANSWER": 15, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420853991\">\u4e2d\u533b\u7684\u8840\uff0c\u5185\u810f\u8ddf\u521d\u4e2d\u751f\u7269\u4e66\u4e0d\u662f\u4e00\u4e2a\u4e1c\u897f\uff0c\u8bf7\u95ee\u751f\u7269\u4e66\u7684\u8840\u6db2\uff0c\u5185\u810f\u4e2d\u533b\u53e4\u4e66\u91cc\u53eb\u4ec0\u4e48?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.0, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420511571\">\u6211\u662f\u666e\u901a\u5927\u5b66\u6821\u961f\u6c34\u5e73\uff0c\u5047\u5982\u6253\u6bd4\u8d5b\u524d\u4e09\u6b21\u6295\u7bee\u5fc5\u4e2d\uff0c\u90a3\u6211\u80fd\u8fdbNBA\u5417\uff0c\u80fd\u8fdb\u7684\u8bdd\u80fd\u62ff\u591a\u5c11\u94b1\u85aa\u8d44\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 22, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.16, 
+        "ANSWER": 19, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420513814\">\u6e56\u4eba 110:100 \u80dc\u706b\u7bad\u62ff\u5230\u8d5b\u70b9\uff0c\u6234\u7ef4\u65af 29+12\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a><span class=\"lh\">Hot</span>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 634, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 2.86, 
+        "ANSWER": 222, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420680937\">\u4e3a\u4ec0\u4e48\u7ec3\u4e2a\u7bee\u7403\u90fd\u6709\u4eba\u7b11?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.22, 
+        "ANSWER": 9, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420666203\">\u4e3a\u4ec0\u8a79\u59c6\u65afNBA\u516d\u4e9a\u5c31\u80fd\u7a33\u5750\u5386\u53f2\u7b2c\u4e8c\uff0c\u800c\u6885\u897f\u56fd\u5bb6\u961f\u56db\u4e9a\u5374\u88ab\u8ba4\u4e3a\u4e00\u4e8b\u65e0\u6210\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.2, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420675637\">\u6398\u91d1 111:105 \u9006\u8f6c\u5feb\u8239\uff0c\u7a46\u96f7 26 \u5206\u4f26\u7eb3\u5fb7 36 \u5206\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 149, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.94, 
+        "ANSWER": 77, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420689024\">\u6e56\u4eba\u548c\u5feb\u8239\uff0c\u8c01\u80fd\u62ff\u5230\u897f\u90e8\u51a0\u519b\uff0c\u95ee\u9f0e\u603b\u51b3\u8d5b\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 20, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.33, 
+        "ANSWER": 15, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420706513\">\u62a2\u4e03\u6218\u51ef\u5c14\u7279\u4eba 92:87 \u529b\u514b\u731b\u9f99\uff0c\u4e0e\u70ed\u706b\u4f1a\u5e08\u4e1c\u51b3\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 230, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.97, 
+        "ANSWER": 117, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420866540\">\u5982\u4f55\u8bc4\u4ef7\u706b\u7bad\u961f\u572819-20\u8d5b\u5b63\u7684\u8868\u73b0\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 80, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.74, 
+        "ANSWER": 46, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420871155\">\u5409\u7c73\u5df4\u7279\u52d2\u5982\u679c\u6210\u529f\u5355\u6838\u593a\u51a0\u4f1a\u662f\u4ec0\u4e48\u5386\u53f2\u5730\u4f4d\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420891297\">\u662f\u4e0d\u662f\u6240\u6709\u4eba\u7684\u9752\u6625\u90fd\u548c\u7bee\u7403\u6709\u5173\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420891073\">\u5973\u5b69\u53ef\u4ee5\u591a\u61c2\u7bee\u7403\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420996085\">\u6398\u91d1 111:98 \u80dc\u5feb\u8239\u62d6\u5165\u62a2\u4e03\uff0c\u7ea6\u57fa\u5947 34+14\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 62, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.51, 
+        "ANSWER": 41, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420554869\">\u5982\u4f55\u770b\u5f85\u7537\u5b50\u60e8\u906d6\u6761\u6d41\u6d6a\u72d7\u6d3b\u6d3b\u6495\u54ac\u81f4\u6b7b?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 18, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.38, 
+        "ANSWER": 13, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420680812\">\u81ea\u5df1\u5bb6\u7684\u72d7\u83ab\u540d\u5176\u5999\u88ab\u522b\u4eba\u6253\u4e86\uff0c\u8fd9\u6837\u53cd\u51fb\u5408\u9002\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.0, 
+        "ANSWER": 15, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420547481\">\u5927\u5b66\u521a\u5165\u5b66\uff0c\u60f3\u9001\u65b0\u820d\u53cb\uff08\u5973\u751f\uff09\u4e00\u4e9b\u8f7b\u5962\u54c1\u6709\u4ec0\u4e48\u63a8\u8350\u4e48\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.2, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420640696\">\u900118\u5c81\u521a\u4e0a\u5927\u5b66\u7684\u59b9\u59b9\u8fea\u5965999\u5f53\u751f\u65e5\u793c\u7269\u5408\u9002\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 16, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.23, 
+        "ANSWER": 13, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420677878\">\u4e00\u4e2a\u4eba\u7684\u751f\u65e5\u8fd8\u6709\u5fc5\u8981\u8fc7\u4e48\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 25, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.19, 
+        "ANSWER": 21, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420687850\">\u4eca\u5929\u621118\u5c81\u751f\u65e5 \u9ed8\u9ed8\u5730\u7ed9\u53e5\u795d\u798f\u7684\u8bdd\u5427\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420609569\">\u8001\u4eba\u88ab\u9a97\u901a\u8fc7\u94f6\u884c\u6253\u6b3e5\u4e07\uff0c\u94f6\u884c\u6709\u8d23\u4efb\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 20, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.05, 
+        "ANSWER": 19, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420709361\">\u4e3a\u4ec0\u4e48\u73b0\u5728\u6709\u4e9b\u4eba\u8c08\u5230\u66b4\u541b\u5c31\u559c\u6b22\u628a\u4ed6\u4eec\"\u5927\u5174\u571f\u6728\"\u7684\u4f5c\u4e3a\u8bf4\u6210\"\u4ee5\u5de5\u4ee3\u8d48\"\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 20, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 3.33, 
+        "ANSWER": 6, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420509268\">\u9886\u8bc1\u672a\u4e3e\u884c\u5a5a\u793c \u60f3\u79bb\u5a5a \u4ee5\u540e\u662f\u5426\u5c31\u662f\u4e8c\u5a5a\u4e86 \u5f71\u54cd\u662f\u4e0d\u662f\u4e0d\u597d?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-10", 
+        "FARATIO": 1.0, 
+        "ANSWER": 13, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420514109\">\u5929\u6d25\u7684\u516c\u52a1\u5458\u5c97\u4f4d\uff0c\u548c\u8fdc\u5ac1\u5e7f\u5dde\uff0c\u6211\u5e94\u8be5\u9009\u54ea\u4e2a\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 14, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.27, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420536196\">\u4f53\u5236\u5185\u7684\u7537\u751f\u90fd\u88ab\u52a8\u5543\u8001\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 16, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.14, 
+        "ANSWER": 14, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420590236\">\u7ed3\u5a5a\u4f60\u4f1a\u9009\u62e9\u4e00\u4e2a\u6709\u623f\u6709\u8f66\u5e76\u4e14\u7231\u4f60\u4f46\u662f\u4f60\u4e0d\u7231\u7684\u4eba\uff0c\u8fd8\u662f\u9009\u62e9\u4e00\u4e2a\u672a\u6765\u751f\u6d3b\u4e0d\u7a33\u5b9a\u4f46\u662f\u4f60\u7231\u4ed6\uff0c\u4ed6\u4e5f\u7231\u4f60\u7684\u4eba\u5462\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.18, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420591715\">\u5982\u679c\u5973\u6027\u53ea\u8c08\u4e00\u6b21\u604b\u7231\u5c31\u7ed3\u5a5a\u662f\u4e0d\u662f\u633a\u9057\u61be\u7684?\u5982\u679c\u662f\u4e00\u5f00\u59cb\u5c31\u60f3\u7740\u5954\u7ed3\u5a5a\u53bb\u7684\u5973\u6027\u662f\u4e0d\u662f\u633a\u50bb\u7684\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.25, 
+        "ANSWER": 12, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420633479\">\u4e3a\u4ec0\u4e48\u73b0\u5728\u7684\u592b\u59bb \u603b\u6ca1\u6709\u4e00\u5bb6\u4eba\u7684\u611f\u89c9 \u5a5a\u540e\u8fd8\u662f\u5728\u4f60\u5bb6 \u6211\u5bb6\u4e4b\u95f4 \u5206\u7684\u7279\u522b\u6e05\u695a \u603b\u611f\u89c9\u4e0d\u50cf\u4e00\u5bb6\u4eba\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.22, 
+        "ANSWER": 9, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420682227\">\u7537\u65b9\u7236\u6bcd\u770b\u4e0d\u8d77\u5973\u65b9\u548c\u5973\u65b9\u5bb6\u5ead\u6761\u4ef6\uff0c\u76f4\u8a00\u914d\u4e0d\u4e0a\uff0c\u4e0d\u60f3\u4e0e\u8fd9\u79cd\u7236\u6bcd\u505a\u4eb2\u5bb6\uff0c\u8fd9\u6837\u7684\u60c5\u51b5\u8fd8\u8981\u548c\u5bf9\u65b9\u5728\u4e00\u8d77\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.22, 
+        "ANSWER": 9, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420718705\">\u600e\u4e48\u770b\u5f8568\u5c81\u5f20\u7eaa\u4e2d\u4e0e\u5c0f31\u5c81\u5973\u52a9\u7406\u4e8c\u80ce\u5f97\u5973\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.88, 
+        "ANSWER": 8, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420731560\">\u79bb\u5f02\u4e24\u6b21\u7684\u7537\u4eba\u80fd\u4e0d\u80fd\u63a5\u53d7\uff1f\u6211\u662f\u4e27\u5076\u7684\u4e2d\u5e74\u5973\u4eba\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.22, 
+        "ANSWER": 9, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420598271\">\u521d\u4e09\u751f\u5904\u5728\u5783\u573e\u73ed\u7ea7\uff0c\u5e94\u8be5\u600e\u4e48\u529e?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.1, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420736643\">\u5982\u679c\u8ba9\u4f60\u56de\u5230\u521d\u4e8c\u56de\u5bb6\u8def\u4e0a\uff0c\u9047\u5230\u66fe\u7ecf\u7684\u4f60\uff0c\u4f60\u4f1a\u5bf9\u90a3\u65f6\u7684\u81ea\u5df1\u8bf4\u4ec0\u4e48?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.08, 
+        "ANSWER": 12, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420886040\">\u521d\u4e8c\u4e0d\u60f3\u4e0a\u5b66\u4e86\uff0c\u60f3\u81ea\u5df1\u5728\u5bb6\u5199\u6587\uff0c\u5b66\u4e60\u4e00\u822c\u6587\u7b14\u8fd8\u884c\uff0c\u67092\u5e74\u7684\u5199\u6587\u7ecf\u5386\uff0c\u4f46\u6015\u8f8d\u5b66\u4ee5\u540e\u81ea\u5df1\u4f1a\u540e\u6094\uff0c\u600e\u4e48\u529e\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 1.09, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420522455\">175cm\u7684\u7537\u751f\u5728\u604b\u7231\u4e0a\u6709\u6ca1\u6709\u7ade\u4e89\u529b?\u4f1a\u88ab\u4e00\u89c1\u949f\u60c5\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 21, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.11, 
+        "ANSWER": 19, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420849114\">\u7537\u670b\u53cb\u5acc\u6211\u9ad8\uff0c\u559c\u6b22\u4e2a\u5b50\u77ee\u7684\u5973\u751f\u600e\u4e48\u529e\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 2.4, 
+        "ANSWER": 5, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420622510\">win10\u5b8c\u5168\u4e0d\u73a9\u6e38\u620f\uff0c\u63a8\u8350\u4ec0\u4e48\u663e\u5361?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.08, 
+        "ANSWER": 12, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420831488\">\u8def\u8fc7\u7684\u670b\u53cb\uff0c\u80fd\u5bf9\u6211\u8bf4\u58f0\u751f\u65e5\u5feb\u4e50\u5417?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.08, 
+        "ANSWER": 12, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420516845\">\u5355\u7eaf\u505a\u7b14\u8bb0\u7528iPad 2019\u8fd8\u662fiPad air3?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 18, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.13, 
+        "ANSWER": 16, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420517844\">\u7537\u670b\u53cb\u7236\u6bcd\u5f88\u5f3a\u52bf \u7537\u670b\u53cb\u6ca1\u4e3b\u89c1 \u73b0\u5728\u9762\u4e34\u7ed3\u5a5a \u8be5\u600e\u4e48\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.2, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420594332\">\u5927\u5bb6\u8bf4\u6211\u5f53\u5e74\u9006\u6765\u987a\u53d7\uff0c\u9ad8\u4e09\u65f6\u88ab\u7236\u6bcd\u903c\u5f97\u5b66\u7279\u957f\u8003\u5927\u5b66\uff0c\u800c\u6ca1\u6709\u53cd\u6297\uff0c\u8d70\u81ea\u5df1\u7684\u8def\uff0c\u7a76\u7adf\u5bf9\u4e0d\u5bf9\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.0, 
+        "ANSWER": 12, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420608785\">\u56de\u7236\u6bcd\u5bb6\u5e26\u793c\u7269\u662f\u57fa\u672c\u793c\u8282\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 17, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.06, 
+        "ANSWER": 16, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420778337\">\u6211\u5176\u5b9e\u633a\u4e0d\u660e\u767d\u5427\uff0c\u4e3a\u4ec0\u4e48\u7236\u6bcd\u89c9\u5f97\u4e0d\u7ed3\u5a5a\u5c31\u662f\u81ea\u79c1\u884c\u4e3a\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.0, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420827188\">\u6709\u4e00\u5bf9\u6076\u5fc3\u7684\u7236\u6bcd\u662f\u4ec0\u4e48\u4f53\u9a8c\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 14, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.4, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420614305\">\u6211\u662f\u521a\u5347\u5165\u5927\u4e8c\u5b66\u751f\uff0c\u5927\u4e00\u56e0\u4e3a\u61d2\u548c\u5b66\u7684\u4e1c\u897f\u591a\u800c\u6742\u57fa\u672c\u4e0a\u7b97\u662f\u4ec0\u4e48\u90fd\u6ca1\u5b66\u5230\uff0c\u73b0\u5728\u60f3\u8f6c\u4e13\u4e1a\uff0c\u600e\u4e48\u529e\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 13, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.18, 
+        "ANSWER": 11, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420509280\">\u5404\u4f4d\u5927\u4f6c\uff0c\u672c\u79d1\u7684\u65f6\u5019\u53c2\u52a0\u4e86\u7535\u7f51\u62db\u8058\u8003\u8bd5,\u6ca1\u8003\u4e0a\uff0c\u5982\u679c\u8bfb\u4e86\u7814\u7a76\u751f\u540e\u80fd\u518d\u8fdb\u7535\u7f51\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 12, 
+        "FIRST_COMMENT": "2020-09-10", 
+        "FARATIO": 1.2, 
+        "ANSWER": 10, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420623535\">\u5982\u4f55\u770b\u5f852021\u5e74\u4fdd\u7814\u653f\u7b56\u529e\u6cd5\u8fdf\u8fdf\u4e0d\u53d1\u5e03\uff1f</a><span class=\"hv\">Value</span>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 15.0, 
+        "ANSWER": 0, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420689151\">\u5982\u4f55\u770b\u5f85\u534e\u4e1c\u5e08\u8303\u5927\u5b662021\u5e74\u7814\u7a76\u751f\u5fc3\u7406\u5b66\u54a8\u8be2\u65b9\u5411\u6da8\u4ef7\u52303\u5e7419.8\u4e07\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 58, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.93, 
+        "ANSWER": 30, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420735199\">\u6709\u54ea\u4e9b\u8f6f\u88c5\u642d\u914d\u6280\u5de7\uff0c\u53ef\u4ee5\u5feb\u901f\u63d0\u5347\u5c45\u5bb6\u5e78\u798f\u611f\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 19, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 3.17, 
+        "ANSWER": 6, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420760487\">\u6709\u54ea\u4e9b\u5bb6\u5c45\u597d\u7269\uff0c\u7528\u4e00\u6b21\u540e\uff0c\u8ba9\u4f60\u611f\u89c9\u201c\u4ee5\u524d\u7684\u529b\u6c14\u90fd\u767d\u8d39\u4e86\u201d\uff1f</a><span class=\"lv\">Value</span>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 14, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 7.0, 
+        "ANSWER": 2, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420557880\">\u5f02\u661f\u707e\u53d8\u7b2c\u56db\u96c6\u7b2c\u4e94\u96c6\u7ec6\u8282\u89e3\u6790\uff1f</a><span class=\"lv\">Value</span>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 5.5, 
+        "ANSWER": 2, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420585396\">\u5982\u4f55\u770b\u5f85\u65e5\u672c\u7535\u5f71\u9662\u5c06\u572811\u65e5\u63a8\u51fa\u7684\u5f39\u5e55\u529f\u80fd\uff1f\u4f1a\u662f\u600e\u6837\u7684\u4f53\u9a8c\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 15, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.88, 
+        "ANSWER": 8, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420581468\">\u5982\u4f55\u8bc4\u4ef7\u300a\u9ed1\u888d\u7ea0\u5bdf\u961f\u300b\u7b2c\u4e8c\u5b63\u7b2c\u56db\u96c6\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 35, 
+        "FIRST_COMMENT": "2020-09-11", 
+        "FARATIO": 1.67, 
+        "ANSWER": 21, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420763753\">\u4fe1\u6761\u771f\u7684\u6709\u4eba\u770b\u61c2\u4e86\u5417\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 23, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 3.83, 
+        "ANSWER": 6, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420839101\">\u8fd9\u8857\u4e09\u5b63\u4ee5\u6765\u5370\u8c61\u6700\u6df1\u7684\u4e09\u4e2a\u4f5c\u54c1\uff08\u4e2a\u4eba\u9f50\u821e\u4e0d\u9650\uff09\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 14, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 1.0, 
+        "ANSWER": 14, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420840610\">\u600e\u4e48\u770b\u7c89\u7b14CEO\u674e\u5c0f\u9f99\u63ed\u9732\u300a\u9752\u6625\u5728\u5927\u5730\u300b\u7684\u771f\u76f8\u5e76\u70b9\u540d\u9a82\u6c88\u68a6\u8fb0\u662f\u50bb13\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 11, 
+        "FIRST_COMMENT": "2020-09-12", 
+        "FARATIO": 2.75, 
+        "ANSWER": 4, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420850041\">\u5982\u4f55\u8bc4\u4ef7\u4e2d\u56fd\u5bfc\u6f14\u8d75\u5a77\u4f5c\u54c1\u300a\u65e0\u4f9d\u4e4b\u5730\u300b\u83b7\u5f97\u7b2c 77 \u5c4a\u5a01\u5c3c\u65af\u7535\u5f71\u8282\u6700\u9ad8\u5956\u91d1\u72ee\u5956\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 73, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 4.87, 
+        "ANSWER": 15, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420881008\">\u5982\u4f55\u8bc4\u4ef7\u514b\u91cc\u65af\u57c3\u6587\u65af\uff08\u7f8e\u961f\uff09\u7684\u76f8\u518c?</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 52, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 2.08, 
+        "ANSWER": 25, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
+        "NAME": "<a href=\"http://www.zhihu.com/question/420882042\">\u7535\u5f71\u300a\u593a\u51a0\u300b\u63d0\u6863\u81f3 9 \u6708 25 \u65e5\u4e0a\u6620\uff0c\u4f60\u671f\u5f85\u8fd9\u90e8\u7535\u5f71\u5417\uff1f\u4f60\u89c9\u5f97\u6700\u7ec8\u5f71\u7247\u7684\u8bc4\u5206\u548c\u7968\u623f\u80fd\u5230\u591a\u5c11\uff1f</a>", 
+        "REVIEW": 0, 
+        "TOP_ANSWER_NUMBER": 0, 
+        "FOCUS": 47, 
+        "FIRST_COMMENT": "2020-09-13", 
+        "FARATIO": 2.47, 
+        "ANSWER": 19, 
+        "ADD_TIME": "2020-09-13"
+    }, 
+    {
+        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420589167\">\u5982\u4f55\u770b\u5f85\u8d8a\u6765\u8d8a\u591a\u7684PC\u786c\u4ef6\u5382\u5546\u63a8\u51fa\u4ea7\u54c1\u62df\u4eba\u5316\u7684\u4e8c\u6b21\u5143\u865a\u62df\u5076\u50cf\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -111,17 +881,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420522455\">175cm\u7684\u7537\u751f\u5728\u604b\u7231\u4e0a\u6709\u6ca1\u6709\u7ade\u4e89\u529b?\u4f1a\u88ab\u4e00\u89c1\u949f\u60c5\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 21, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.11, 
-        "ANSWER": 19, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420532810\">\u4e0d\u60f3\u53bb\u7537\u670b\u53cb\u5bb6\u4f4f\u6709\u9519\u5417\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -195,17 +954,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.57, 
         "ANSWER": 7, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420585396\">\u5982\u4f55\u770b\u5f85\u65e5\u672c\u7535\u5f71\u9662\u5c06\u572811\u65e5\u63a8\u51fa\u7684\u5f39\u5e55\u529f\u80fd\uff1f\u4f1a\u662f\u600e\u6837\u7684\u4f53\u9a8c\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.88, 
-        "ANSWER": 8, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -353,17 +1101,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420511571\">\u6211\u662f\u666e\u901a\u5927\u5b66\u6821\u961f\u6c34\u5e73\uff0c\u5047\u5982\u6253\u6bd4\u8d5b\u524d\u4e09\u6b21\u6295\u7bee\u5fc5\u4e2d\uff0c\u90a3\u6211\u80fd\u8fdbNBA\u5417\uff0c\u80fd\u8fdb\u7684\u8bdd\u80fd\u62ff\u591a\u5c11\u94b1\u85aa\u8d44\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 21, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.17, 
-        "ANSWER": 18, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420537817\">\u4f60\u4eec\u89c9\u5f97\u5feb\u8239\u548c\u6e56\u4eba\u90fd\u80fd4\uff1a1\u6dd8\u6c70\u5bf9\u624b\u5417\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -419,17 +1156,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420513814\">\u6e56\u4eba 110:100 \u80dc\u706b\u7bad\u62ff\u5230\u8d5b\u70b9\uff0c\u6234\u7ef4\u65af 29+12\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a><span class=\"lh\">Hot</span>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 634, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 2.86, 
-        "ANSWER": 222, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420564739\">\u54c8\u767b\u9047\u5230\u7684\u5305\u5939\u9632\u5b88\u662f\u5341\u5206\u7f55\u89c1\u7684\u5417\uff1f\u7b97\u5386\u53f2\u7ea7\u522b\u7684\u5f85\u9047\u5417\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -441,28 +1167,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420666203\">\u4e3a\u4ec0\u8a79\u59c6\u65afNBA\u516d\u4e9a\u5c31\u80fd\u7a33\u5750\u5386\u53f2\u7b2c\u4e8c\uff0c\u800c\u6885\u897f\u56fd\u5bb6\u961f\u56db\u4e9a\u5374\u88ab\u8ba4\u4e3a\u4e00\u4e8b\u65e0\u6210\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.2, 
-        "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420675637\">\u6398\u91d1 111:105 \u9006\u8f6c\u5feb\u8239\uff0c\u7a46\u96f7 26 \u5206\u4f26\u7eb3\u5fb7 36 \u5206\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 148, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.92, 
-        "ANSWER": 77, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420687534\">\u5feb\u8239\u662f\u5426\u4f1a\u89e6\u53d1\u808c\u8089\u8bb0\u5fc6\uff0c\u88ab1:3\u7ffb\u76d8?</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -470,28 +1174,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.08, 
         "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420706513\">\u62a2\u4e03\u6218\u51ef\u5c14\u7279\u4eba 92:87 \u529b\u514b\u731b\u9f99\uff0c\u4e0e\u70ed\u706b\u4f1a\u5e08\u4e1c\u51b3\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 231, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.97, 
-        "ANSWER": 117, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420689024\">\u6e56\u4eba\u548c\u5feb\u8239\uff0c\u8c01\u80fd\u62ff\u5230\u897f\u90e8\u51a0\u519b\uff0c\u95ee\u9f0e\u603b\u51b3\u8d5b\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 20, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.43, 
-        "ANSWER": 14, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -529,17 +1211,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420866540\">\u5982\u4f55\u8bc4\u4ef7\u706b\u7bad\u961f\u572819-20\u8d5b\u5b63\u7684\u8868\u73b0\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 79, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.72, 
-        "ANSWER": 46, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420851077\">\u6e56\u4eba 119:96 \u6dd8\u6c70\u706b\u7bad\u664b\u7ea7\u897f\u51b3\uff0c\u8a79\u59c6\u65af 29 \u5206\u54c8\u767b 30 \u5206\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a><span class=\"hh\">Hot</span>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -547,28 +1218,6 @@
         "FIRST_COMMENT": "2020-09-13", 
         "FARATIO": 3.15, 
         "ANSWER": 348, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420871155\">\u5409\u7c73\u5df4\u7279\u52d2\u5982\u679c\u6210\u529f\u5355\u6838\u593a\u51a0\u4f1a\u662f\u4ec0\u4e48\u5386\u53f2\u5730\u4f4d\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.1, 
-        "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420996085\">\u6398\u91d1 111:98 \u80dc\u5feb\u8239\u62d6\u5165\u62a2\u4e03\uff0c\u7ea6\u57fa\u5947 34+14\uff0c\u5982\u4f55\u8bc4\u4ef7\u8fd9\u573a\u6bd4\u8d5b\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 36, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.24, 
-        "ANSWER": 29, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -591,17 +1240,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.5, 
         "ANSWER": 8, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420622510\">win10\u5b8c\u5168\u4e0d\u73a9\u6e38\u620f\uff0c\u63a8\u8350\u4ec0\u4e48\u663e\u5361?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 13, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.08, 
-        "ANSWER": 12, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -925,17 +1563,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420516845\">\u5355\u7eaf\u505a\u7b14\u8bb0\u7528iPad 2019\u8fd8\u662fiPad air3?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 18, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.06, 
-        "ANSWER": 17, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420529256\">\u957f\u671f\u6295\u5582\u6d41\u6d6a\u72d7\u88ab\u5224\u8d54\u507f4\u4e07\uff0c\u8be5\u5982\u4f55\u5bf9\u5f85\u6d41\u6d6a\u72d7\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -1013,17 +1640,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420680937\">\u4e3a\u4ec0\u4e48\u7ec3\u4e2a\u7bee\u7403\u90fd\u6709\u4eba\u7b11?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.22, 
-        "ANSWER": 9, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420687388\">\u4e3a\u4ec0\u4e48\u4eba\u4eec\u5e38\u5e38\u8d2c\u4f4e\u52aa\u529b\u800c\u4e0d\u806a\u660e\u7684\u5b66\u751f\uff0c\u5374\u62ac\u9ad8\u806a\u660e\u800c\u4e0d\u52aa\u529b\u7684\u5b66\u751f\uff1f\u5373\u4fbf\u524d\u8005\u6210\u7ee9\u4e0a\u8d85\u8d8a\u540e\u8005\u4e5f\u662f\u5982\u6b64\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -1064,17 +1680,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.09, 
         "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420598271\">\u521d\u4e09\u751f\u5904\u5728\u5783\u573e\u73ed\u7ea7\uff0c\u5e94\u8be5\u600e\u4e48\u529e?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.1, 
-        "ANSWER": 10, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -1145,17 +1750,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420509268\">\u9886\u8bc1\u672a\u4e3e\u884c\u5a5a\u793c \u60f3\u79bb\u5a5a \u4ee5\u540e\u662f\u5426\u5c31\u662f\u4e8c\u5a5a\u4e86 \u5f71\u54cd\u662f\u4e0d\u662f\u4e0d\u597d?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 13, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.0, 
-        "ANSWER": 13, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420554259\">\u6df1\u5733\u518d\u5a5a\u6216\u590d\u5a5a\u4e0d\u518d\u8ffd\u6eaf\u79bb\u5f02\u524d\u623f\u4ea7\uff0c\u610f\u5473\u7740\u4ec0\u4e48\uff1f\u53ef\u80fd\u4f1a\u5e26\u6765\u54ea\u4e9b\u5f71\u54cd\uff1f</a><span class=\"lv\">Value</span><span class=\"lh\">Hot</span>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -1218,17 +1812,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.7, 
         "ANSWER": 33, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420594332\">\u5927\u5bb6\u8bf4\u6211\u5f53\u5e74\u9006\u6765\u987a\u53d7\uff0c\u9ad8\u4e09\u65f6\u88ab\u7236\u6bcd\u903c\u5f97\u5b66\u7279\u957f\u8003\u5927\u5b66\uff0c\u800c\u6ca1\u6709\u53cd\u6297\uff0c\u8d70\u81ea\u5df1\u7684\u8def\uff0c\u7a76\u7adf\u5bf9\u4e0d\u5bf9\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.09, 
-        "ANSWER": 11, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -1306,17 +1889,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 3.0, 
         "ANSWER": 5, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420514109\">\u5929\u6d25\u7684\u516c\u52a1\u5458\u5c97\u4f4d\uff0c\u548c\u8fdc\u5ac1\u5e7f\u5dde\uff0c\u6211\u5e94\u8be5\u9009\u54ea\u4e2a\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.27, 
-        "ANSWER": 11, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -1486,17 +2058,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420590236\">\u7ed3\u5a5a\u4f60\u4f1a\u9009\u62e9\u4e00\u4e2a\u6709\u623f\u6709\u8f66\u5e76\u4e14\u7231\u4f60\u4f46\u662f\u4f60\u4e0d\u7231\u7684\u4eba\uff0c\u8fd8\u662f\u9009\u62e9\u4e00\u4e2a\u672a\u6765\u751f\u6d3b\u4e0d\u7a33\u5b9a\u4f46\u662f\u4f60\u7231\u4ed6\uff0c\u4ed6\u4e5f\u7231\u4f60\u7684\u4eba\u5462\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 13, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.18, 
-        "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420718739\">\u4e24\u4e2a\u76f8\u5dee\u5f88\u5927\u7684\u4eba\u4f1a\u5728\u4e00\u8d77\u5f88\u4e45\u5417?</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -1629,17 +2190,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420886040\">\u521d\u4e8c\u4e0d\u60f3\u4e0a\u5b66\u4e86\uff0c\u60f3\u81ea\u5df1\u5728\u5bb6\u5199\u6587\uff0c\u5b66\u4e60\u4e00\u822c\u6587\u7b14\u8fd8\u884c\uff0c\u67092\u5e74\u7684\u5199\u6587\u7ecf\u5386\uff0c\u4f46\u6015\u8f8d\u5b66\u4ee5\u540e\u81ea\u5df1\u4f1a\u540e\u6094\uff0c\u600e\u4e48\u529e\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.09, 
-        "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420529602\">\u5982\u4f55\u770b\u5f852020\u5e74\u5168\u56fd\u5927\u5b66\u751f\u6570\u5b66\u5efa\u6a21\u7ade\u8d5bE\u9898\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -1673,17 +2223,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420536196\">\u4f53\u5236\u5185\u7684\u7537\u751f\u90fd\u88ab\u52a8\u5543\u8001\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 16, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.14, 
-        "ANSWER": 14, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420586005\">\u51c6\u5907\u7ed3\u5a5a\u7528\u7684\u5a5a\u623f\uff08\u4e3b\u5367\uff09\u4ed6\u4eb2\u621a\u7ed3\u5a5a\u6bd4\u6211\u4eec\u524d\u51e0\u5929\u60f3\u5148\u501f\u6765\u505a\u5a5a\u623f\uff0c\u6211\u548c\u7537\u53cb\u5546\u91cf\u501f\u6b21\u5367\uff0c\u8fd9\u4e2a\u8981\u6c42\u8fc7\u5206\u5417\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -1691,28 +2230,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.38, 
         "ANSWER": 8, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420591715\">\u5982\u679c\u5973\u6027\u53ea\u8c08\u4e00\u6b21\u604b\u7231\u5c31\u7ed3\u5a5a\u662f\u4e0d\u662f\u633a\u9057\u61be\u7684?\u5982\u679c\u662f\u4e00\u5f00\u59cb\u5c31\u60f3\u7740\u5954\u7ed3\u5a5a\u53bb\u7684\u5973\u6027\u662f\u4e0d\u662f\u633a\u50bb\u7684\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.25, 
-        "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420633479\">\u4e3a\u4ec0\u4e48\u73b0\u5728\u7684\u592b\u59bb \u603b\u6ca1\u6709\u4e00\u5bb6\u4eba\u7684\u611f\u89c9 \u5a5a\u540e\u8fd8\u662f\u5728\u4f60\u5bb6 \u6211\u5bb6\u4e4b\u95f4 \u5206\u7684\u7279\u522b\u6e05\u695a \u603b\u611f\u89c9\u4e0d\u50cf\u4e00\u5bb6\u4eba\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.22, 
-        "ANSWER": 9, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -1768,17 +2285,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.09, 
         "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420795450\">\u7ed3\u5a5a\u540e\u4e0d\u60f3\u8981\u5b69\u5b50\u53ef\u4ee5\u5417\uff1f\u8fd9\u79cd\u60f3\u6cd5\u5f88\u5947\u602a\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 0.92, 
-        "ANSWER": 13, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -2014,17 +2520,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420849114\">\u7537\u670b\u53cb\u5acc\u6211\u9ad8\uff0c\u559c\u6b22\u4e2a\u5b50\u77ee\u7684\u5973\u751f\u600e\u4e48\u529e\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.5, 
-        "ANSWER": 8, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420935657\">\u56e0\u7410\u4e8b\u4e89\u7aef\u628a\u7537\u53cb\u8bba\u6587\u53ca\u8d44\u6599\u5168\u5220\u4e86\uff0c\u6709\u633d\u56de\u529e\u6cd5\u5417\uff1f\u600e\u4e48\u624d\u80fd\u8ba9\u7537\u53cb\u6d88\u6c14\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -2032,39 +2527,6 @@
         "FIRST_COMMENT": "2020-09-13", 
         "FARATIO": 1.62, 
         "ANSWER": 213, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420627805\">\u505a\u7236\u6bcd\u662f\u4e00\u79cd\u600e\u6837\u7684\u4f53\u9a8c\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.27, 
-        "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420637801\">\u7236\u6bcd\u80fd\u628a\u5b69\u5b50\u5173\u5728\u623f\u95f4\u91cc\u5417\uff1f\u8fd9\u79cd\u6559\u80b2\u65b9\u5f0f\u53ef\u53d6\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.0, 
-        "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420636525\">\u7236\u6bcd\u5728\u5b69\u5b50\u751f\u6d3b\u4e2d\u626e\u6f14\u7740\u600e\u6837\u91cd\u8981\u7684\u89d2\u8272\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.22, 
-        "ANSWER": 9, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -2080,45 +2542,12 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420787534\">\u600e\u6837\u6210\u4e3a\u7236\u6bcd\u773c\u4e2d\u7684\u597d\u5b69\u5b50\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.0, 
-        "ANSWER": 14, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420804432\">\u4e3a\u4ec0\u4e48\u7236\u6bcd\u53ea\u6709\u5728\u5b69\u5b50\u6210\u7ee9\u597d\u7684\u65f6\u5019\u624d\u559c\u6b22\u81ea\u5df1\u7684\u5b69\u5b50\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.0, 
-        "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420516606\">\u662f\u4e0d\u662f\u5927\u591a\u6570\u4eba\u90fd\u770b\u4e0d\u8d77\u4e13\u79d1\uff0c\u6216\u8005\u4e13\u5347\u672c\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
         "FOCUS": 13, 
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.3, 
-        "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420547481\">\u5927\u5b66\u521a\u5165\u5b66\uff0c\u60f3\u9001\u65b0\u820d\u53cb\uff08\u5973\u751f\uff09\u4e00\u4e9b\u8f7b\u5962\u54c1\u6709\u4ec0\u4e48\u63a8\u8350\u4e48\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.1, 
         "ANSWER": 10, 
         "ADD_TIME": "2020-09-13"
     }, 
@@ -2652,28 +3081,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420736643\">\u5982\u679c\u8ba9\u4f60\u56de\u5230\u521d\u4e8c\u56de\u5bb6\u8def\u4e0a\uff0c\u9047\u5230\u66fe\u7ecf\u7684\u4f60\uff0c\u4f60\u4f1a\u5bf9\u90a3\u65f6\u7684\u81ea\u5df1\u8bf4\u4ec0\u4e48?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 13, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.08, 
-        "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420763753\">\u4fe1\u6761\u771f\u7684\u6709\u4eba\u770b\u61c2\u4e86\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 23, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 3.83, 
-        "ANSWER": 6, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420616711\">\u5982\u4f55\u770b\u5f85\u8b66\u65b9\u901a\u62a5\u300c\u672a\u6210\u5e74\u5c11\u5973\u7591\u88ab\u6027\u4fb5\u300d\u6848\u5acc\u7591\u4eba\u5168\u5f52\u6848\uff0c\u5747\u7cfb\u672a\u6210\u5e74\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -2747,17 +3154,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.22, 
         "ANSWER": 9, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420509067\">\u8981\u662f\u7279\u522b\u65e9\u7761\uff0c\u665a\u4e0a\u516b\u70b9\u70b9\u7761\uff0c\u51cc\u6668\u4e24\u70b9\u8d77\uff0c\u8fd9\u6837\u4f1a\u600e\u4e48\u6837\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.08, 
-        "ANSWER": 13, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -2890,17 +3286,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.33, 
         "ANSWER": 9, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420891297\">\u662f\u4e0d\u662f\u6240\u6709\u4eba\u7684\u9752\u6625\u90fd\u548c\u7bee\u7403\u6709\u5173\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.1, 
-        "ANSWER": 10, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -3103,17 +3488,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420541314\">\u88ab\u8bc8\u9a97\u540e\u6211\u662f\u6291\u90c1\u4e86\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.2, 
-        "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420657481\">\u770b\u5230\u522b\u4eba\u5b66\u4e60\u65f6\u95f4\u5f88\u957f\u800c\u611f\u5230\u5f88\u7126\u8e81\u600e\u4e48\u529e?</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -3132,17 +3506,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.22, 
         "ANSWER": 9, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420508059\">\u9ad8\u4e09\u8bed\u6587\u6587\u8a00\u6587\u4e0d\u884c\uff0c\u96f6\u57fa\u7840\uff0c\u4e0d\u8fc7\u540c\u5b66\u603b\u7ed3\u4e86\u597d\u591a\uff0c\u6211\u662f\u76f4\u63a5\u6284\u8fd8\u662f\u548c\u5979\u4e00\u6837\u81ea\u5df1\u4e70\u9898\u76ee\u603b\u7ed3\u5462\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 39, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.03, 
-        "ANSWER": 38, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -3396,17 +3759,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 5.0, 
         "ANSWER": 3, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420508538\">\u5728\u5927\u5b66\u662f\u4e0d\u662f\u53ea\u6709\u5b66\u751f\u4f1a\u6216\u8005\u73ed\u5e72\u90e8\u624d\u6709\u8d44\u683c\u62ff\u5956\u5b66\u91d1\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 33, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.0, 
-        "ANSWER": 33, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -3708,17 +4060,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420680812\">\u81ea\u5df1\u5bb6\u7684\u72d7\u83ab\u540d\u5176\u5999\u88ab\u522b\u4eba\u6253\u4e86\uff0c\u8fd9\u6837\u53cd\u51fb\u5408\u9002\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.0, 
-        "ANSWER": 15, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420543778\">\u548c\u5f02\u6027\u670b\u53cb\u53d1\u751f\u4e86\u8d8a\u754c\u884c\u4e3a\uff0c\u8fd9\u6837\u7684\u53cb\u8c0a\u8fd8\u80fd\u7ee7\u7eed\u5417\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -3792,28 +4133,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.08, 
         "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420682227\">\u7537\u65b9\u7236\u6bcd\u770b\u4e0d\u8d77\u5973\u65b9\u548c\u5973\u65b9\u5bb6\u5ead\u6761\u4ef6\uff0c\u76f4\u8a00\u914d\u4e0d\u4e0a\uff0c\u4e0d\u60f3\u4e0e\u8fd9\u79cd\u7236\u6bcd\u505a\u4eb2\u5bb6\uff0c\u8fd9\u6837\u7684\u60c5\u51b5\u8fd8\u8981\u548c\u5bf9\u65b9\u5728\u4e00\u8d77\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.22, 
-        "ANSWER": 9, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420827188\">\u6709\u4e00\u5bf9\u6076\u5fc3\u7684\u7236\u6bcd\u662f\u4ec0\u4e48\u4f53\u9a8c\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.4, 
-        "ANSWER": 10, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -3939,17 +4258,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420731560\">\u79bb\u5f02\u4e24\u6b21\u7684\u7537\u4eba\u80fd\u4e0d\u80fd\u63a5\u53d7\uff1f\u6211\u662f\u4e27\u5076\u7684\u4e2d\u5e74\u5973\u4eba\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.22, 
-        "ANSWER": 9, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420738975\">\u5982\u4f55\u770b\u5f85\u7537\u670b\u53cb\u8bf4\u201c\u4ea7\u540e\u6291\u90c1\u5c31\u662f\u5973\u6027\u81ea\u79c1\u201d\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -3957,17 +4265,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.09, 
         "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420508982\">\u738b\u8005\u8363\u800013888\u7684\u82f1\u96c4\uff0c\u4e70\u54ea\u4e2a\u4e0a\u624b\u5bb9\u6613\uff0c\u53c8\u7279\u522b\u5389\u5bb3\u7279\u522b\u79c0\uff1f\uff08\u5b59\u5c1a\u9999\uff0c\u5a49\u513f\uff0c\u8c82\u8749\uff0c\u8000\uff0c\u5766\u514b\u7c7b\u9664\u5916\uff09\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 16, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 0.89, 
-        "ANSWER": 18, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -4313,17 +4610,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420608785\">\u56de\u7236\u6bcd\u5bb6\u5e26\u793c\u7269\u662f\u57fa\u672c\u793c\u8282\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 17, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.06, 
-        "ANSWER": 16, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420687637\">\u7236\u4eb2\u4e0d\u8ba9\u6211\u53bb\u4e0a\u666e\u62c9\u63d0\u8bfe\u6211\u600e\u4e48\u8bf4\u670d\u4ed6?</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -4331,17 +4617,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.2, 
         "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420778337\">\u6211\u5176\u5b9e\u633a\u4e0d\u660e\u767d\u5427\uff0c\u4e3a\u4ec0\u4e48\u7236\u6bcd\u89c9\u5f97\u4e0d\u7ed3\u5a5a\u5c31\u662f\u81ea\u79c1\u884c\u4e3a\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.0, 
-        "ANSWER": 11, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -4419,28 +4694,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 2.29, 
         "ANSWER": 101, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420882042\">\u7535\u5f71\u300a\u593a\u51a0\u300b\u63d0\u6863\u81f3 9 \u6708 25 \u65e5\u4e0a\u6620\uff0c\u4f60\u671f\u5f85\u8fd9\u90e8\u7535\u5f71\u5417\uff1f\u4f60\u89c9\u5f97\u6700\u7ec8\u5f71\u7247\u7684\u8bc4\u5206\u548c\u7968\u623f\u80fd\u5230\u591a\u5c11\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 46, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 2.42, 
-        "ANSWER": 19, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420850041\">\u5982\u4f55\u8bc4\u4ef7\u4e2d\u56fd\u5bfc\u6f14\u8d75\u5a77\u4f5c\u54c1\u300a\u65e0\u4f9d\u4e4b\u5730\u300b\u83b7\u5f97\u7b2c 77 \u5c4a\u5a01\u5c3c\u65af\u7535\u5f71\u8282\u6700\u9ad8\u5956\u91d1\u72ee\u5956\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 72, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 4.8, 
-        "ANSWER": 15, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -4720,17 +4973,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420718705\">\u600e\u4e48\u770b\u5f8568\u5c81\u5f20\u7eaa\u4e2d\u4e0e\u5c0f31\u5c81\u5973\u52a9\u7406\u4e8c\u80ce\u5f97\u5973\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.88, 
-        "ANSWER": 8, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420566137\">\u516c\u8def\u8f66\u7684\u5b89\u5168\u6027\u5982\u4f55\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -4738,17 +4980,6 @@
         "FIRST_COMMENT": "2020-09-11", 
         "FARATIO": 1.0, 
         "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420508503\">\u79bb\u7269\u7406\u590d\u8d5b\u8fd8\u6709\u4e00\u5468\uff0c\u672c\u4eba\u4e00\u70b9\u7ade\u8d5b\u77e5\u8bc6\u90fd\u4e0d\u77e5\u9053\uff0c\u6211\u8be5\u600e\u6837\u9006\u88ad\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 22, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.22, 
-        "ANSWER": 18, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -4771,17 +5002,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.64, 
         "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420509007\">\u5982\u4f55\u770b\u5f85\u300c\u98de\u884c\u5458\u6563\u53d1\u524d\u5973\u53cb\u4e0d\u96c5\u7167\u300d\u6848\u4e8c\u5ba1\u7ef4\u6301\u539f\u5224\uff0c\u5f53\u4e8b\u4eba\u79f0\u524d\u7537\u53cb\u4ecd\u672a\u9053\u6b49\uff1f</a><span class=\"lv\">Value</span>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 384, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 7.11, 
-        "ANSWER": 54, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -5105,17 +5325,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420609569\">\u8001\u4eba\u88ab\u9a97\u901a\u8fc7\u94f6\u884c\u6253\u6b3e5\u4e07\uff0c\u94f6\u884c\u6709\u8d23\u4efb\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 20, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.05, 
-        "ANSWER": 19, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420538110\">\u73b0\u5728\u7535\u8111\u624b\u673a\u6e38\u620f\u8fd9\u4e48\u591a\uff0c\u4e3a\u4ec0\u4e48\u8fd8\u6709\u4eba\u73a9Switch?</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -5237,17 +5446,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420623535\">\u5982\u4f55\u770b\u5f852021\u5e74\u4fdd\u7814\u653f\u7b56\u529e\u6cd5\u8fdf\u8fdf\u4e0d\u53d1\u5e03\uff1f</a><span class=\"hv\">Value</span>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 15.0, 
-        "ANSWER": 1, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420612381\">\u5982\u4f55\u770b\u5f85\u5728\u534e\u5357\u7406\u5de5\u5927\u5b66\uff0c\u5373\u4f7f\u662f\u5e74\u7ea7\u7b2c\u4e00\u4e5f\u53ef\u80fd\u65e0\u6cd5\u4fdd\u7814\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -5277,17 +5475,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 0.92, 
         "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420614305\">\u6211\u662f\u521a\u5347\u5165\u5927\u4e8c\u5b66\u751f\uff0c\u5927\u4e00\u56e0\u4e3a\u61d2\u548c\u5b66\u7684\u4e1c\u897f\u591a\u800c\u6742\u57fa\u672c\u4e0a\u7b97\u662f\u4ec0\u4e48\u90fd\u6ca1\u5b66\u5230\uff0c\u73b0\u5728\u60f3\u8f6c\u4e13\u4e1a\uff0c\u600e\u4e48\u529e\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 13, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.18, 
-        "ANSWER": 11, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -5343,17 +5530,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.0, 
         "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420735199\">\u6709\u54ea\u4e9b\u8f6f\u88c5\u642d\u914d\u6280\u5de7\uff0c\u53ef\u4ee5\u5feb\u901f\u63d0\u5347\u5c45\u5bb6\u5e78\u798f\u611f\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 19, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 3.17, 
-        "ANSWER": 6, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -5655,17 +5831,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420709361\">\u4e3a\u4ec0\u4e48\u73b0\u5728\u6709\u4e9b\u4eba\u8c08\u5230\u66b4\u541b\u5c31\u559c\u6b22\u628a\u4ed6\u4eec\"\u5927\u5174\u571f\u6728\"\u7684\u4f5c\u4e3a\u8bf4\u6210\"\u4ee5\u5de5\u4ee3\u8d48\"\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 20, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 3.33, 
-        "ANSWER": 6, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420535371\">\u5355\u7c92\u5b50\u6001\u5728\u6d1b\u4f26\u5179\u53d8\u6362\u4e0b\u7684\u6f14\u5316\u8be5\u5982\u4f55\u53bb\u7406\u89e3\uff1f</a><span class=\"lv\">Value</span>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -5684,17 +5849,6 @@
         "FIRST_COMMENT": "2020-09-13", 
         "FARATIO": 1.0, 
         "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420508111\">\u88ab\u6760\u7cbe\u603c\uff0c\u4f60\u6709\u8111\u5b50\u8fd8\u662f\u5927\u8111\uff0c\u600e\u6837\u56de\u4ed6\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 18, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.13, 
-        "ANSWER": 16, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -5908,105 +6062,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420831488\">\u8def\u8fc7\u7684\u670b\u53cb\uff0c\u80fd\u5bf9\u6211\u8bf4\u58f0\u751f\u65e5\u5feb\u4e50\u5417?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 13, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.08, 
-        "ANSWER": 12, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420517844\">\u7537\u670b\u53cb\u7236\u6bcd\u5f88\u5f3a\u52bf \u7537\u670b\u53cb\u6ca1\u4e3b\u89c1 \u73b0\u5728\u9762\u4e34\u7ed3\u5a5a \u8be5\u600e\u4e48\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.09, 
-        "ANSWER": 11, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420509280\">\u5404\u4f4d\u5927\u4f6c\uff0c\u672c\u79d1\u7684\u65f6\u5019\u53c2\u52a0\u4e86\u7535\u7f51\u62db\u8058\u8003\u8bd5,\u6ca1\u8003\u4e0a\uff0c\u5982\u679c\u8bfb\u4e86\u7814\u7a76\u751f\u540e\u80fd\u518d\u8fdb\u7535\u7f51\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 12, 
-        "FIRST_COMMENT": "2020-09-10", 
-        "FARATIO": 1.2, 
-        "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420689151\">\u5982\u4f55\u770b\u5f85\u534e\u4e1c\u5e08\u8303\u5927\u5b662021\u5e74\u7814\u7a76\u751f\u5fc3\u7406\u5b66\u54a8\u8be2\u65b9\u5411\u6da8\u4ef7\u52303\u5e7419.8\u4e07\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 57, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.9, 
-        "ANSWER": 30, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420760487\">\u6709\u54ea\u4e9b\u5bb6\u5c45\u597d\u7269\uff0c\u7528\u4e00\u6b21\u540e\uff0c\u8ba9\u4f60\u611f\u89c9\u201c\u4ee5\u524d\u7684\u529b\u6c14\u90fd\u767d\u8d39\u4e86\u201d\uff1f</a><span class=\"lv\">Value</span>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 7.0, 
-        "ANSWER": 2, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420557880\">\u5f02\u661f\u707e\u53d8\u7b2c\u56db\u96c6\u7b2c\u4e94\u96c6\u7ec6\u8282\u89e3\u6790\uff1f</a><span class=\"lv\">Value</span>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 5.5, 
-        "ANSWER": 2, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420581468\">\u5982\u4f55\u8bc4\u4ef7\u300a\u9ed1\u888d\u7ea0\u5bdf\u961f\u300b\u7b2c\u4e8c\u5b63\u7b2c\u56db\u96c6\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 35, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.59, 
-        "ANSWER": 22, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420839101\">\u8fd9\u8857\u4e09\u5b63\u4ee5\u6765\u5370\u8c61\u6700\u6df1\u7684\u4e09\u4e2a\u4f5c\u54c1\uff08\u4e2a\u4eba\u9f50\u821e\u4e0d\u9650\uff09\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 14, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.0, 
-        "ANSWER": 14, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420881008\">\u5982\u4f55\u8bc4\u4ef7\u514b\u91cc\u65af\u57c3\u6587\u65af\uff08\u7f8e\u961f\uff09\u7684\u76f8\u518c?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 48, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.6, 
-        "ANSWER": 30, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420547474\">\u5982\u4f55\u4ece\u4e0d\u7231\u8bfb\u4e66\u53d8\u6210\u7231\u8bfb\u4e66\u7684\u4eba\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -6058,17 +6113,6 @@
         "FIRST_COMMENT": "2020-09-13", 
         "FARATIO": 4.67, 
         "ANSWER": 3, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420683521\">\u964c\u751f\u4eba\uff0c\u4eca\u65e5\u5f53\u7239\u4e86\u80fd\u7ed9\u4e00\u53e5\u795d\u798f\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 21, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.17, 
-        "ANSWER": 18, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
@@ -6755,17 +6799,6 @@
     }, 
     {
         "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420554869\">\u5982\u4f55\u770b\u5f85\u7537\u5b50\u60e8\u906d6\u6761\u6d41\u6d6a\u72d7\u6d3b\u6d3b\u6495\u54ac\u81f4\u6b7b?</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 18, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.29, 
-        "ANSWER": 14, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
         "NAME": "<a href=\"http://www.zhihu.com/question/420649976\">\u4eba\u7c7b\u7684\u51a5\u60f3\u548c\u5b87\u5b99\u7684\u5173\u7cfb\u662f\u4ec0\u4e48\uff1f</a>", 
         "REVIEW": 0, 
         "TOP_ANSWER_NUMBER": 0, 
@@ -7026,50 +7059,6 @@
         "FIRST_COMMENT": "2020-09-12", 
         "FARATIO": 1.05, 
         "ANSWER": 19, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420739864\">\u5b9e\u73b0\u4e2d\u533b\u7406\u8bba\u73b0\u4ee3\u5316\u56fa\u7136\u662f\u4ef6\u96be\u4e8b\u4f46\u51b3\u4e0d\u610f\u5473\u7740\u6beb\u65e0\u53ef\u80fd\u5047\u5982\u67d0\u4eba\u7684\u67d0\u4e2a\u53d1\u73b0\u53ef\u4ee5\u4fc3\u6210\u4e4b\u4f60\u8ba4\u4e3a\u56fd\u5bb6\u5e94\u4e88\u91cd\u89c6\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-12", 
-        "FARATIO": 1.07, 
-        "ANSWER": 14, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420891073\">\u5973\u5b69\u53ef\u4ee5\u591a\u61c2\u7bee\u7403\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 11, 
-        "FIRST_COMMENT": "2020-09-13", 
-        "FARATIO": 1.1, 
-        "ANSWER": 10, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420640696\">\u900118\u5c81\u521a\u4e0a\u5927\u5b66\u7684\u59b9\u59b9\u8fea\u5965999\u5f53\u751f\u65e5\u793c\u7269\u5408\u9002\u5417\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 15, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.15, 
-        "ANSWER": 13, 
-        "ADD_TIME": "2020-09-13"
-    }, 
-    {
-        "ACTIVATE": "1970-01-01", 
-        "NAME": "<a href=\"http://www.zhihu.com/question/420677878\">\u4e00\u4e2a\u4eba\u7684\u751f\u65e5\u8fd8\u6709\u5fc5\u8981\u8fc7\u4e48\uff1f</a>", 
-        "REVIEW": 0, 
-        "TOP_ANSWER_NUMBER": 0, 
-        "FOCUS": 16, 
-        "FIRST_COMMENT": "2020-09-11", 
-        "FARATIO": 1.07, 
-        "ANSWER": 15, 
         "ADD_TIME": "2020-09-13"
     }, 
     {
