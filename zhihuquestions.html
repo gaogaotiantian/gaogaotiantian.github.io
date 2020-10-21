@@ -71,6 +71,13 @@
       crossorigin="anonymous"></script>
 
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
     <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/jquery.dynatable.css" />
     <script>
       var dbJSON = []
@@ -84,11 +91,18 @@
       });
 
       $(document).ready(function() {
-        $.getJSON("db.json", function(data) {
-          dbJSON = data
-        })
-        .fail(function(d, text, error){alert("Error in getJSON!" + text + error)})
-        .success(function() {
+        var firebaseConfig = {
+          apiKey: "AIzaSyBfjqfPjYhFtu5-kZaXryfs7vKb2C46Ba4",
+          authDomain: "minkoder-web.firebaseapp.com",
+          projectId: "minkoder-web",
+          storageBucket: "minkoder-web.appspot.com"
+        }
+        firebase.initializeApp(firebaseConfig);
+
+        var storage = firebase.storage();
+        var ref = storage.ref("zhihu-spider/db.json");
+
+        updateTable = function(data) {
           $('#question_table')
           .bind('dynatable:preinit', function(e, dynatable) {
             dynatable.utility.textTransform.noStyle = function(text) {
@@ -157,12 +171,23 @@
               search: false
             },
             dataset : {
-              records: dbJSON
+              records: data
             },
             inputs : {
               queries: $('#min_focus, #max_focus, #min_answer, #max_answer, #min_ratio, #max_ratio, #min_highans, #max_highans, #min_review, #max_review')
             }
           });
+
+        }
+        ref.getDownloadURL().then(function(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.onload = function(event) {
+              var data = xhr.response;
+              updateTable(data);
+            };
+            xhr.open('GET', url);
+            xhr.send();
         })
       })
     </script>
