@@ -1,6 +1,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script
+      src="http://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.2/dist/js/tabulator.min.js"></script>
     <style>
       span {
         margin-right: 10px;
@@ -22,73 +36,9 @@
         font-weight: bold;
         color: #FF0000;
       }
-      table {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-      }
-      tr:nth-child(even) {
-        background:#DDDDDD;
-      }
-      div {
-        margin: 0px;
-        padding: 0px;
-      }
-      #full_content {
-        margin-left: auto;
-        margin-right: auto;
-        height:100%;
-      }
-      #search_filters {
-        position: absolute;
-        background: #e0e0e0;
-        text-align: center;
-        width: 100%;
-        height: 25px;
-      }
-      #scroll_wrapper {
-        position: absolute;
-        top: 25px;
-        bottom: 0px;
-        width: 100%;
-        height: auto;
-      }
-      #actual_table_section {
-        height: 100%;
-        text-align: center;
-        overflow-y: scroll;
-      }
-      body {
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        text-align: center;
-      }
     </style>
-    <script
-      src="http://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-      crossorigin="anonymous"></script>
-
-    <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
-    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/jquery.dynatable.css" />
     <script>
       var dbJSON = []
-      $.dynatableSetup({
-        features: {
-          paginate : false
-        },
-        table: {
-          defaultColumnIdStyle: 'noStyle'
-        }
-      });
 
       $(document).ready(function() {
         var firebaseConfig = {
@@ -101,90 +51,73 @@
 
         var storage = firebase.storage();
         var ref = storage.ref("zhihu-spider/db.json");
+        var ignoredQuestions = {};
+        var origData = [];
+        if (localStorage && "ignoredQuestions" in localStorage) {
+          ignoredQuestions = JSON.parse(localStorage["ignoredQuestions"]);
+        }
 
-        updateTable = function(data) {
-          $('#question_table')
-          .bind('dynatable:preinit', function(e, dynatable) {
-            dynatable.utility.textTransform.noStyle = function(text) {
-              switch (text)
-              {
-                case "问题":
-                  return "NAME"
-                case "关注":
-                  return "FOCUS"
-                case "答案数":
-                  return "ANSWER"
-                case "关注答案比":
-                  return "FARATIO"
-                case "最高答案赞同":
-                  return "TOP_ANSWER_NUMBER"
-                case "浏览":
-                  return "REVIEW"
-                case "首次评论":
-                  return "FIRST_COMMENT"
-                case "上次活跃时间":
-                  return "ACTIVATE"
-                case "加入数据库时间":
-                  return "ADD_TIME"
-                default:
-                  return text
+        ignoreQuestion = function(e, cell) {
+          name = cell.getRow().getData().NAME;
+          ignoredQuestions[name] = {
+            "ts": new Date().toJSON()
+          }
+          updateTable()
+        }
+
+        storeIgnoredQuestions = function() {
+          // filter out outdated entries first
+          var storedIgnoredQuestions = {}
+          var diffMax = 3 * 24 * 3600 * 1000;
+
+          if (localStorage) {
+            for (var name in ignoredQuestions) {
+              var val = ignoredQuestions[name];
+              var currTime = new Date();
+              var entryTime = new Date(val.ts);
+
+              if (currTime - entryTime <= diffMax) {
+                storedIgnoredQuestions[name] = val;
               }
-              if (text == "abc")
-                return "NAME"
-              return text;
-            };
-          })
-          .bind('dynatable:init', function(e, dynatable) {
-            dynatable.queries.functions['min_focus'] = function(record, queryValue) {
-              return record['FOCUS'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_focus'] = function(record, queryValue) {
-              return record['FOCUS'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_answer'] = function(record, queryValue) {
-              return record['ANSWER'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_answer'] = function(record, queryValue) {
-              return record['ANSWER'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_ratio'] = function(record, queryValue) {
-              return record['FARATIO'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_ratio'] = function(record, queryValue) {
-              return record['FARATIO'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_highans'] = function(record, queryValue) {
-              return record['TOP_ANSWER_NUMBER'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_highans'] = function(record, queryValue) {
-              return record['TOP_ANSWER_NUMBER'] <= parseInt(queryValue);
-            };
-            dynatable.queries.functions['min_review'] = function(record, queryValue) {
-              return record['REVIEW'] >= parseInt(queryValue);
-            };
-            dynatable.queries.functions['max_review'] = function(record, queryValue) {
-              return record['REVIEW'] <= parseInt(queryValue);
-            };
-          })
-          .dynatable({
-            features : {
-              search: false
-            },
-            dataset : {
-              records: data
-            },
-            inputs : {
-              queries: $('#min_focus, #max_focus, #min_answer, #max_answer, #min_ratio, #max_ratio, #min_highans, #max_highans, #min_review, #max_review')
             }
-          });
+            localStorage["ignoredQuestions"] = JSON.stringify(storedIgnoredQuestions);
+          }
 
+          return null;
+        }
+
+        window.onbeforeunload = storeIgnoredQuestions;
+
+        updateTable = function() {
+          // filter data with ignoredQuestions
+          var data = [];
+          for (var entry of origData) {
+            if (!(entry.NAME in ignoredQuestions)) {
+              data.push(entry);
+            }
+          }
+
+          // Draw table
+          var table = new Tabulator("#question-table", {
+            data:data,
+            layout:"fitColumns",
+            pagination: "local",
+            height: "100%",
+            columns:[
+              {"title": "问题", "field": "NAME", "formatter": "html", "widthGrow": 4},
+              {"title": "忽略", "formatter": "buttonCross", "cellClick": ignoreQuestion},
+              {"title": "答案", "field": "ANSWER"},
+              {"title": "关注", "field": "FOCUS"},
+              {"title": "首次回复", "field": "FIRST_COMMENT"}
+            ]
+          })
         }
         ref.getDownloadURL().then(function(url) {
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'json';
             xhr.onload = function(event) {
-              var data = xhr.response;
-              updateTable(data);
+              origData = xhr.response;
+              updateTable();
             };
             xhr.open('GET', url);
             xhr.send();
@@ -193,48 +126,8 @@
     </script>
   </head>
   <body>
-    <div id="full_content">
-      <div id="search_filters">
-        关注数
-        <input id="min_focus" style="width:45px">
-        -
-        <input id="max_focus" style="width:45px">
-        答案数
-        <input id="min_answer" style="width:45px">
-        -
-        <input id="max_answer" style="width:45px">
-        关注答案比
-        <input id="min_ratio" style="width:45px">
-        -
-        <input id="max_ratio" style="width:45px">
-        最高答案
-        <input id="min_highans" style="width:45px">
-        -
-        <input id="max_highans" style="width:45px">
-        浏览数
-        <input id="min_review" style="width:45px">
-        -
-        <input id="max_review" style="width:45px">
-        <span>Made by and all rights reserved by <a href="http://www.zhihu.com/people/gao-tian-50">高天</a><span>
-      </div>
-      <div id="scroll_wrapper">
-        <div id="actual_table_section">
-          <table id="question_table">
-            <thead>
-              <th>问题</th>
-              <th>关注</th>
-              <th>答案数</th>
-              <th>关注答案比</th>
-              <th>最高答案赞同</th>
-              <th>浏览</th>
-              <th>首次评论</th>
-              <th>上次活跃时间</th>
-              <th>加入数据库时间</th>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
+    <div id="full_content" style="padding: 0px 100px">
+      <div id="question-table">
       </div>
     </div>
   </body>
