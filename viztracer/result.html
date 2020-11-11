@@ -10386,17 +10386,20 @@ function updateCodeSection() {
 
     resizeCodeSection();
 
-    codeNode.innerHTML = "Unable to locate the source code";
     var file_data = json_data["file_info"]["functions"][funcName];
     if (file_data) {
       var file_name = file_data[0];
-      var lineno = file_data[1];
+      var lineno = parseInt(file_data[1]);
       var raw_code = json_data["file_info"]["files"][file_name][0];
       var total_lineno = json_data["file_info"]["files"][file_name][1];
       var highlighted_html = Prism.highlight(raw_code, Prism.languages.python, 'python');
       codeNode.innerHTML = highlighted_html;
-      var portion = codeNode.offsetHeight * lineno / total_lineno;
-      codeViewNode.scrollTo(0, portion);
+      setTimeout(() => {
+        var portion = codeNode.offsetHeight * (lineno-1) / total_lineno;
+        codeViewNode.scrollTo(0, portion);
+      }, 120);
+    } else {
+      codeNode.innerHTML = "Unable to locate the source code";
     }
   } catch (error) {
   }
