@@ -10395,7 +10395,7 @@ function updateCodeSection() {
       var highlighted_html = Prism.highlight(raw_code, Prism.languages.python, 'python');
       codeNode.innerHTML = highlighted_html;
       setTimeout(() => {
-        var portion = codeNode.offsetHeight * (lineno-1) / total_lineno;
+        var portion = 5 + codeNode.offsetHeight * (lineno-1) / total_lineno;
         codeViewNode.scrollTo(0, portion);
       }, 120);
     } else {
