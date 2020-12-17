@@ -39,6 +39,7 @@
     </style>
     <script>
       var dbJSON = []
+      var ignoredQuestions = {};
 
       $(document).ready(function() {
         var firebaseConfig = {
@@ -51,15 +52,14 @@
 
         var storage = firebase.storage();
         var ref = storage.ref("zhihu-spider/db.json");
-        var ignoredQuestions = {};
         var origData = [];
         if (localStorage && "ignoredQuestions" in localStorage) {
           ignoredQuestions = JSON.parse(localStorage["ignoredQuestions"]);
         }
 
         ignoreQuestion = function(e, cell) {
-          name = cell.getRow().getData().NAME;
-          ignoredQuestions[name] = {
+          title = cell.getRow().getData().title;
+          ignoredQuestions[title] = {
             "ts": new Date().toJSON()
           }
           updateTable()
@@ -71,13 +71,13 @@
           var diffMax = 3 * 24 * 3600 * 1000;
 
           if (localStorage) {
-            for (var name in ignoredQuestions) {
-              var val = ignoredQuestions[name];
+            for (var title in ignoredQuestions) {
+              var val = ignoredQuestions[title];
               var currTime = new Date();
               var entryTime = new Date(val.ts);
 
               if (currTime - entryTime <= diffMax) {
-                storedIgnoredQuestions[name] = val;
+                storedIgnoredQuestions[title] = val;
               }
             }
             localStorage["ignoredQuestions"] = JSON.stringify(storedIgnoredQuestions);
@@ -92,7 +92,7 @@
           // filter data with ignoredQuestions
           var data = [];
           for (var entry of origData) {
-            if (!(entry.NAME in ignoredQuestions)) {
+            if (!(entry.title in ignoredQuestions)) {
               data.push(entry);
             }
           }
@@ -104,11 +104,11 @@
             pagination: "local",
             height: "100%",
             columns:[
-              {"title": "问题", "field": "NAME", "formatter": "html", "widthGrow": 4},
+              {"title": "问题", "formatter": "link", "widthGrow": 4, "formatterParams": {"labelField": "title", "urlField": "url", "target": "_blank"}},
               {"title": "忽略", "formatter": "buttonCross", "cellClick": ignoreQuestion},
-              {"title": "答案", "field": "ANSWER"},
-              {"title": "关注", "field": "FOCUS"},
-              {"title": "首次回复", "field": "FIRST_COMMENT"}
+              {"title": "答案", "field": "answer_count"},
+              {"title": "关注", "field": "follower_count"},
+              {"title": "首次回复", "field": "created"}
             ]
           })
         }
