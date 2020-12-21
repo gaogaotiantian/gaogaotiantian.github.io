@@ -67,10 +67,15 @@
 
         storeIgnoredQuestions = function() {
           // filter out outdated entries first
-          var storedIgnoredQuestions = {}
           var diffMax = 3 * 24 * 3600 * 1000;
 
           if (localStorage) {
+            // It's possible other pages have updated the localStorage
+            // We need to reload it before store
+            var storedIgnoredQuestions = {};
+            if ("ignoredQuestions" in localStorage) {
+              storedIgnoredQuestions = JSON.parse(localStorage["ignoredQuestions"]);
+            }
             for (var title in ignoredQuestions) {
               var val = ignoredQuestions[title];
               var currTime = new Date();
@@ -78,6 +83,8 @@
 
               if (currTime - entryTime <= diffMax) {
                 storedIgnoredQuestions[title] = val;
+              } else if (title in storedIgnoredQuestions) {
+                delete storeIgnoredQuestions[title];
               }
             }
             localStorage["ignoredQuestions"] = JSON.stringify(storedIgnoredQuestions);
