@@ -110,6 +110,9 @@
             layout:"fitColumns",
             pagination: "local",
             height: "100%",
+            initialSort: [
+              {column: "created", dir: "dec"}
+            ],
             columns:[
               {"title": "问题", "formatter": "link", "widthGrow": 4, "formatterParams": {"labelField": "title", "urlField": "url", "target": "_blank"}},
               {"title": "忽略", "formatter": "buttonCross", "cellClick": ignoreQuestion},
