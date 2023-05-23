@@ -1,0 +1,523 @@
+<html>
+<head>
+<title> Gaucho Course </title>
+<link href="Style.css" rel="stylesheet", type="text/css"/>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="apSourceCodes.js"></script>
+<script src="gc.js"></script>
+<script src="typege.js"></script>
+<script src="ui.js"></script>
+</head>
+<body>
+<div id="whole_page_wrapper">
+    <div id="top_bar">
+        <div id="website_logo">
+          <p class="web_logo">Gaucho</p>
+          <p class="web_logo">Course</p>
+        </div>
+        <div id="user_info">
+            <label for="sel_major">Major:</label>
+            <select name="sel_major" id="sel_major">
+            </select>
+            <button id="ap_form_button">Edit AP</button>
+            <span>Non-Native English Speaker</span><input type="checkbox" id="nonNativeCheckBox">
+            
+        </div>
+    </div>
+    <div id="main_content">
+        <div id="left_bar">
+        </div>
+        <div id="form_area">
+            <div class="year">
+                <div class="inputform">
+                <form semester=freshman_summer>
+                <p class="title">Freshman Summer
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=freshman_fall>
+                <p class="title">Freshman Fall
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=freshman_winter>
+                <p class="title">Freshman Winter
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=freshman_spring>
+                <p class="title">Freshman Spring
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+            </div>
+            <div class="year">
+                <div class="inputform">
+                <form semester=sophomore_summer>
+                <p class="title">Sophomore Summer
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=sophomore_fall>
+                <p class="title">Sophomore Fall
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=sophomore_winter>
+                <p class="title">Sophomore Winter
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=sophomore_spring>
+                <p class="title">Sophomore Spring
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+            </div>
+            <div class="year">
+                <div class="inputform">
+                <form semester=junior_summer>
+                <p class="title">Junior Summer
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=junior_fall>
+                <p class="title">Junior Fall
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=junior_winter>
+                <p class="title">Junior Winter
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=junior_spring>
+                <p class="title">Junior Spring
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+            </div>
+            <div class="year">
+                <div class="inputform">
+                <form semester=senior_summer>
+                <p class="title">Senior Summer
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=senior_fall>
+                <p class="title">Senior Fall
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=senior_winter>
+                <p class="title">Senior Winter
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+                <div class="inputform">
+                <form semester=senior_spring>
+                <p class="title">Senior Spring
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courseInputWrapper">
+                    <a href="javascript:;" class="courseInputRemove"><img src=image/remove.png class="remove_button"></a>
+                    <span class="courseCredit singleCredit">0</span>
+                        <div class="courseInputSection">
+                            <input class="courseInput" type="text" ignore="false">
+                            <div class="courseInputErrMsg">
+                                <input type="checkbox" class="ignoreCheckBox"><span>Ignore This Error</span>
+                                <p class="errMsg">This is error message</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="javascript:;" class="addInputButton" semester="freshman summer"><img src="image/add.jpg" class="add_button"></a>
+                <span class="courseCredit totalCredit">0</span>
+                </div>
+            </div>
+        </div>
+    <div>
+    <div id="footer">
+        <p>
+        &copy; 2016 Tian Gao, Xujia Cao, Yanxi Chen, Ming Chen, Shaoyi Zhang All rights reserved. If you find any bugs or have suggestions, please email to <a href="mailto:gaogaotiantian@hotmail.com?subject=Feedback for gauchocourse">gaogaotiantian@hotmail.com</a>
+        </p>
+        <p>Data in the website may be wrong, we are not responsible for any results from data provided.</p>
+    </div>
+</div>
+
+<p id="error_msg"></p>
+<div id="ap_form" title="AP Input">
+    <form>
+    
+    </form>
+    <a href="javascript:;" class="addApSelectButton"><img src="image/add.jpg" class="ap_add_button"></a>
+</div>
+</body>
+</html>

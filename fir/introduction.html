@@ -1,0 +1,113 @@
+<html>
+<meta charset="UTF-8">
+<style>
+#header {
+    background-color:#3e3e3e;
+    color:white;
+    text-align:center;
+    padding:5px;
+    width:1200px;
+}
+#nav {
+    text-align:center;
+    background-color:#eeeeee;
+    line-height:30px;
+    float:left;
+    height:800px;
+    width:200px;
+    padding:5px;
+}
+#section {
+    height:800px;
+    width:1000px;
+    float:left;
+    padding:10px;
+    overflow:auto;
+}
+#mid {
+    margin:0 auto;
+    width:1250px;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom:50px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+code {
+    background-color:#e0e0e0;
+}
+a:link {text-decoration: none;color:black;}
+a:visited{text-decoration:none;color:black;}
+a:hover{text-decoration:underline;color:black;}
+</style>
+
+<body>
+<div id="mid">
+<div id="header">
+<h1>五子棋AI娱乐赛</h1>
+</div>
+
+<div id="nav">
+    <h2><a href=index.html>Result</a></h2> 
+    <h2><a href=ranking.html>Ranking</a></h2> 
+    <h2><a href=introduction.html>Introduction</a></h2> 
+    <h2><a href=get_start.html>Getting Started</a></h2> 
+    <h2><a href=gui.html>GUI</a></h2> 
+    <h2><a href=validation.html>Validation</a></h2> 
+</div>
+
+<div id="section">
+<h3>
+简介
+</h3>
+<p>
+这个项目是一个AI比赛，五子棋本身的平台以及接口全部提供好，你所需要做的只是写一个函数，输入是一个棋盘的情况以及你的颜色，返回一个你决定下的位置。<br>
+你需要的基本知识一共有三个方面：Linux, git以及cpp。当然还有五子棋！<br>
+我们简单介绍一下Linux以及git你需要的知识，如果你不会cpp，那就没办法了。五子棋的规则网上有！
+</p>
+
+<h3>
+Linux
+</h3>
+<p>
+完成这个项目本身并不需要非常扎实和深奥的Linux知识，但是请你至少了解Terminal是什么，常用的命令如mkdir, ls, rm, cd。如果你完全不会这些最最基础的Linux知识，你将会感到非常无助。不过好消息是，这些内容你在半小时之内就应该基本可以掌握了！<br>
+同时，你需要稍微了解一下make这个命令，以及makefile的最最基本的写法，我们用到了它的一个简单形式
+</p>
+
+<h3>
+git
+</h3>
+<p>
+git是一个Version Control的工具，在很多开源项目中都会有所使用，一般来说他有两个很明显的好处：第一是可以多人同时工作，不用互相把代码传来传去，而且可以在不同的机器上工作。第二就是他自动帮你备份很多内容。
+
+git大致的工作流程如下图：
+<center><img src="image/git_flow.png"></center>
+
+其中Workspace就是我们一般意义上的“文件夹”，我们在这里改程序，编译，运行，测试。而Local Repository是我们本地的一个仓库。这里储存着我们的各种正式commit过的历史记录。我们在有了一个满意的版本之后，要先把文件放到这个本地仓库里。Remote Repository就是运行在服务器上的，每一个参与这个项目的人共享的仓库，大家在这里共享代码。
+
+在我们开始之前，需要git clone，也就是把远端仓库复制到本地一份，这个clone的过程同时也会给我们建立一个本地仓库。在每次进行工作之前，我们需要git pull一下，就是更新一下看看有没有人上传了新的文件，或者修改了新的文件。在我们完成了一个或多个文件的修改，准备上传到服务器的时候，我们要先git add到中转区，也就是那个文件夹。这个区域是储存我们准备上传哪些文件的。然后git commit放到我们的本地仓库，注意这时候git会让你输入commit message，这个是很重要的，以后万一要恢复有助于你知道当时你做了什么。在commit之后我们就可以git push，放到服务器上了。<br>
+</p>
+<p>
+这里有一个问题，就是当两个人同时修改一个文件的时候，可能会产生conflict。那么我在git pull的时候git会提示。这时候你需要打开那个conflict的文件，寻找"<<<"。一般冲突会是这个样子：<br>
+<<< ***<br>
+a = 1;<br>
+b = 1;<br>
+==========<br>
+a = 0;<br>
+b = 0;<br>
+<<< ***<br>
+你这时要决定这里应该是什么样子的，然后写好，比如将这七行改为：<br>
+a = 1;<br>
+b = 0;<br>
+然后add, commit, push。<br>
+也就是说，你需要人工决定，冲突怎么解决，然后上传上去。<br>
+其实git是个功能很强大的version control软件，还有很多功能等着大家去开发：）
+</p>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <h1>
+    Crime Rate Project
+  </h1>
+  <div class="page-header">
+  <h2>
+    小组介绍
+  </h2>
+  </div>
+  <h3>
+    数据组（张竞，李雪欣 | Paul，Kenneth | Star | <a href="https://github.com/ShaoyiZhang/FBI-Crime-Data">张少轶</a>（<a href="https://raw.githubusercontent.com/ShaoyiZhang/FBI-Crime-Data/master/crimeByCity.json">JSON数据</a>））
+  </h3>
+  <p>负责整理<a href=https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/home>FBI UCR</a>的数据，把数据从网站上爬下来，进行整合和处理，最后输出成json文件。</p>
+  <p>需要的Skill: python, urllib2, json</p>
+  <h3>
+    HTML组（Koro | 骆琳韵 | 董凯伦，张玺元 | <a href="https://github.com/ruichongliu/ruichongliu.github.io">Lex，Stella</a>（<a href="http://rliu.me/">网站演示</a>））
+  </h3>
+  <p>实现HTML前端，网页应用</p>
+  <p>需要的Skill: html, css, JavaScript, json</p>
+  <h3>
+    iOS组（安南，too | lsy | Lei）
+  </h3>
+  <p>实现iOS前端，Apple app</p>
+  <p>需要的Skill: swift, json</p>
+  <h3>
+    Android组（董泊宁，Yini | 刘恒宇，董哲仁 | yu，Leo）
+  </h3>
+  <p>实现Android前端，Android app</p>
+  <p>需要的Skill: Java, json</p>
+  <div class="page-header">
+  <h2>
+    项目细节
+  </h2>
+  </div>
+  <h3>
+    综述
+  </h3>
+  <p>本项目核心是为用户开发一款方便快捷的应用，可以输入城市名称，获取这个城市是否安全。包括城市的犯罪数量，犯罪率，和其他城市相比的情况等等数据。我们争取在网页端、iOS和Android全部实现。</p>
+  <h3>
+    数据结构
+  </h3>
+  <p>在这个project中，我们的数据将会保存在一个
+     <a href=https://en.wikipedia.org/wiki/JSON>json</a>文件里。核心结构为一个dict，key是城市名称，data是有关城市的数据。这个json文件由数据组负责。</p>
+  <p>
+    <i>Example</i>
+  </p>
+  <p>
+  <pre>
+  <code>
+    {
+      "Santa Barbara, CA":
+      {
+        "Number":363,
+        "Rate":395,
+        "Index":80,
+        "Ranking":70,
+      }
+      "Los Angeles, CA":
+      {
+        ...
+      }
+    }
+  </code>
+  </pre>
+  </p>
+  <h3>
+    数据组职责
+  </h3>
+  <p>
+    从FBI UCR的网站上爬下按照城市为单位的数据（可以用爬虫，也可以下载提供的xsl文件再用其他package读xls文件），原始数据保存人口和Violent Crime的数量。保存好原始数据之后，以原始数据为基础，做出整理后的数据。
+    <ul>
+      <li>Num: 城市总犯罪次数</li>
+      <li>Rate: 每10w人的犯罪率</li>
+      <li>Index: 犯罪指数，全美均值为100，80代表犯罪率是全美均值的80%</li>
+      <li>Ranking: 犯罪率排名，在这个城市生活比全美多少百分比的居民安全，最安全为100。如60代表这个城市的犯罪率要低于60%的美国居民所在的城市。</li>
+      <li>你们自由发挥的空间</li>
+    </ul>
+  </p>
+  <h3>
+    前端组职责
+  </h3>
+  <p>
+    在自己负责的平台上，学习怎么导入json数据到自己的程序，学习如何引入一个搜索栏，用户只需要在搜索栏中打出自己的城市名称（实现Auto Complete即智能搜索），就可以显示这个城市的数据。数据已经由json文件给出，你需要在你的平台上用你觉得最美观的方法展示出来。
+    在数据组做出json文件之前，你们可以先用<a href="./crime.json">这个文件</a>作为测试文件。在数据组做出json数据之后，请把他们的数据放到本地使用。
+  </p>
+  <div class="page-header">
+  <h2>
+    参考资料
+  </h2>
+  </div>
+  <p><a href="http://cuiqingcai.com/1052.html">某中文爬虫教程</a></p>
+  <p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup官方文档</a></p>
+  <p><a href="https://www.w3schools.com/html/">HTML JavaScript学习网站</a></p>
+  <p><a href="https://developer.android.com/index.html">Android 官方网站</a></p>
+  <p><a href="https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/">Apple iOS Develop Tutorial</a></p>
+</div>
+</body>
+</html>

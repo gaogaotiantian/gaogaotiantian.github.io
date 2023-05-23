@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+    margin:0;
+    padding:0;
+}
+p {
+    padding:0.05em;
+}
+.ui-menu{
+    max-height:50%;
+    max-width:20%;
+    overflow:scroll;
+}
+.ui-menu .ui-menu-item{
+	 font-size: 0.6em;
+}
+.ui-dialog .ui-widget .ui-widget-content .ui-corner-all .ui-front .ui-draggable .ui-resizable{
+       position:relative;
+	   left:0%;
+	   bottom:0%;
+}
+
+#website_logo{
+	font-size: 1em;
+}
+body{
+	background-image:url(image/BG.jpg);
+	z-index:-1;
+    font: normal 100% Helvetica, Arial, sans-serif;
+}
+#header{
+	text-align:center;
+	width:100%;
+	border-radius: 3%;
+}
+
+#whole_page_wrapper {
+    width:100%;
+    height:100%;
+}
+
+#top_bar{
+    display:block;
+    height:6%; 
+    width:100%;
+    /*background-color:#CCCC33;*/
+    color:black;
+    position:absolute;
+}
+
+#website_logo{
+    text-align:center;
+    float:left;
+    width:15%;
+    height:100%;
+    font-size: 1em;
+}
+
+#user_info{
+    font-size: 1em;
+    float:right;
+    height:100%;
+    width:85%;
+}
+
+#main_content{
+    display:block;
+    position:absolute;
+    top:6%;
+    bottom:0%;
+    left:0%;
+    right:0%;
+    margin-top:0%;
+    margin-bottom:0%;
+    float:left;
+    height:90%;
+    width:100%;
+}
+#left_bar{
+    text-align:center;
+    /*background-color:#CCCC33;*/
+    position:relative;
+    color:black;
+    float:left;
+    width:15%;
+    height:100%;
+    border-radius:3%;
+}
+#grad_requirement{
+    word-wrap: break-word;
+    word-break: normal;
+    width:100%;
+    position:absolute;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    bottom:0;
+}
+#form_area{
+    /*background-color:#FFFFFF;*/
+    border-radius:1%;	
+    width:auto;	
+    height:100%;
+    overflow:hidden;
+    overflow-y:auto;
+}
+
+#major{
+	width:50%;
+	height:5%;
+}
+
+#ap_info{
+	float:right;
+	width:50%;
+	height:100%;
+}
+#ap_form_button{
+    width:auto;
+    font-size:1em;
+}
+#footer{
+    height:5%;
+    position:absolute;
+    width:100%;
+    /*background-color:#CCCC33;*/
+    clear:left;
+}
+.web_logo{
+    font-size:1.74em;
+    height:40%;
+    vertical-align:middle;
+    color:blue;
+}
+.ap_add_button{
+   	width:3%;
+	position:relative;
+}
+.ap_remove_button{
+	width:3%;
+	position:relative;
+	right:1%;
+}
+.remove_button{
+	width:9%;
+}
+
+.add_button{
+	width:7%;
+}
+.addInputButton{
+	position:relative;
+    right:0%;
+	top:8px;
+}
+.addApSelectButton{
+	position:relative;
+}
+.courseInputRemove{
+    margin-left:auto;
+    margin-right:auto;
+	position:relative;
+    width:5%;
+    height:100%;
+	right:3%;
+	top:7px;
+}
+.courseInputSection{
+    float:right;
+    width:88%;
+    margin-top:0px;
+    margin-bottom:0px;
+    position:relative;
+    right:2%;
+}
+.courseInput{
+	outline:none;
+	font-size:12px;
+}
+.courseCredit{
+    margin-left:auto;
+    margin-right:auto;
+    width:2%;
+    font-size:0.75em;
+    float:right;
+	margin-top:05;
+	margin-bottom:0%;
+    position:relative;
+    bottom:-8px;
+    right:0%;
+}
+.courseInputErrMsg {
+    position:fixed;
+    display:none;
+    overflow:auto;
+    z-index:10;
+    background-color:white;
+}
+
+p.title{
+	position:relative;
+	top:0%;
+	text-align:center;
+	background-color:#336699;
+	color:white;
+	font-weight:600;
+	padding-top:3%;
+	padding-bottom:3%;
+	font-size:1.5em;
+	border-radius:10;
+	margin-bottom:3%;
+	margin-top:2%;
+}
+div.req_detail{
+    display:none;
+}
+p.req_p{
+    font-weight:bold;
+    font-size:1em;
+}
+p.req_p.satisfied{
+    color:green;
+}
+p.req_p.unsatisfied{
+    color:red;
+}
+p.req_detail_p{
+    font-size:0.75em;
+}
+.year{
+	overflow:hidden;
+	width:100%;
+	
+}
+#main{
+	margin:0 ;
+	width:100%;
+}
+
+.courseInputWrapper{
+	margin:2%;
+    width:100%;
+}
+.inputform{ 
+    background-color:white;
+    float:left;
+    border-style:solid;
+    width:21%;
+    padding:1%;
+    margin:0.5%;
+    border-radius:12;
+    border-width:2;
+}
+.apCourseSelect{
+    width:30%;
+    font-size:1em;
+}
+.courseInput {
+    border-bottom: black 2px solid;
+    border-left-style:none;
+    border-right-style:none;
+    border-top-style:none;
+    width:100%;
+    padding-top:3%;
+}
+input[valid = 'true'] {
+    background-color:white
+}
+input[ignore = 'true'] {
+    background-color:green
+}
+input[valid = 'false'][ignore = 'false'] {
+    background-color:red
+}
+input[valid = 'na'] {
+    background-color:yellow
+}
+#error_msg {
+    background-color:white;
+    overflow:auto;
+    z-index:10;
+}

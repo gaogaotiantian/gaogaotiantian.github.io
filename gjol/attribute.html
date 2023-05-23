@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./page.css">
+    <script src="./game_data.js"></script>
+    <script src="./common.js"></script>
+    <script src="./attribute.js"></script>
+    <script src="./items.js"></script>
+  </head>
+  <body>
+    <div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="nav-attribute">属性</a>
+        </li>
+        <li class="nav-item mr-auto">
+          <a class="nav-link" href="#" id="nav-item">装备</a>
+        </li>
+        <li class="navbar-text pull-right mx-2">
+          <span>作者：永夜初晗-四海之外-浅浅的港湾</span>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid pt-3">
+
+      <div class="row nav-tab-div d-none" id="attribute-div">
+        <div id="current-attribute-container" class="col-5">
+        </div>
+        <div id="adjust-attribute-container" class="col-7">
+        </div>
+      </div>
+
+      <div class="row nav-tab-div" id="items-div">
+        <div id="item-attribute-container" class="col-8">
+        </div>
+        <div id="character-status-container" class="col-4">
+          <div class="row">
+            <label class="col-6">第一类输出占比(%)</label>
+            <div class="col-4">
+              <input class="form-control" id="character-status-first-percent">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-6">第二类输出占比(%)</label>
+            <div class="col-4">
+              <input class="form-control" id="character-status-second-percent">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-6">战力</label>
+            <div class="col-4">
+              <p id="战力"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <button class="btn btn-success save-curr-button form-control">保存</button>
+            </div>
+            <div class="col-3">
+              <button class="btn btn-primary load-curr-button form-control">读取</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12"><hr></div>
+        <div id="item-choice-container" class="col-12">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.item-cell {
+    padding: 10px;
+    height: 60px;
+}
+
+.item-cell-dark {
+    background-color: #eee;
+}
+
+.attribute-cell {
+    height: 3vh;
+    min-width: 5vw;
+}
+
+.attribute-cell-dark {
+    background-color: #eee;
+}
+
+.attribute-input {
+    width: 5vw;
+    border: 0px;
+    border-bottom: solid 1px;
+}
+
+.title {
+    font-weight: 600;
+    background-color: #dfd;
+    padding: 10px 0px;
+}

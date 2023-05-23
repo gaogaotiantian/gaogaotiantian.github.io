@@ -1,0 +1,148 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<style>
+body
+{
+  font-size:16px;
+}
+</style>
+<script>
+$(document).ready(function() {
+
+  $("input").keyup(function() {
+    $("#two-cost").text(parseInt($("#one-cost").val())*3+3*parseInt($("#tianbi").val()));
+    $("#three-cost").text(parseInt($("#two-cost").text())*3+3*parseInt($("#tianbi").val()));
+    $("#four-cost").text(parseInt($("#three-cost").text())*3+3*parseInt($("#tianbi").val()));
+    $("#five-cost").text(parseInt($("#four-cost").text())*3+28*parseInt($("#tianbi").val()));
+    $("#six-cost").text(parseInt($("#five-cost").text())*3+28*parseInt($("#tianbi").val()));
+    $("#seven-cost").text(parseInt($("#six-cost").text())*3+28*parseInt($("#tianbi").val()));
+    $("#two-profit").text(parseInt($("#two-price").val()) * 0.95 / parseInt($("#two-cost").text()) - 1)
+    $("#three-profit").text(parseInt($("#three-price").val()) * 0.95 / parseInt($("#three-cost").text()) - 1)
+    $("#four-profit").text(parseInt($("#four-price").val()) * 0.95 / parseInt($("#four-cost").text()) - 1)
+    $("#five-profit").text(parseInt($("#five-price").val()) * 0.95 / parseInt($("#five-cost").text()) - 1)
+    $("#six-profit").text(parseInt($("#six-price").val()) * 0.95 / parseInt($("#six-cost").text()) - 1)
+  })
+})
+</script>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <p class="text-center">天币价格</p>
+      </div>
+      <div class="col-md-2">
+        <input id="tianbi"></input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        神格等级
+      </div>
+      <div class="col-md-2">
+        成本
+      </div>
+      <div class="col-md-2">
+        价格
+      </div>
+      <div class="col-md-2">
+        利润
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        1
+      </div>
+      <div class="col-md-2">
+        <input id="one-cost"></input>
+      </div>
+      <div class="col-md-2">
+        <input id="one-price"></input>
+      </div>
+      <div class="col-md-2">
+        <p id="one-profit"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        2
+      </div>
+      <div class="col-md-2">
+        <p id="two-cost"></p>
+      </div>
+      <div class="col-md-2">
+        <input id="two-price"></input>
+      </div>
+      <div class="col-md-2">
+        <p id="two-profit"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        3
+      </div>
+      <div class="col-md-2">
+        <p id="three-cost"></p>
+      </div>
+      <div class="col-md-2">
+        <input id="three-price"></input>
+      </div>
+      <div class="col-md-2">
+        <p id="three-profit"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        4
+      </div>
+      <div class="col-md-2">
+        <p id="four-cost"></p>
+      </div>
+      <div class="col-md-2">
+        <input id="four-price"></input>
+      </div>
+      <div class="col-md-2">
+        <p id="four-profit"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        5
+      </div>
+      <div class="col-md-2">
+        <p id="five-cost"></p>
+      </div>
+      <div class="col-md-2">
+        <input id="five-price"></input>
+      </div>
+      <div class="col-md-2">
+        <p id="five-profit"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        6
+      </div>
+      <div class="col-md-2">
+        <p id="six-cost"></p>
+      </div>
+      <div class="col-md-2">
+        <input id="six-price"></input>
+      </div>
+      <div class="col-md-2">
+        <p id="six-profit"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

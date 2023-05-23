@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script
+      src="http://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.2/dist/js/tabulator.min.js"></script>
+    <style>
+      span {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+      span.lv {
+        color: #009900;
+      }
+      span.hv {
+        font-style: italic;
+        font-weight: bold;
+        color: #007700;
+      }
+      span.lh {
+        color: #FF5555;
+      }
+      span.hh { 
+        font-style: italic;
+        font-weight: bold;
+        color: #FF0000;
+      }
+    </style>
+    <script>
+      var dbJSON = []
+      var ignoredQuestions = {};
+
+      $(document).ready(function() {
+        var firebaseConfig = {
+          apiKey: "AIzaSyBfjqfPjYhFtu5-kZaXryfs7vKb2C46Ba4",
+          authDomain: "minkoder-web.firebaseapp.com",
+          projectId: "minkoder-web",
+          storageBucket: "minkoder-web.appspot.com"
+        }
+        firebase.initializeApp(firebaseConfig);
+
+        var storage = firebase.storage();
+        var ref = storage.ref("zhihu-spider/db.json");
+        var origData = [];
+        if (localStorage && "ignoredQuestions" in localStorage) {
+          ignoredQuestions = JSON.parse(localStorage["ignoredQuestions"]);
+        }
+
+        ignoreQuestion = function(e, cell) {
+          title = cell.getRow().getData().title;
+          ignoredQuestions[title] = {
+            "ts": new Date().toJSON()
+          }
+          updateTable()
+        }
+
+        storeIgnoredQuestions = function() {
+          // filter out outdated entries first
+          var diffMax = 3 * 24 * 3600 * 1000;
+
+          if (localStorage) {
+            // It's possible other pages have updated the localStorage
+            // We need to reload it before store
+            var storedIgnoredQuestions = {};
+            if ("ignoredQuestions" in localStorage) {
+              storedIgnoredQuestions = JSON.parse(localStorage["ignoredQuestions"]);
+            }
+            for (var title in ignoredQuestions) {
+              var val = ignoredQuestions[title];
+              var currTime = new Date();
+              var entryTime = new Date(val.ts);
+
+              if (currTime - entryTime <= diffMax) {
+                storedIgnoredQuestions[title] = val;
+              } else if (title in storedIgnoredQuestions) {
+                delete storeIgnoredQuestions[title];
+              }
+            }
+            localStorage["ignoredQuestions"] = JSON.stringify(storedIgnoredQuestions);
+          }
+
+          return null;
+        }
+
+        window.onbeforeunload = storeIgnoredQuestions;
+
+        updateTable = function() {
+          // filter data with ignoredQuestions
+          var data = [];
+          for (var entry of origData) {
+            if (!(entry.title in ignoredQuestions)) {
+              data.push(entry);
+            }
+          }
+
+          // Draw table
+          var table = new Tabulator("#question-table", {
+            data:data,
+            layout:"fitColumns",
+            pagination: "local",
+            height: "100%",
+            initialSort: [
+              {column: "created", dir: "dec"}
+            ],
+            columns:[
+              {"title": "问题", "formatter": "link", "widthGrow": 4, "formatterParams": {"labelField": "title", "urlField": "url", "target": "_blank"}},
+              {"title": "忽略", "formatter": "buttonCross", "cellClick": ignoreQuestion},
+              {"title": "答案", "field": "answer_count"},
+              {"title": "关注", "field": "follower_count"},
+              {"title": "首次回复", "field": "created"}
+            ]
+          })
+        }
+        ref.getDownloadURL().then(function(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.onload = function(event) {
+              origData = xhr.response;
+              updateTable();
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div id="full_content" style="padding: 0px 100px">
+      <div id="question-table">
+      </div>
+    </div>
+  </body>
+</html>

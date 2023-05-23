@@ -1,0 +1,327 @@
+[
+	{
+		"major" : "CMPSC",
+
+		"getype" : "ENGR",
+
+		"requiredCourses" :[{"sub" : "CMPSC", "number": "16"},
+						    {"sub" : "CMPSC", "number": "24"},
+						    {"sub" : "CMPSC", "number": "32"},
+						    {"sub" : "CMPSC", "number": "40"},
+						    {"sub" : "CMPSC", "number": "48"},
+						    {"sub" : "CMPSC", "number": "56"},
+						    {"sub" : "CMPSC", "number": "64"},
+						    {"sub" : "MATH", "number": "3A"},
+						    {"sub" : "MATH", "number": "3B"},
+						    {"sub" : "MATH", "number": "4A"},
+						    {"sub" : "MATH", "number": "4B"},
+						    {"sub" : "MATH", "number": "6A"},
+						    {"sub" : "PSTAT", "number": "120A"},
+						    {"sub" : "CMPSC", "number": "130A"},
+						    {"sub" : "CMPSC", "number": "130B"},
+						    {"sub" : "CMPSC", "number": "138"},
+						    {"sub" : "CMPSC", "number": "154"},
+						    {"sub" : "CMPSC", "number": "160"},
+						    {"sub" : "CMPSC", "number": "162"},
+						    {"sub" : "CMPSC", "number": "170"},
+						    {"sub" : "ECE", "number": "152A"},
+						    {"sub" : "ENGR", "number": "101"},
+						    {"sub" : "PSTAT", "number": "120B"},
+						    {"sub" : "PHYS", "number": "1"},
+						    {"sub" : "PHYS", "number": "2"},
+						    {"sub" : "PHYS", "number": "3"},
+						    {"sub" : "PHYS", "number": "3L"}
+		],
+
+		"choiceCourses" : [{"courses" : [{"sub" : "CMPSC", "number": "111"},{"sub" : "CMPSC", "number": "140"}], "units" : "4"},
+						   {"courses" : [{"sub" : "CMPSC", "number": "176A"},
+						   				 {"sub" : "CMPSC", "number": "176B"},
+						   				 {"sub" : "CMPSC", "number": "176C"},
+
+						   				 {"sub" : "CMPSC", "number": "160"},
+						   				 {"courses" : [{"sub" : "CMPSC", "number": "171"},{"sub" : "ECE", "number": "151"}], "units" : "4"},
+						   				 {"sub" : "CMPSC", "number": "172"},
+						   				 {"sub" : "CMPSC", "number": "174A"},
+						   				 {"sub" : "CMPSC", "number": "174B"},
+						   				 {"sub" : "CMPSC", "number": "180"},
+
+						   				 {"sub" : "CMPSC", "number": "177"},
+						   				 {"sub" : "CMPSC", "number": "178"},
+
+						   				 {"sub" : "CMPSC", "number": "186"},
+
+						   				 {"sub" : "CMPSC", "number": "165A"},
+						   				 {"sub" : "CMPSC", "number": "165B"},
+						   				 {"courses" : [{"sub" : "CMPSC", "number": "181B"},{"sub" : "ECE", "number": "181B"}], "units" : "4"},
+
+
+						   				 
+
+						   				 {"sub" : "CMPSC", "number": "140"},
+						   				 {"sub" : "CMPSC", "number": "111"},
+						   				 {"courses" : [{"sub" : "CMPSC", "number": "153A"},{"sub" : "ECE", "number": "153A"}], "units" : "4"},
+						   				 {"sub" : "CMPSC", "number": "165A"},
+						   				 {"sub" : "CMPSC", "number": "165B"},
+						   				 {"sub" : "CMPSC", "number": "167"},
+						   				 
+						   				 
+
+						   				 
+						   				 {"sub" : "ECE", "number": "130A"},
+						   				 {"sub" : "ECE", "number": "130B"},
+						   				 {"sub" : "ECE", "number": "130C"},
+						   				 {"courses" : [{"sub" : "CMPSC", "number": "182"},{"sub" : "ECE", "number": "160"}], "units" : "4"},
+						   				 {"sub" : "CMPSC", "number": "185"},
+						   				 {"sub" : "CMPSC", "number": "186"},
+						   				 {"sub" : "CMPSC", "number": "189A"},
+						   				 {"sub" : "CMPSC", "number": "189B"},
+						   				 {"sub" : "CMPSC", "number": "190"},
+						   				 {"sub" : "CMPSC", "number": "192"},
+						   				 {"sub" : "CMPSC", "number": "196"},
+						   				 {"sub" : "ECE", "number": "140"},
+						   				 {"sub" : "ECE", "number": "152B"},
+						   				 {"sub" : "ECE", "number": "153B"},
+						   				 {"sub" : "MATH", "number": "108A"},
+						   				 {"sub" : "MATH", "number": "108B"},
+						   				 {"sub" : "MATH", "number": "119A"},
+						   				 {"sub" : "MATH", "number": "119B"},
+						   				 {"sub" : "MATH", "number": "124A"},
+						   				 {"sub" : "MATH", "number": "124B"},
+						   				 {"sub" : "PSTAT", "number": "122"},
+						   				 {"sub" : "PSTAT", "number": "130"},
+						   				 {"sub" : "PSTAT", "number": "160A"},
+						   				 {"sub" : "PSTAT", "number": "160B"}
+
+						   			], 
+						   "units":"20"},
+
+						   {"courses" : [{"sub" : "ANTH", "number" : "5"},
+						   				 {"sub" : "ASTRO", "number" : "1"},
+						   				 {"sub" : "ASTRO", "number" : "2"},
+						   				 {"sub" : "CHEM", "number" : "1A"},
+						   				 {"sub" : "CHEM", "number" : "1AL"},
+						   				 {"sub" : "CHEM", "number" : "1B"},
+						   				 {"sub" : "CHEM", "number" : "1BL"},
+						   				 {"sub" : "CHEM", "number" : "1C"},
+						   				 {"sub" : "CHEM", "number" : "1CL"},
+						   				 {"sub" : "CHEM", "number" : "2A"},
+						   				 {"sub" : "CHEM", "number" : "2AL"},
+						   				 {"sub" : "CHEM", "number" : "2B"},
+						   				 {"sub" : "CHEM", "number" : "2BL"},
+						   				 {"sub" : "CHEM", "number" : "2C"},
+						   				 {"sub" : "CHEM", "number" : "2CL"},
+						   				 {"sub" : "EARTH", "number" : "2"},
+						   				 {"courses" : [{"sub" : "EARTH", "number": "4"},{"sub" : "EARTH", "number": "4W"}], "units" : "4"},
+						   				 {"sub" : "EARTH", "number" : "6"},
+						   				 {"sub" : "EARTH", "number" : "7"},
+						   				 {"sub" : "EARTH", "number" : "8"},
+						   				 {"sub" : "EARTH", "number" : "9"},
+						   				 {"sub" : "EARTH", "number" : "10"},
+						   				 {"courses" : [{"sub" : "EARTH", "number": "20"},{"sub" : "EARTH", "number": "20W"}], "units" : "4"},
+						   				 {"sub" : "EARTH", "number" : "30"},
+						   				 {"sub" : "EARTH", "number" : "111"},
+						   				 {"sub" : "EARTH", "number" : "123"},
+						   				 {"sub" : "EARTH", "number" : "130"},
+						   				 {"sub" : "EEMB", "number" : "21"},
+						   				 {"sub" : "EEMB", "number" : "22"},
+						   				 {"sub" : "EEMB", "number" : "40"},
+						   				 {"sub" : "EEMB", "number" : "50"},
+						   				 {"sub" : "ENV S", "number" : "2"},
+						   				 {"sub" : "GEOG", "number" : "3A"},
+						   				 {"sub" : "GEOG", "number" : "3B"},
+						   				 {"sub" : "GEOG", "number" : "8"},
+						   				 {"sub" : "GEOG", "number" : "12"},
+						   				 {"sub" : "GEOG", "number" : "115A"},
+						   				 {"sub" : "GEOG", "number" : "115B"},
+						   				 {"sub" : "GEOG", "number" : "115BL"},
+						   				 {"sub" : "MCDB", "number" : "1A"},
+						   				 {"sub" : "MCDB", "number" : "1AL"},
+						   				 {"courses" : [{"sub" : "MCDB", "number": "1B"},{"sub" : "EEMB", "number": "2"}], "units" : "3"},
+						   				 {"courses" : [{"sub" : "MCDB", "number": "1BL"},{"sub" : "EEMB", "number": "2L"}], "units" : "1"},
+						   				 {"sub" : "MCDB", "number" : "20"},
+						   				 {"sub" : "MCDB", "number" : "21"},
+						   				 {"sub" : "MCDB", "number" : "23"},
+						   				 {"sub" : "MCDB", "number" : "26"},
+						   				 {"sub" : "MCDB", "number" : "27"},
+						   				 {"sub" : "MCDB", "number" : "29"},
+						   				 {"sub" : "PHIL", "number" : "183"},
+						   				 {"sub" : "PHYS", "number" : "4"},
+						   				 {"sub" : "PHYS", "number" : "4L"},
+						   				 {"sub" : "PHYS", "number" : "5"},
+						   				 {"sub" : "PHYS", "number" : "5L"},
+						   				 {"sub" : "PSY", "number" : "107"},
+						   				 {"sub" : "PSY", "number" : "108"}
+						   ], "units" : "8"}
+
+						   ], 
+
+		"units" : "184"
+	},
+
+	{
+		"major" : "Financial Math",
+		"getype" : "LSBS",
+
+		"requiredCourses": [{"sub" : "ECON", "number": "1"},
+							{"sub" : "ECON", "number": "2"},
+							{"sub" : "ECON", "number": "10A"},
+							{"sub" : "MATH", "number": "3A"},
+							{"sub" : "MATH", "number": "3B"},
+							{"sub" : "MATH", "number": "4A"},
+							{"sub" : "MATH", "number": "4B"},
+							{"sub" : "MATH", "number": "6A"},
+							{"sub" : "MATH", "number": "6B"},
+							{"sub" : "MATH", "number": "8"},
+							{"sub" : "MATH", "number": "104A"},
+							{"sub" : "MATH", "number": "104B"},
+							{"sub" : "MATH", "number": "104C"},
+							{"sub" : "MATH", "number": "117"},
+							{"sub" : "PSTAT", "number": "120B"},
+							{"sub" : "PSTAT", "number": "126"},
+							{"sub" : "PSTAT", "number": "160A"},
+							{"sub" : "PSTAT", "number": "160B"},
+							{"sub" : "ECON", "number": "1"}
+		],
+
+		"choiceCourses" : [{"courses" : [{"sub" : "PSTAT", "number" : "120A"}, {"sub" : "PSTAT", "number": "W 120A"}], "units": "4"},
+
+						   {"courses" : [{"sub" : "CMPSC", "number" : "8"},
+						   			 	 {"sub" : "CMPSC", "number" : "16"},
+						   			 	 {"sub" : "ENGR",  "number" : "3" }
+						   ], "units" : "4"},
+
+						   {"courses" : [{"sub" : "ECON", "number" : "100B"},
+						   				 {"sub" : "ECON", "number" : "101"},
+						   				 {"sub" : "ECON", "number" : "130"},
+						   				 {"sub" : "ECON", "number" : "134A"},
+						   				 {"sub" : "ECON", "number" : "134B"},
+						   				 {"sub" : "ECON", "number" : "140B"},
+						   				 {"sub" : "ECON", "number" : "171"},
+						   				 {"sub" : "ECON", "number" : "181"},
+						   				 {"sub" : "MATH", "number" : "108A"},
+						   				 {"sub" : "MATH", "number" : "108B"},
+						   				 {"sub" : "MATH", "number" : "124A"},
+						   				 {"sub" : "MATH", "number" : "124B"},
+						   				 {"sub" : "MATH", "number" : "132A"},
+						   				 {"sub" : "PSTAT", "number" : "120C"},
+						   				 {"sub" : "PSTAT", "number" : "130"},
+						   				 {"sub" : "PSTAT", "number" : "131"},
+						   				 {"sub" : "PSTAT", "number" : "171"},
+						   				 {"sub" : "PSTAT", "number" : "173"},
+						   				 {"sub" : "PSTAT", "number" : "174"}
+						   ], "units" : "16"}
+		],
+
+		"units" : "180"
+	},
+
+	{
+		"major" : "MATH BS",
+		"getype" : "LSBS",
+
+		"requiredCourses": [{"sub" : "MATH", "number": "3A"},
+							{"sub" : "MATH", "number": "3B"},
+							{"sub" : "MATH", "number": "4A"},
+							{"sub" : "MATH", "number": "4B"},
+							{"sub" : "MATH", "number": "6A"},
+							{"sub" : "MATH", "number": "6B"},
+							{"sub" : "MATH", "number": "8"},
+							{"sub" : "MATH", "number": "108A"},
+							{"sub" : "MATH", "number": "108B"},
+							{"sub" : "MATH", "number": "111A"},
+							{"sub" : "MATH", "number": "111B"},
+							{"sub" : "MATH", "number": "117"},
+							{"sub" : "MATH", "number": "118A"},
+							{"sub" : "MATH", "number": "118B"},
+							{"sub" : "MATH", "number": "122A"}
+							],
+
+		"choiceCourses" : [{
+							"courses" : [{"sub" : "CMPSC", "number" : "8"},
+						   			 	 {"sub" : "CMPSC", "number" : "16"},
+						   			 	 {"sub" : "ENGR",  "number" : "3" }
+						   ], "units" : "4"
+						   },
+
+						   {
+						   	"courses" : [{"sub" : "PHYS", "number" : "1"},
+						   				 {"sub" : "PHYS", "number" : "6A"},
+						   				 {"sub" : "PHYS", "number" : "21"}
+						   	], "units" : "4"
+						   },
+
+						   {
+						   	"courses" : [{"sub" : "MATH", "number" : "111C" },
+						   				 {"sub" : "MATH", "number" : "118C" }
+						   	], "units" : "4"
+						   },
+
+						   {
+						   	"courses" : [{"sub" : "MATH", "number" : "145" },
+						   				 {"sub" : "MATH", "number" : "147A" }
+						   	], "units" : "4"
+						   },
+
+						   {
+						   	"courses" : [{"sub" : "MATH", "number" : "101A" },
+						   				 {"sub" : "MATH", "number" : "101B" },
+						   				 {"sub" : "MATH", "number" : "102A" },
+						   				 {"sub" : "MATH", "number" : "103" },
+						   				 {"sub" : "MATH", "number" : "104A" },
+						   				 {"sub" : "MATH", "number" : "104B" },
+						   				 {"sub" : "MATH", "number" : "104C" },
+						   				 {"sub" : "MATH", "number" : "108B" },
+						   				 {"sub" : "MATH", "number" : "111C" },
+						   				 {"sub" : "MATH", "number" : "113" },
+						   				 {"sub" : "MATH", "number" : "115A" },
+						   				 {"sub" : "MATH", "number" : "115B" },
+						   				 {"sub" : "MATH", "number" : "116" },
+						   				 {"sub" : "MATH", "number" : "118C" },
+						   				 {"sub" : "MATH", "number" : "119A" },
+						   				 {"sub" : "MATH", "number" : "119B" },
+						   				 {"sub" : "MATH", "number" : "124A" },
+						   				 {"sub" : "MATH", "number" : "124B" },
+						   				 {"sub" : "MATH", "number" : "132A" },
+						   				 {"sub" : "MATH", "number" : "132B" },
+						   				 {"sub" : "MATH", "number" : "137A" },
+						   				 {"sub" : "MATH", "number" : "137B" },
+						   				 {"sub" : "MATH", "number" : "145" },
+						   				 {"sub" : "MATH", "number" : "147A" },
+						   				 {"sub" : "MATH", "number" : "147B" },
+						   				 {"sub" : "MATH", "number" : "181A" },
+						   				 {"sub" : "MATH", "number" : "181B" },
+						   				 {"sub" : "MATH", "number" : "182" },
+						   				 {"sub" : "ED", "number" : "134" },
+						   				 {"sub" : "ED", "number" : "135" },
+						   				 {"sub" : "PSTAT", "number" : "105" },
+						   				 {"sub" : "PSTAT", "number" : "109" },
+						   				 {"sub" : "PSTAT", "number" : "120A" },
+						   				 {"sub" : "PSTAT", "number" : "120B" },
+						   				 {"sub" : "PSTAT", "number" : "120C" },
+						   				 {"sub" : "PSTAT", "number" : "122" },
+						   				 {"sub" : "PSTAT", "number" : "123" },
+						   				 {"sub" : "PSTAT", "number" : "126" },
+						   				 {"sub" : "PSTAT", "number" : "130" },
+						   				 {"sub" : "PSTAT", "number" : "137" },
+						   				 {"sub" : "PSTAT", "number" : "140" },
+						   				 {"sub" : "PSTAT", "number" : "160A" },
+						   				 {"sub" : "PSTAT", "number" : "160B" },
+						   				 {"sub" : "PSTAT", "number" : "170" },
+						   				 {"sub" : "PSTAT", "number" : "171" },
+						   				 {"sub" : "PSTAT", "number" : "172A" },
+						   				 {"sub" : "PSTAT", "number" : "172B" },
+						   				 {"sub" : "PSTAT", "number" : "173" },
+						   				 {"sub" : "PSTAT", "number" : "174" },
+						   				 {"sub" : "PSTAT", "number" : "175" },
+						   				 {"sub" : "PSTAT", "number" : "176" },
+						   				 {"sub" : "PSTAT", "number" : "182T" },
+						   				 {"sub" : "PSTAT", "number" : "194" },
+						   				 {"sub" : "PSTAT", "number" : "195" },
+						   				 {"sub" : "PSTAT", "number" : "196" },
+						   				 {"sub" : "PSTAT", "number" : "199" },
+						   				 {"sub" : "PSTAT", "number" : "199RA" }
+						   	], "units" : "12"
+						   }
+		]
+	}
+]

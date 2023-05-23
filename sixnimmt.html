@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css"/>
+    <style>
+      body {
+        text-align: center;
+      }
+      input {
+        width: 60px;
+      }
+    </style>
+    <script>
+      $(document).ready(function() {
+        $.getJSON("sixnimmtdata.json", function(data) {
+          userJSON = data
+        })
+        .fail(function(d, text, error){alert("ERR in getJSON!" + text + error)})
+        .success(function() {
+          var table = $('#user-table').DataTable( {
+            data: userJSON,
+            paging: false,
+            order: [[11, "desc"]],
+            columnDefs: [ {
+              sortable: false,
+              "class": "index",
+              "data": null,
+              "defaultContent": '',
+              targets: [0]
+            }], 
+            columns: [
+              {title:"排名"},
+              {title:"用户", "sortable": false, orderable: false},
+              {title:"2 Players"},
+              {title:"3 Players"},
+              {title:"4 Players"},
+              {title:"5 Players"},
+              {title:"6 Players"},
+              {title:"7 Players"},
+              {title:"8 Players"},
+              {title:"9 Players"},
+              {title:"10 Players"},
+              {title:"Total Score"},
+            ],
+            fixedColumns: true,
+            fixedHeader: {
+              header : true
+            }
+          })
+          
+          var num = 1;
+          for (p in userJSON) {
+            var score = userJSON[p]["score"];
+            var rowData = [];
+            rowData.push(num);
+            rowData.push(p);
+            for (var i = 0; i < 10; i++) {
+              console.log(userJSON[p])
+              if (userJSON[p]["broken"] == "false") {
+                rowData.push(score[i]);
+              } else {
+                rowData.push('-');
+              }
+            }
+            table.row.add(rowData);
+          } 
+
+          table.on( 'order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            } );
+          } ).draw();
+
+          $('.filter').blur(function() {
+            table.draw()
+          })
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div>
+      <table id="user-table" class="display compact">
+      </table>
+    </div>
+  </body>
+</html>

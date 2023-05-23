@@ -1,0 +1,176 @@
+<html>
+<meta charset="UTF-8">
+<style>
+#header {
+    background-color:#3e3e3e;
+    color:white;
+    text-align:center;
+    padding:5px;
+    width:1200px;
+}
+#nav {
+    text-align:center;
+    background-color:#eeeeee;
+    line-height:30px;
+    float:left;
+    height:800px;
+    width:200px;
+    padding:5px;
+}
+#section {
+    height:800px;
+    width:1000px;
+    float:left;
+    padding:10px;
+    overflow:auto;
+}
+#mid {
+    margin:0 auto;
+    width:1250px;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom:50px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+code {
+    background-color:#e0e0e0;
+}
+a:link {text-decoration: none;color:black;}
+a:visited{text-decoration:none;color:black;}
+a:hover{text-decoration:underline;color:black;}
+</style>
+
+<body>
+<div id="mid">
+<div id="header">
+<h1>五子棋AI娱乐赛</h1>
+</div>
+
+<div id="nav">
+    <h2><a href=index.html>Result</a></h2> 
+    <h2><a href=ranking.html>Ranking</a></h2> 
+    <h2><a href=introduction.html>Introduction</a></h2> 
+    <h2><a href=get_start.html>Getting Started</a></h2> 
+    <h2><a href=gui.html>GUI</a></h2> 
+    <h2><a href=validation.html>Validation</a></h2> 
+</div>
+
+<div id="section">
+<h3>
+下载源代码
+</h3>
+<p>
+首先打开你的Terminal，在mac或者Linux上都可以，windows请参考cygwin。选择一个你喜欢的文件夹，假设是/home/programs/
+</p>
+<code>
+$ cd /home/<br>
+$ mkdir programs<br>
+$ cd /home/programs/<br>
+</code>
+<p>
+然后我们要从git上获取源代码，回顾一下简介里的过程。
+</p>
+<code>
+$ git clone https://github.com/gaogaotiantian/fir
+</code>
+<p>
+此时我们就把源代码下载下来了，已经开始准备玩耍啦！
+</p>
+
+<h3>
+编译、运行
+</h3>
+<p>
+进入我们刚才下载的那个文件夹：
+</p>
+<code>
+$ cd fir
+</code>
+<p>
+我们只需要使用make指令就可以编译整个文件，当然代价就是你写代码的时候也需要修改makefile文件，不过只需要修改一次
+</p>
+<code>
+$ make
+</code>
+<p>
+理论上如果一切顺利的话，你的文件夹里应该出现了game.out这个可执行文件。有关这个文件如何运行，请参考readme.txt。目前假设我们灵机一动，猜到了一个命令：
+</p>
+<code>
+$ ./game.out 2 10
+</code>
+<p>
+现在你面前应该有一个五子棋棋盘了，你就开始和ai2（我的AI）下棋了。
+</p>
+
+<h3>
+自己的AI
+</h3>
+<p>
+当然这并不是我们的目的，我们是想写一个用来和别的AI对战的AI。在这开始之前，你需要和我联系，获取一个你的专属ID，这个ID将决定很多事情。有了ID之后（假设你的ID是99），你可以复制一份ai1.cpp作为参考：
+</p>
+<code>
+$ cp ai1.cpp ai99.cpp
+</code>
+<p>
+用你喜欢的编辑器打开ai99.cpp，这是一个最最基础的贪婪搜索AI，从左上角到右下角，哪里有空就往哪里下，如果你的AI就只有这个水平，就要被血虐了。不过在这个程序里，你可以看到基本接口。
+</p>
+<p>
+首先请把这个函数改名，比如改叫MyAI()。输入是一个二维数组，告诉你每个点是Black还是White还是Empty，以及你是什么颜色。你需要返回一个值决定你下在哪里。剩下的就是你自己发挥了，非常简单的接口。当然，你需要简单看一下game.h里面已经为你设计好的一些type以及数据结构。
+</p>
+<p>
+当然，在你开始写AI之前，还需要进行一些基本的修改。
+</p>
+<p>
+首先请打开AI_Name.h，declare你的函数，以及添加到AIList里。里面已经有非常多例子了，只需要照猫画虎就好。<br>
+然后请打开makefile，把你的文件ai99.cpp加到第一行。
+</p>
+<p>
+现在你就可以用make编译自己的AI，然后测试了！
+</p>
+
+<h3>
+上传AI
+</h3>
+<p>
+在有了满意的作品之后，就要准备上传了。回忆一下git的知识，我们需要先决定上传哪些文件，然后传到本地，然后传到服务器。如果你是第一次上传，你将至少修改了AI_Name.h, makefile以及新加了ai99.cpp。我们需要上传这些文件。
+</p>
+<code>
+$ git add AI_Name.h makefile ai99.cpp
+</code>
+
+<p>
+接下来是把他们传到本地的仓库！注意第一个指令会打开一个editor让你输入一些Commit message，或者你可以用第二个命令。请注意，在你commit之前一定要保证可以make，否则push之后会对其他人造成困扰。
+</p>
+<code>
+$ git commit<br>
+$ git commit -m "Initial Commit!"
+</code>
+
+<p>
+这一步成功之后我们就可以把文件从本地传到服务器了。
+</p>
+<code>
+$ git push
+</code>
+
+<h3>
+更新AI
+</h3>
+<p>
+书山有路勤为径，码海无涯苦作舟。我们的AI需要不断地维护更新升级，才能打败其他的AI。每次在你开始编辑自己的AI，以及准备上传前，要先从服务器pull一下，以保证自己本地的内容是最新的，否则git不让你传。然后老方法add commit push。
+</p>
+<code>
+$ git pull<br>
+$ git add ai99.cpp<br>
+$ git commit<br>
+$ git push<br>
+</code>
+
+
+</div>
+</div>
+</body>
+</html>

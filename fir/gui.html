@@ -1,0 +1,115 @@
+<html>
+<meta charset="UTF-8">
+<style>
+#header {
+    background-color:#3e3e3e;
+    color:white;
+    text-align:center;
+    padding:5px;
+    width:1200px;
+}
+#nav {
+    text-align:center;
+    background-color:#eeeeee;
+    line-height:30px;
+    float:left;
+    height:800px;
+    width:200px;
+    padding:5px;
+}
+#section {
+    height:800px;
+    width:1000px;
+    float:left;
+    padding:10px;
+    overflow:auto;
+}
+#mid {
+    margin:0 auto;
+    width:1250px;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom:50px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+code {
+    background-color:#e0e0e0;
+}
+a:link {text-decoration: none;color:black;}
+a:visited{text-decoration:none;color:black;}
+a:hover{text-decoration:underline;color:black;}
+</style>
+
+<body>
+<div id="mid">
+<div id="header">
+<h1>五子棋AI娱乐赛</h1>
+</div>
+
+<div id="nav">
+    <h2><a href=index.html>Result</a></h2> 
+    <h2><a href=ranking.html>Ranking</a></h2> 
+    <h2><a href=introduction.html>Introduction</a></h2> 
+    <h2><a href=get_start.html>Getting Started</a></h2> 
+    <h2><a href=gui.html>GUI</a></h2> 
+    <h2><a href=validation.html>Validation</a></h2> 
+</div>
+
+<div id="section">
+<h3>
+什么是GUI
+</h3>
+<p>
+GUI(Graphical User Interface)一般指可视化界面。大家平时玩五子棋很少有输入坐标玩的，这个GUI系统就是为了让大家可以更好的和AI交流
+</p>
+
+<h3>
+准备工作
+</h3>
+<p>
+GUI的全部内容都在git repo里了，所以你需要的准备工作只是从git里pull下来
+</p>
+<code>
+$ git pull
+</code>
+<p>
+GUI用的是gtk+3.0的库，所以你需要先下载库。不过Linux和mac的用户可以直接用我写好的脚本安装
+</p>
+<code>
+$ ./installLibs.sh
+</code>
+<p>
+在库下载完成以后我们就可以准备编译运行了
+</p>
+
+<h3>
+编译运行
+</h3>
+<p>
+我们依然用make来编译，只不过用一个不同的file，需要用-f来指定makefile。注意GUI版本和Terminal版本是共享header和ai文件的，只是有不同的主source file。
+</p>
+<code>
+$ make -f makefile_gui
+</code>
+<p>
+然后我们只需要运行编译好的程序即可：
+</p>
+<code>
+$ ./gfir
+</code>
+
+<h3>
+GUI简单说明
+</h3>
+<p>
+GUI本身很简单，按那儿就下哪儿。只有两个按钮，“从头再来”是正常的开局，“随机开局”是棋盘上随机2白1黑之后黑棋开始下。
+</p>
+
+
+</div>
+</div>
+</body>
+</html>

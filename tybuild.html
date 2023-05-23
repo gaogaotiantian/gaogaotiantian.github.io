@@ -1,0 +1,250 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="./tybuild_style.css"/>
+  <script>
+    $(document).ready(function() {
+        var userBasic = {};
+      function InitializeUser() {
+        var user = {};
+        user.minAttack = 0;
+        user.minDamage = 0;
+        user.maxDamage = 0;
+        return user;
+      }
+      function GetDamage(user) {
+        if (jQuery.isEmptyObject(user)) {
+          return 0;
+        }
+        var damage = (user.minDamage + user.maxDamage + user.minSkillDamage + user.maxSkillDamage) / 2 * (1 + user.criticalRate * user.criticalDamage) * (1 + user.wushuangRate * user.wushuangDamageRatio) * (1 + user.pomoRate) * (1 - user.enemyDefRate)
+        return damage.toFixed(3);
+      }
+      function GetUser() {
+        var user = {};
+        user.level = parseInt($("#user_level").val())
+        user.minDamage = parseInt($("#user_min_damage").val());
+        user.maxDamage = parseInt($("#user_max_damage").val());
+        user.extraDamage = parseInt($("#user_extra_damage").val());
+        user.shengeAttack = parseInt($('#user_shenge_attack').val());
+        user.skillAttack = parseInt($('#user_skill_attack').val());
+        user.criticalValue = parseInt($('#user_critical_value').val());
+        user.extraCriticalRate = parseFloat($('#user_extra_critical_rate').val());
+        user.criticalBuffRate = parseFloat($('#user_critical_buff_rate').val());
+        user.criticalDamageValue = parseInt($('#user_critical_damage_value').val());
+        user.extraCriticalDamageRate = parseFloat($('#user_extra_critical_damage_rate').val());
+        user.minSkillDamage = parseInt($('#user_min_skill_damage').val());
+        user.maxSkillDamage = parseInt($('#user_max_skill_damage').val());
+        user.wushuangValue = parseInt($('#user_wushuang_value').val());
+        user.wushuangDamageRatio = parseFloat($('#user_wushuang_damage_ratio').val()/100);
+        user.pomoValue = parseInt($('#user_pomo_value').val());
+        user.power = parseInt($("#user_power_potential").val()) + parseInt($("#user_power_other").val());
+        user.dex = parseInt($("#user_dex_potential").val()) + parseInt($("#user_dex_other").val());
+        user.pofangValue = parseInt($("#user_pofang_value").val());
+        user.extraPofangRate = parseInt($("#user_extra_pofang_rate").val());
+        user.enemyDefValue = parseInt($("#user_enemy_def_value").val());
+        user.mainStatus = $("#user_job option:selected").val();
+
+        if (user.level < 79) {
+          user.ATK_CONST = 1.04;
+        } else {
+          user.ATK_CONST = 1.1128;
+        }
+
+        user.equipDamage = Math.round(user.extraDamage / user.ATK_CONST / (1+user.shengeAttack/100) - user.power);
+        if (user.mainStatus == "power") {
+          user.lidao = parseInt(user.power / 10) * 4;
+        } else if (user.mainStatus == "dex") {
+          user.lidao = parseInt(user.dex / 10) * 4;
+        }
+
+        // Calculate source data
+        user.minAttack = (user.minDamage - user.extraDamage) / ((1 + user.lidao/100) * (1 + user.skillAttack/100));
+        user.maxAttack = (user.maxDamage - user.extraDamage) / ((1 + user.lidao/100) * (1 + user.skillAttack/100));
+        user.minEquipAttack = Math.round(user.minAttack / user.ATK_CONST / (1+user.shengeAttack/100));
+        user.maxEquipAttack = Math.round(user.maxAttack / user.ATK_CONST / (1+user.shengeAttack/100));
+
+        console.log(user);
+        UpdateUser(user);
+        console.log(user);
+        return user;
+      }
+      function UpdateUser(user) {
+        if (user.mainStatus == "power") {
+          user.lidao = parseInt(user.power / 10) * 4;
+        } else if (user.mainStatus == "dex") {
+          user.lidao = parseInt(user.dex / 10) * 4;
+        }
+        user.CRI_CONST = user.level*37.5+187.5;
+        user.CRIDAM_CONST = user.level*12.5+62.5;
+        user.WS_CONST = user.level*25+125;
+        user.PM_CONST = user.level*37.5+150;
+        user.DEF_CONST = user.level*40+200;
+        user.PF_CONST = user.level*(35+0.2971*user.level)+180;
+        user.criticalRate = (user.criticalValue * (1 + user.criticalBuffRate/100) / user.CRI_CONST + user.extraCriticalRate/100);
+        user.criticalDamage = Math.min(2, (0.5 + user.criticalDamageValue / user.CRIDAM_CONST + user.extraCriticalDamageRate/100));
+        user.extraDamage = (user.equipDamage + user.power) * user.ATK_CONST * (1+user.shengeAttack/100);
+        user.pofangRate = user.pofangValue / user.PF_CONST + user.extraPofangRate/100;
+        user.enemyDefRate = user.enemyDefValue*(1-user.pofangRate) / (user.DEF_CONST + user.enemyDefValue * (1-user.pofangRate))
+        user.minAttack = user.minEquipAttack * user.ATK_CONST * (1+user.shengeAttack/100);
+        user.maxAttack = user.maxEquipAttack * user.ATK_CONST * (1+user.shengeAttack/100);
+        if (user.minAttack > user.maxAttack) {
+          user.maxAttack = user.minAttack;
+        }
+        user.minDamage = user.minAttack * (1 + user.lidao/100) * (1 + user.skillAttack/100) + user.extraDamage;
+        user.maxDamage = user.maxAttack * (1 + user.lidao/100) * (1 + user.skillAttack/100) + user.extraDamage;
+        user.wushuangRate = user.wushuangValue / user.WS_CONST;
+        user.pomoRate = user.pomoValue / user.PM_CONST;
+        user.damage = GetDamage(user);
+      }
+      function EquipUser(user, equip) {
+        var newUser = $.extend({}, user); 
+        for (var key in newUser) {
+          if (key in equip) {
+            newUser[key] += equip[key];
+          }
+        }
+        UpdateUser(newUser);
+        return newUser;
+      }
+      function UpdateJuexing() {
+        var juexingMap = {
+          "#juexing_power" : ["power", 6],
+          "#juexing_power":["power", 6],
+          "#juexing_power_10":["power", 10],
+          "#juexing_equip_damage":["equipDamage", 27],
+          "#juexing_min_attack": ["minEquipAttack", 30],
+          "#juexing_max_attack": ["maxEquipAttack", 30],
+          "#juexing_critical_value":["criticalValue", 54],
+          "#juexing_extra_critical_rate":["extraCriticalRate", 2.5],
+          "#juexing_critical_damage_value":["criticalDamageValue", 54],
+          "#juexing_extra_critical_damage_rate":["extraCriticalDamageRate", 7.6],
+          "#juexing_wushuang_value":["wushuangValue", 54],
+          "#juexing_pomo_value":["pomoValue", 54],
+          "#juexing_pofang_value":["pofangValue", 54]
+        }
+        for (juexing in juexingMap) {
+          var newUser = {}
+          var equip = {};
+          equip[juexingMap[juexing][0]] = juexingMap[juexing][1];
+          newUser = EquipUser(userBasic, equip);
+          var newDamage = GetDamage(newUser);
+          var effect = (newDamage - userBasic.damage) / userBasic.damage
+          $(juexing).text(effect)
+        }
+      }
+      function UpdateEquip() {
+        $(".equip").each(function() {
+          var equip = {}
+          $("input", this).each(function() {
+            equip[$(this).attr("status")] = parseInt($(this).val());
+          });
+          var newUser = EquipUser(userBasic, equip);
+          var newDamage = GetDamage(newUser);
+          var oldDamage = GetDamage(userBasic);
+          var extraDamage = newDamage - oldDamage;
+          var extraDamageRate = extraDamage / oldDamage;
+          $(".equip_result", this).text(extraDamage + '(' + (extraDamageRate*100).toString() +'%)')
+        });
+      }
+      function UpdatePage() {
+        $("#user_damage").text(userBasic.minDamage.toString() + ' - ' + userBasic.maxDamage.toString());
+        $("#user_equip_attack").text(userBasic.minEquipAttack.toString() + ' - ' + userBasic.maxEquipAttack.toString());
+        $("#user_lidao").text(userBasic.lidao.toString())
+        $("#user_critical_rate").text(userBasic.criticalRate);
+        $("#user_critical_damage_rate").text(userBasic.criticalDamage);
+        $("#user_wushuang_rate").text(userBasic.wushuangRate);
+        $("#user_pomo_rate").text(userBasic.pomoRate);
+        $("#user_expect_damage").text(GetDamage(userBasic));
+        UpdateEquip();
+      }
+      function UpdateAll() {
+          userBasic = GetUser();
+          UpdateJuexing();
+          UpdatePage();
+      }
+      $(".user_input").val(0);
+      $(".user_input").keyup(function() {
+        UpdateAll();
+      });
+      $("#user_job").change(function() {
+        UpdateAll();
+      });
+    })
+  </script>
+</head>
+<body>
+  <div id="main_content">
+    <div>
+      <div id="user_status_input">
+        <h2>用户状态输入</h2>
+        <span class="user_status_option">职业：</span><select id="user_job"><option value="power">圣堂/光刃</option><option value="dex">炎天</option></select><br>
+        <span class="user_status_option">等级：</span><input class="user_input" id="user_level"/><br>
+        <span class="user_status_option">面板最小伤害：</span><input class="user_input" id="user_min_damage"><br>
+        <span class="user_status_option">面板最大伤害：</span><input class="user_input" id="user_max_damage"/><br>
+        <span class="user_status_option">力量（智力）：</span><input class="user_input" id="user_power_potential"/> + <input class="user_input" id="user_power_other"/><br>
+        <span class="user_status_option">敏捷：</span><input class="user_input" id="user_dex_potential"/> + <input class="user_input" id="user_dex_other"/><br>
+        <span class="user_status_option">附加伤害：</span><input class="user_input" id="user_extra_damage"/><br>
+        <span class="user_status_option">神格激活攻击率(%):</span><input class="user_input" id="user_shenge_attack"/><br>
+        <span class="user_status_option">技能攻击率(%):</span><input class="user_input" id="user_skill_attack"/><br>
+        <span class="user_status_option">暴击值:</span><input class="user_input" id="user_critical_value"/><br>
+        <span class="user_status_option">额外暴击率:</span><input class="user_input" id="user_extra_critical_rate"/><br>
+        <span class="user_status_option">暴击buff(%):</span><input class="user_input" id="user_critical_buff_rate"/><br>
+        <span class="user_status_option">暴击加成值:</span><input class="user_input" id="user_critical_damage_value"/><br>
+        <span class="user_status_option">额外暴击加成率:</span><input class="user_input" id="user_extra_critical_damage_rate"/><br>
+        <span class="user_status_option">技能伤害归一化最小值:</span><input class="user_input" id="user_min_skill_damage"/><br>
+        <span class="user_status_option">技能伤害归一化最大值:</span><input class="user_input" id="user_max_skill_damage"/><br>
+        <span class="user_status_option">无双值:</span><input class="user_input" id="user_wushuang_value"/><br>
+        <span class="user_status_option">无双输出占比(%):</span><input class="user_input" id="user_wushuang_damage_ratio"/><br>
+        <span class="user_status_option">破魔值:</span><input class="user_input" id="user_pomo_value"/><br>
+        <span class="user_status_option">破防值:</span><input class="user_input" id="user_pofang_value"/><br>
+        <span class="user_status_option">额外破防率:</span><input class="user_input" id="user_extra_pofang_rate"/><br>
+        <span class="user_status_option">敌人防御:</span><input class="user_input" id="user_enemy_def_value"/><br>
+      </div>
+      <div id="user_status_general">
+        <h2>用户结果</h2>
+        <span class="user_status_general">面板伤害：</span><span id="user_damage">0-0</span><br>
+        <span class="user_status_general">装备攻击：</span><span id="user_equip_attack">0-0</span><br>
+        <span class="user_status_general">力道：</span><span id="user_lidao">0</span><br>
+        <span class="user_status_general">暴击率：</span><span id="user_critical_rate">0</span><br>
+        <span class="user_status_general">暴击加成率：</span><span id="user_critical_damage_rate">0</span><br>
+        <span class="user_status_general">无双率：</span><span id="user_wushuang_rate">0</span><br>
+        <span class="user_status_general">破魔率：</span><span id="user_pomo_rate">0</span><br>
+        <span class="user_status_general">期望伤害：</span><span id="user_expect_damage">0</span><br>
+      </div>
+      <div id="juexing_effect">
+        <h2>觉醒收益</h2>
+        <span class="juexing_effect">力量(6)</span><span id="juexing_power">0</span><br>
+        <span class="juexing_effect">力量(10)(参考)</span><span id="juexing_power_10">0</span><br>
+        <span class="juexing_effect">伤害(27)</span><span id="juexing_equip_damage">0</span><br>
+        <span class="juexing_effect">小攻(30)</span><span id="juexing_min_attack">0</span><br>
+        <span class="juexing_effect">大攻(30)</span><span id="juexing_max_attack">0</span><br>
+        <span class="juexing_effect">暴击值(54)</span><span id="juexing_critical_value">0</span><br>
+        <span class="juexing_effect">额外暴击率(2.5)</span><span id="juexing_extra_critical_rate">0</span><br>
+        <span class="juexing_effect">暴击加成值(54)</span><span id="juexing_critical_damage_value">0</span><br>
+        <span class="juexing_effect">额外暴击加成率(7.6)</span><span id="juexing_extra_critical_damage_rate">0</span><br>
+        <span class="juexing_effect">无双力(54)</span><span id="juexing_wushuang_value">0</span><br>
+        <span class="juexing_effect">破魔力(54)</span><span id="juexing_pomo_value">0</span><br>
+        <span class="juexing_effect">破防力(54)</span><span id="juexing_pofang_value">0</span><br>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div id="equip_effect">
+      <div class="equip" id="equip1">
+        <h2>装备一</h2>
+        <span class="equip_effect">小攻</span><input class="user_input" status="minEquipAttack"><br>
+        <span class="equip_effect">大攻</span><input class="user_input" status="maxEquipAttack"><br>
+        <span class="equip_effect">伤害</span><input class="user_input" status="equipDamage"><br>
+        <span class="equip_effect">暴击值</span><input class="user_input" status="criticalValue"><br>
+        <span class="equip_effect">额外暴击率</span><input class="user_input" status="extraCriticalRate"><br>
+        <span class="equip_effect">暴击加成值</span><input class="user_input" status="criticalDamageValue"><br>
+        <span class="equip_effect">额外暴击加成率</span><input class="user_input" status="extraCriticalDamageRate"><br>
+        <span class="equip_effect">无双值</span><input class="user_input" status="wushuangValue"><br>
+        <span class="equip_effect">破魔值</span><input class="user_input" status="pomoValue"><br>
+        <span class="equip_effect">破防值</span><input class="user_input" status="pofangValue"><br>
+        <span class="equip_effect">期望伤害增长</span><span class="equip_result">0</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
